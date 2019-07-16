@@ -22,7 +22,7 @@ Play party games with friends!
 
 ## Contributing
 
-0. Fork this repo!
+0. Fork and clone this repo!
 1. Add new remote as the master branch ```$ git remote add absolute-master https://github.com/lukehorak/gamebox```
 2. Pull from master to get latest stable version before working ```git pull absolute-master```
 3. Checkout and switch to a new branch named as the feature you're working on ```get checkout -b pwn-noobs```
