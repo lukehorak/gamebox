@@ -15,9 +15,6 @@ Play party games with friends!
 1. Install dependencies: `npm i`
 2. Fix to binaries for sass: `npm rebuild node-sass`
 3. Run migrations: `npm run knex migrate:latest`
-4. add to env. `MAILGUN_KEY=<your_mailgun_key>`
-              `MAILGUN_DOMAIN=<your_mailgun_domain>`
-  - Check the migrations folder to see what gets created in the DB
 4. Run the seed: `npm run knex seed:run`
   - Check the seeds file to see what gets seeded in the DB
 5. Run the server: `npm run local`
