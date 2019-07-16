@@ -22,13 +22,14 @@ Play party games with friends!
 
 ## Contributing
 
-0. Add new remote as the master branch ```$ git remote add absolute-master https://github.com/lukehorak/gamebox```
-1. Pull from master to get latest stable version before working ```git pull absolute-master```
-1. Checkout and switch to a new branch named as the feature you're working on ```get checkout -b pwn-noobs```
-2. Do local tests
-4. Push to your forked copy's branch on Github (not absolute-master) ```git push origin pwn-noobs```
-5. Open pull request 
-6. Wait for merge
+0. Fork this repo!
+1. Add new remote as the master branch ```$ git remote add absolute-master https://github.com/lukehorak/gamebox```
+2. Pull from master to get latest stable version before working ```git pull absolute-master```
+3. Checkout and switch to a new branch named as the feature you're working on ```get checkout -b pwn-noobs```
+4. Do local tests
+5. Push to your forked copy's branch on Github (not absolute-master) ```git push origin pwn-noobs```
+6. Open pull request 
+7. Wait for merge
 
 ## Dependencies
 
