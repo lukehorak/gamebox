@@ -3,6 +3,15 @@ class User {
   constructor(name){
     this.name = name
   }
+
+}
+
+class Host extends User{
+
+  constructor(){
+    super('host')
+  }
+
 }
 
 class Player extends User {
@@ -10,4 +19,9 @@ class Player extends User {
     super(name)
     this.isFaker = false;
   }
+}
+
+module.exports = {
+  Player: Player,
+  Host: Host
 }
