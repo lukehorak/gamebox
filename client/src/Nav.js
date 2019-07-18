@@ -18,10 +18,9 @@ class Nav extends Component{
           </a>
         </div>
       </nav>
-    )
-  }
-
-}
+    );
+  };
+};
 
 
 
