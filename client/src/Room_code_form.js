@@ -7,10 +7,9 @@ class RoomCodeForm extends Component{
         Room code:
         <input class="input" type="text" placeholder="Enter 4-digit room code"></input>
         </div>
-    
-    )
-  }
-}
+    );
+  };
+};
 
 
 
