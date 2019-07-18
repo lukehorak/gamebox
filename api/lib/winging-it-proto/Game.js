@@ -2,7 +2,7 @@ class Game {
   
   constructor() {
     this.roomCode = this.generateCode();
-    this.players = new Array();
+    this.players = {};
 
   }
 
@@ -12,19 +12,26 @@ class Game {
   }
 
   addPlayer(player){
-    this.players.push(player);
+    if(!this.players[player.name]){
+      this.players[player.name] = player;
+    }
+    else {
+      console.log("A player with that name already exists!")
+    };
   }
 
 
   // May not be needed, keeping it in our back pocket
   resetFaker(){
-    this.players.forEach( player => player.isFaker = false);
+    for (let i in this.players){
+      this.players[i].isFaker = false;
+    }
   }
 
   setFaker(){
-    const max = this.players.length - 1;
-    const index = (Math.random() * max) + 1;
-
+    const keys = Object.keys(this.players);
+    const index = Math.floor((Math.random() * keys.length));
+    this.players[ keys[ index ] ].isFaker = true;
   }
 
 }

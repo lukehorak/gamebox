@@ -1,8 +1,13 @@
 class Round {
 
-  constructor({question, fakerQuestion}) {
+  constructor(question, players) {
     this.question = question;
-    this.fakerQuestion = fakerQuestion;
+    this.fakerQuestion = "Just wing it!";
+    this.players = {};
+    // Populate this.players with k,v pairs of playername, 0 (initial vote count)
+    for (let p in players){
+      this.players[p] = 0
+    }
   }
 
   getQuestion(player) {
