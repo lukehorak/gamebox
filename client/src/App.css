@@ -1,6 +1,25 @@
 
-
-
 body{
-  background-color: #EEE2DC
+  font-family: 'Hind Guntur';
+  background-color: #EEE2DC;
+
+}
+
+nav .navbar-brand{
+  display: flex;
+  align-items: center;
+  margin-bottom: 5em;
+}
+
+.name-container{
+  display: flex;
+}
+
+form .input{
+  width: 12em;
+  margin-top: 2em;
+}
+
+form .room-code{
+  padding-top: 23em;
 }
