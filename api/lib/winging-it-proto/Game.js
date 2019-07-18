@@ -3,7 +3,17 @@ class Game {
   constructor() {
     this.roomCode = this.generateCode();
     this.players = {};
+    this.fakerIsFound = false;
+    this.roundNumber = 0;
 
+  }
+
+  gameIsOver() {
+    return (this.fakerIsFound || this.roundNumber > 2)
+  }
+
+  get winner() {
+    return (this.fakerIsFound ? "not the faker" : "faker")
   }
 
   generateCode() {
@@ -22,16 +32,21 @@ class Game {
 
 
   // May not be needed, keeping it in our back pocket
-  resetFaker(){
+  resetFaker() {
     for (let i in this.players){
       this.players[i].isFaker = false;
     }
   }
 
-  setFaker(){
+  setFaker() {
     const keys = Object.keys(this.players);
     const index = Math.floor((Math.random() * keys.length));
-    this.players[ keys[ index ] ].isFaker = true;
+    const faker = this.players[ keys[ index ] ]
+    faker.isFaker = true;
+  }
+
+  endGame() {
+
   }
 
 }
