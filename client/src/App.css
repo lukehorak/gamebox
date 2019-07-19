@@ -2,6 +2,8 @@
 body{
   font-family: 'Hind Guntur';
   background-color: #EEE2DC;
+  padding-left: 10em;
+  padding-right: 20em;
 
 }
 
@@ -22,4 +24,19 @@ form .input{
 
 form .room-code{
   padding-top: 23em;
+}
+
+.card {
+  margin-top: 2em;
+  margin-bottom: 3em;
+  margin-right: 2em;
+  margin-left: 2em;
+  border-radius: 8px;
+  margin-bottom: 12px;
+  /* height: 10em; */
+}
+
+.create-game-main {
+  padding-left: 8em;
+  padding-right: 8em;
 }
