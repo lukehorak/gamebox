@@ -23,3 +23,145 @@ form .input{
 form .room-code{
   padding-top: 23em;
 }
+
+#join-game-form {
+  width: 305px;
+  height: 300px;
+  margin: 70px;
+  position: relative;
+  color: white;
+  font-family: Arial;
+  text-align: center; }
+
+.input {
+  width: 305px;
+  height: 35px;
+  margin: 4px 0px;
+  padding: 5px 7px;
+  color: #7C8A99;
+  background-color: white;
+  border: 0px solid #9CAAB9;
+  border-bottom-width: 2px;
+  border-right-width: 2px;
+  border-radius: 7px;
+  outline: 0;
+  transition: .325s all ease; }
+
+.room-code-input {
+  margin-top: -39px;
+  display: none; }
+
+input {
+  box-shadow: none; }
+
+.join-game-button {
+  margin-top: -15;
+  display: none; }
+
+.fake-button {
+  margin-top: 4px;
+  text-align: center;
+  cursor: pointer;
+  float: left;
+  display: block;
+  margin-left: 50%;
+  transform: translateX(-50%); }
+
+.room-code-input {
+  margin-left: calc(50% + -1px);
+  transform: translateX(-50%);
+  z-index: 100;
+  position: relative; }
+
+.nameBox-anim {
+  animation: move-name-box 0.35s ease-in-out;
+  animation-fill-mode: forwards;
+  animation-delay: 0.3s;
+  display: block;
+  opacity: 0;
+  z-index: 25; }
+
+.button-anim {
+  animation: move-button 0.25s ease-in-out;
+  animation-fill-mode: forwards;
+  animation-delay: 0.7s;
+  display: block;
+  opacity: 0;
+  z-index: 20; }
+
+.nameBox-anim-reverse {
+  animation: move-name-box-reverse 0.35s ease-in-out;
+  animation-fill-mode: forwards; }
+
+.button-anim-reverse {
+  animation: move-button-reverse 0.25s ease-in-out;
+  animation-fill-mode: forwards; }
+
+.room-code-revert {
+  animation: revert-room-code-box 0.4s ease-in-out;
+  animation-fill-mode: forwards;
+  animation-delay: 0.3s;
+  background-color: #ffffff;
+  border: 0; }
+
+.button {
+  width: 140px;
+  height: 35px;
+  background-color: #388E3C;
+  color: white;
+  border: 0px solid #2E7D32;
+  border-bottom-width: 2px;
+  border-right-width: 2px;
+  border-radius: 10px;
+  float: right;
+  cursor: pointer; }
+
+.button:hover {
+  background-color: #2E7D32; }
+
+@keyframes move-name-box {
+  from {
+    transform: translateY(0);
+    opacity: 1; }
+  to {
+    transform: translateY(43px);
+    opacity: 1; } }
+@keyframes move-button {
+  from {
+    transform: translateY(0);
+    opacity: 1; }
+  to {
+    transform: translateY(43px);
+    opacity: 1; } }
+@keyframes move-name-box-reverse {
+  to {
+    transform: translateY(0);
+    opacity: 0; }
+  99% {
+    opacity: 1; }
+  from {
+    transform: translateY(43px);
+    opacity: 1; } }
+@keyframes move-button-reverse {
+  to {
+    transform: translateY(-43px);
+    opacity: 0; }
+  20% {
+    transform: translateY(-43px);
+    opacity: 0; }
+  99% {
+    opacity: 1; }
+  from {
+    transform: translateY(43px);
+    opacity: 1; } }
+@keyframes revert-room-code-box {
+  0% {
+    width: 305px;
+    background-color: #ffffff; }
+  100% {
+    width: 30px;
+    opacity: 0;
+    border-radius: 100px;
+    background-color: #000000; } }
+/* Loading Circle */
+

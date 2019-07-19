@@ -5,7 +5,9 @@ import RoomCodeForm from './Room_code_form';
 import NameForm from './Name_form'
 import StartButton from './StartButton'
 import 'bulma/css/bulma.css'
+import LandingPageForms from './FormAnimation';
 
+//TODO -functional burger, form anime
 class App extends Component {
   constructor(props){
     super(props)
@@ -14,9 +16,7 @@ class App extends Component {
     return (
       <div>
         <Nav/>
-        <RoomCodeForm/>
-        <NameForm/>
-        <StartButton/>
+        <LandingPageForms />
           </div>
     );
   }
