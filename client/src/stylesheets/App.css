@@ -9,16 +9,11 @@ html, body{
   padding: 0px;
   overflow-x: hidden;
 }
-.main-div{
-  padding-bottom: 14.3em;
-  padding-left: 10em;
-  padding-right: 20em;
-}
+
 
 nav .navbar-brand{
   display: flex;
   align-items: center;
-  margin-bottom: 5em;
   justify-content: space-between;
 }
 
@@ -55,24 +50,13 @@ form .room-code{
   color: white;
   font-family: Arial;
   text-align: center
-}
+  }
 
   #join-game{
     margin-bottom: 2em;
+    margin-top: 4em;
   }
 
-
-.card {
-  margin-top: 2em;
-  margin-bottom: 3em;
-  margin-right: 2em;
-  margin-left: 2em;
-  border-radius: 8px;
-  margin-bottom: 12px;
-  /* height: 10em; */
-}
-
-.create-game-main {
-  padding-left: 8em;
-  padding-right: 8em;
-}
+  #create-game{
+    margin-top: 2em;
+  }
