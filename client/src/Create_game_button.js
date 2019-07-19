@@ -1,18 +1,16 @@
 import React, { Component } from 'react';
 
-  class StartButton extends Component{
+
+  class CreateButton extends Component{
     render(){
       return(
-        <div className="start-game columns is-mobile is-centered ">
+        <div id="create-game" className="create-game columns is-mobile is-centered ">
           <button className="button button is-primary">
-            Start Game
+            Create Game
           </button>
         </div>
       );
     }
-    
   }
 
-
-
-export default StartButton
+export default CreateButton

@@ -6,7 +6,7 @@ class RoomCodeForm extends Component{
       <div className="room-code columns is-mobile is-centered">
         <form className="room-code control">
           <p className="control">
-            <input class="input" type="text" placeholder="Enter 4-digit room code">
+            <input className="input" type="text" placeholder="Enter 4-digit room code">
             </input>
           </p>
         </form>

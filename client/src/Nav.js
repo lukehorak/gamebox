@@ -11,10 +11,7 @@ class Nav extends Component{
           <span className="navbar-start">
           GameBox
           </span>
-          <a role="button" className="navbar-burger" aria-label="menu" aria-expanded="false">
-            <span aria-hidden="true"></span>
-            <span aria-hidden="true"></span>
-            <span aria-hidden="true"></span>
+          <a className="about-link" href="#" id="about-link"> About
           </a>
         </div>
       </nav>
