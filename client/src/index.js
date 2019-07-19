@@ -1,11 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-// TODO: Revert back to App
+
+import { BrowserRouter } from 'react-router-dom';
+
 import App from './component/App'
 import './stylesheets/index.css';
 
 ReactDOM.render(
-  // TODO: Revert back to App
-  < App /> ,
+  <BrowserRouter>
+    < App />
+  </BrowserRouter>,
   document.getElementById('root')
 );
