@@ -9,11 +9,9 @@ class CreateGame extends Component {
   }
   render() {
     return (
-      <div>
-        <div className="create-game-title title is-1 has-text-centered">Create a Game</div>
-
-        <div className="create-game-main">
-          <div className="columns is-variable is-relative is-three-quarters-mobile is-two-thirds-tablet is-half-desktop is-one-third-widescreen is-one-quarter-fullhd">
+      <div id="card-container">
+        <div className="create-game-title title is-1 has-text-centered">{/*ROOM CODE HERE*/}</div>  
+          <div className="create-game-container">
 
             <Card
               cardClass="fakerCard"
@@ -44,7 +42,6 @@ class CreateGame extends Component {
 
           </div>
         </div>
-      </div>
     );
   }
 }
