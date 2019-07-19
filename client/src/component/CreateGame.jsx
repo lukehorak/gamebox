@@ -1,14 +1,6 @@
 import React, { Component } from 'react';
 import '../stylesheets/App.css';
-<<<<<<< HEAD
-import Faker from './../component/CreateGame/Faker';
-import Typist from './../component/CreateGame/Typist';
-import Lollipop from './../component/CreateGame/Lollipop';
-import WhereAmI from './../component/CreateGame/WhereAmI';
-=======
-import 'bulma/css/bulma.css'
 import Card from './../component/Card';
->>>>>>> 51d08777c2ca98303b2e5509d8851635b1f419ba
 
 
 class CreateGame extends Component {
