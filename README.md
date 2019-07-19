@@ -20,6 +20,12 @@ Play party games with friends!
 5. Run the server: `npm run local`
 6. Visit `http://localhost:8080/`
 
+## Environment Variables
+
+### API
+
+### Client (Front-End)
+
 ## Contributing
 
 0. Fork and clone this repo!
