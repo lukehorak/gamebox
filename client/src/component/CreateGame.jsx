@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import '../stylesheets/App.css';
-import 'bulma/css/bulma.css'
 import Card from './../component/Card';
 
 
