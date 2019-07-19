@@ -65,10 +65,27 @@ form .room-code{
 
   img{
     width: 10em;
-    height: 16em;
+    height: 12em;
+    padding: 1em 1em 0em 1em;
   }
 
   #card-container{
     display: flex;
     justify-content: center;
+  }
+
+  figure{
+    border: 0.1em solid #EEE2DC;
+    background-color: white;
+    border-radius: 0.5em;
+    box-shadow:  -3px 4px 11px 0 rgb(85, 84, 84);
+  }
+  
+  figure .title-container{
+    display: flex;
+    justify-content: center;
+  }
+
+  p {
+    margin: 0;
   }
