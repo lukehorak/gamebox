@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Route, Switch } from 'react-router-dom';
 import Home from './Home';
+import WingIt from './WingIt';
 import SocketTest from './SocketTest';
 
 class App extends Component {
@@ -10,7 +11,7 @@ class App extends Component {
         <Switch>
           <Route exact path="/" component={Home}/>
           <Route exact path="/testing" component={SocketTest}/>
-          <Route path="/wingit" componen={} />
+          <Route path="/wingit" component={WingIt} />
         </Switch>
       </div>
     )

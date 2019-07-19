@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
-import '../stylesheets/App.css';
+import '../stylesheets/Home.css';
 import Card from './../component/Card';
 import Nav from './Nav';
 
 
 
-class Faker extends Component {
+class WingIt extends Component {
   constructor(props) {
     super(props)
   }
@@ -52,4 +52,4 @@ class Faker extends Component {
   }
 }
 
-export default Faker;
+export default WingIt;
