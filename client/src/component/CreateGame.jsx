@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import '../stylesheets/App.css';
-import 'bulma/css/bulma.css'
 import Faker from './../component/CreateGame/Faker';
 import Typist from './../component/CreateGame/Typist';
 import Lollipop from './../component/CreateGame/Lollipop';

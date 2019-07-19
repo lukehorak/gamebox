@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import '../../stylesheets/App.css';
-import 'bulma/css/bulma.css'
+
 
 class Lollipop extends Component {
   constructor(props) {

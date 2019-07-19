@@ -10,8 +10,9 @@ html, body{
   overflow-x: hidden;
 }
 
-
-nav .navbar-brand{
+nav{
+  height: 5em;
+  background-color: #AC3B61;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -20,6 +21,7 @@ nav .navbar-brand{
 #about-link{
   text-decoration: none;
   margin-right: 2em;
+  justify-content: flex-end;
 }
 
 .navbar-start{
