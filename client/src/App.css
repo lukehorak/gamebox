@@ -18,10 +18,12 @@ nav .navbar-brand{
 form .input{
   width: 12em;
   margin-top: 2em;
+  visibility: hidden;
 }
 
 form .room-code{
   padding-top: 23em;
+  margin-top: 2em;
 }
 
 #join-game-form {
@@ -31,8 +33,9 @@ form .room-code{
   position: relative;
   color: white;
   font-family: Arial;
-  text-align: center; }
-
+  text-align: center
+  }
+/* 
 .input {
   width: 305px;
   height: 35px;
@@ -45,14 +48,19 @@ form .room-code{
   border-right-width: 2px;
   border-radius: 7px;
   outline: 0;
-  transition: .325s all ease; }
+  transition: .325s all ease; 
+}
 
 .room-code-input {
-  margin-top: -39px;
-  display: none; }
+  margin-top: 2em;
 
-input {
-  box-shadow: none; }
+} */
+
+/* input {
+  box-shadow: none; } */
+
+
+  /* 
 
 .join-game-button {
   margin-top: -15;

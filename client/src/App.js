@@ -3,7 +3,8 @@ import './App.css';
 import Nav from './Nav';
 import RoomCodeForm from './Room_code_form';
 import NameForm from './Name_form'
-import StartButton from './StartButton'
+import StartButton from './Start_game_button'
+import JoinButton from  './Join_game_button'
 import 'bulma/css/bulma.css'
 import LandingPageForms from './FormAnimation';
 
@@ -16,7 +17,10 @@ class App extends Component {
     return (
       <div>
         <Nav/>
-        <LandingPageForms />
+        <StartButton/>
+        <RoomCodeForm/>
+        <JoinButton/>
+        <NameForm/>
           </div>
     );
   }
