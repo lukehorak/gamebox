@@ -5,14 +5,12 @@ class Nav extends Component{
   }
   render(){
     return (
-      <nav className="navbar is-primary" role="navigation" aria-label="main navigation">
-        <div className="navbar-brand">
-          <span className="navbar-start">
+      <nav className="navbar" role="navigation" aria-label="main navigation">
+        <span className="navbar-start">
           GameBox
-          </span>
-          <a className="about-link" href="#" id="about-link"> About
-          </a>
-        </div>
+        </span>
+        <a className="about-link" href="#" id="about-link"> About
+        </a>
       </nav>
     );
   };
