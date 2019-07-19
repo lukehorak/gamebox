@@ -1,9 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './App';
+// TODO: Revert back to App
+import App from './App'
+// import CreateGame from './page/CreateGame';
 import './index.css';
 
 ReactDOM.render(
-  <App />,
+  // TODO: Revert back to App
+  < App /> ,
+  // < CreateGame /> ,
   document.getElementById('root')
 );

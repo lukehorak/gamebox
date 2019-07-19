@@ -11,6 +11,8 @@ html, body{
 }
 .main-div{
   padding-bottom: 14.3em;
+  padding-left: 10em;
+  padding-right: 20em;
 }
 
 nav .navbar-brand{
@@ -58,3 +60,19 @@ form .room-code{
   #join-game{
     margin-bottom: 2em;
   }
+}
+
+.card {
+  margin-top: 2em;
+  margin-bottom: 3em;
+  margin-right: 2em;
+  margin-left: 2em;
+  border-radius: 8px;
+  margin-bottom: 12px;
+  /* height: 10em; */
+}
+
+.create-game-main {
+  padding-left: 8em;
+  padding-right: 8em;
+}
