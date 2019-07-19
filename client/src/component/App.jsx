@@ -1,22 +1,20 @@
 import React, { Component } from 'react';
-import '../stylesheets/App.css';
-import Nav from './Nav';
-import CreateGame from './CreateGame'
-import CreateButton from './Create_game_button';
-import JoinButton from  './Join_game_button';
+import { Route, Switch } from 'react-router-dom';
+import Home from './Home';
 
-//TODO -functional burger, form anime
 class App extends Component {
-  constructor(props){
-    super(props)
-  }
   render() {
-    return (
-      <div className="main-div">
-        <Nav/>
-        <JoinButton/>
-        <CreateButton/>
+    const App = () => (
+      <div>
+        <Switch>
+          <Route exact path="/" component={Home}/>
+        </Switch>
       </div>
+    )
+    return (
+      <Switch>
+        <App/>
+      </Switch>
     );
   }
 }
