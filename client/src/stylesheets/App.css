@@ -62,3 +62,13 @@ form .room-code{
   #create-game{
     margin-top: 2em;
   }
+
+  img{
+    width: 10em;
+    height: 16em;
+  }
+
+  #card-container{
+    display: flex;
+    justify-content: center;
+  }
