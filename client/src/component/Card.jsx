@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import '../stylesheets/Home.css';
 
+
 class Card extends Component {
   constructor(props) {
     super(props)
