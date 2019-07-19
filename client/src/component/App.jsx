@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Route, Switch } from 'react-router-dom';
 import Home from './Home';
+import SocketTest from './SocketTest';
 
 class App extends Component {
   render() {
@@ -8,6 +9,8 @@ class App extends Component {
       <div>
         <Switch>
           <Route exact path="/" component={Home}/>
+          <Route exact path="/testing" component={SocketTest}/>
+          <Route path="/wingit" componen={} />
         </Switch>
       </div>
     )
