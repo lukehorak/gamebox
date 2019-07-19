@@ -1,9 +1,5 @@
 import React, { Component } from 'react';
-import '../App.css';
-import Nav from './../Nav';
-import RoomCodeForm from './../Room_code_form';
-import NameForm from './../Name_form'
-import StartButton from './../StartButton'
+import '../stylesheets/App.css';
 import 'bulma/css/bulma.css'
 import Faker from './../component/CreateGame/Faker';
 import Typist from './../component/CreateGame/Typist';
@@ -18,8 +14,6 @@ class CreateGame extends Component {
   render() {
     return (
       <div>
-        <Nav />
-        
         <div className="create-game-title title is-1 has-text-centered">Create a Game</div>
 
         <div className="create-game-main">

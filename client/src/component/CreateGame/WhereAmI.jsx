@@ -1,9 +1,5 @@
 import React, { Component } from 'react';
-import '../../App.css';
-import Nav from '../../Nav';
-import RoomCodeForm from '../../Room_code_form';
-import NameForm from '../../Name_form'
-import StartButton from '../../StartButton'
+import '../../stylesheets/App.css';
 import 'bulma/css/bulma.css'
 
 class WhereAmI extends Component {
