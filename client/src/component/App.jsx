@@ -17,7 +17,6 @@ class App extends Component {
         <Nav/>
         <JoinButton/>
         <CreateButton/>
-        <CreateGame/>
       </div>
     );
   }
