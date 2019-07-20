@@ -39,21 +39,33 @@ nav{
   display: flex; 
   flex-direction: column;
   align-items: center;
-  margin: 5em 10em 10em 10em;
-  background-color: #FDFDFD;
+  margin: 5em 13em 5em 13em;
+  background-color: #f0e8e4;
   border-radius: .5em;
   box-shadow: inset 1px 0px 20px 0px rgb(85, 84, 84);
 }
 
+.game-container{
+  margin-bottom: 4em;
+}
 
 #join-game{
+  color: white;
+  background-color: #AC3B61;
   margin-bottom: 2em;
   margin-top: 6em;
+  padding: 0.7em 0.9em 0.7em 0.9em;
+  border-radius: 0.5em;
 }
 
-#create-game{
-  margin: 3em 0 2em 0;
-}
+.create-game-button{
+  color: white;
+  background-color: #AC3B61;
+  margin: 3em 0 4em 0;
+  padding: 0.79em 0.9em 0.79em 0.9em;
+  border-radius: 0.5em;
+  }
+
 
 form .input{
   width: 12em;
@@ -116,6 +128,7 @@ form .room-code{
     align-items: center;
   }
 
-  .create-game-button{
-    margin-bottom: 4em;
+  .game-link{
+    color: black;
+    text-decoration: none;
   }
