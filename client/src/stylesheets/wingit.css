@@ -1,0 +1,12 @@
+.wingit-main-container {
+  background-color: rgb(171, 243, 243);
+  margin: 5em;
+}
+
+.player-field {
+  text-align: center;
+}
+
+.generated-room-code {
+  text-align: center;
+}
