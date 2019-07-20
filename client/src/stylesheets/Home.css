@@ -30,8 +30,29 @@ nav{
   font-weight: 120em;
   color: white;
 }
+
 .name-container{
   display: flex;
+}
+
+#button-container{
+  display: flex; 
+  flex-direction: column;
+  align-items: center;
+  margin: 5em 10em 10em 10em;
+  background-color: #FDFDFD;
+  border-radius: .5em;
+  box-shadow: inset 1px 0px 20px 0px rgb(85, 84, 84);
+}
+
+
+#join-game{
+  margin-bottom: 2em;
+  margin-top: 6em;
+}
+
+#create-game{
+  margin: 3em 0 2em 0;
 }
 
 form .input{
@@ -54,20 +75,12 @@ form .room-code{
   text-align: center
   }
 
-  #join-game{
-    margin-bottom: 2em;
-    margin-top: 4em;
-  }
-
-  #create-game{
-    margin-top: 2em;
-  }
-
   img{
     width: 10em;
     height: 12em;
     padding: 1em 1em 0em 1em;
   }
+
 
   #card-container{
     display: flex;
@@ -79,6 +92,7 @@ form .room-code{
     background-color: white;
     border-radius: 0.5em;
     box-shadow:  -3px 4px 11px 0 rgb(85, 84, 84);
+    margin: 1.5em;
   }
   
   figure .title-container{
@@ -86,6 +100,22 @@ form .room-code{
     justify-content: center;
   }
 
-  p {
+  p .title{
     margin: 0;
+  }
+
+  .join-game{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .create-game{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .create-game-button{
+    margin-bottom: 4em;
   }

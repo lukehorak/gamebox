@@ -15,7 +15,7 @@ import React, { Component } from 'react';
     } 
     render(){
       return(
-        <div className="join-game columns is-mobile is-centered">
+        <div className="join-game">
           <button onClick={this.toggleHidden.bind(this)} id="join-game" className="button button is-primary">
             Join Game
           </button>
