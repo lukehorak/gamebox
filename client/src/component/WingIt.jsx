@@ -13,14 +13,16 @@ class WingIt extends Component {
     super(props)
   }
   render() {
+    const randomRoomId = db.getRandomNumber();
+    const randomRoomName = 'WingIt-' + new Date().getTime()
+    db.createNewRoom(randomRoomId, randomRoomName)
     return (
       <div>
         < Nav />
         <div className="wingit-main-container">
 
-
           <div className="generated-room-code">
-            Room Code: 
+            Room Code: {randomRoomId}, Room Name : {randomRoomName}
           </div>
 
           <form action="/wherever-handling-form-page" method="post">
