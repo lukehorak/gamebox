@@ -29,8 +29,8 @@ import React, { Component } from 'react';
     <div className="columns is-mobile is-centered">
       <form className="is-horizontal">
         <p className="control">
-          <input className="input" type="text" placeholder="Enter your name"/>
-          <input className="input" type="text" placeholder="Enter 4-digit room code"/>
+          <input className="name-input" type="text" placeholder="Enter your name"/>
+          <input className="room-code-input" type="text" placeholder="Enter room code"/>
         </p>
       </form>
     </div>

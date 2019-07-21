@@ -39,14 +39,10 @@ nav{
   display: flex; 
   flex-direction: column;
   align-items: center;
-  margin: 5em 13em 5em 13em;
-  background-color: #f0e8e4;
-  border-radius: .5em;
-  box-shadow: inset 1px 0px 20px 0px rgb(85, 84, 84);
 }
 
 .game-container{
-  margin-bottom: 4em;
+  margin: 0 0 2em 0;
 }
 
 #join-game{
@@ -77,26 +73,37 @@ form .room-code{
   margin-top: 2em;
 }
 
-#join-game-form {
-  width: 305px;
-  height: 300px;
-  margin: 70px;
-  position: relative;
-  color: white;
-  font-family: Arial;
-  text-align: center
-  }
-
   img{
     width: 10em;
     height: 12em;
     padding: 1em 1em 0em 1em;
   }
 
+  input{
+    border: none;
+    border-radius: 0.5em;
+    box-shadow: -3px 5px 9px 0px rgb(85, 84, 84);
+    height: 1.5rem;
+    width: 6rem;
+  }
+  .name-input{
+    margin-right: 1rem;
+  }
+
+  .room-code-input{
+    margin-left: 1rem;
+  }
 
   #card-container{
     display: flex;
     justify-content: center;
+    background-color: rgba(0,0,0, 0.2);
+    border-radius: .5em;
+    height: 30em;
+    width: 40em;
+    overflow-y: scroll;
+    scroll-behavior: smooth; 
+    margin-bottom: 4em;
   }
 
   figure{

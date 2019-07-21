@@ -11,7 +11,7 @@ class CreateGame extends Component {
     return (
       <div id="card-container">
         <div className="create-game-title title is-1 has-text-centered">{/*ROOM CODE HERE*/}</div>  
-
+      
           <div className="game-container">
             <Card
               cardClass="wingItCard"
