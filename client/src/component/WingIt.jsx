@@ -11,23 +11,41 @@ import '../stylesheets/wingit.css';
 class WingIt extends Component {
   constructor(props) {
     super(props)
+    this.state = {
+      players: [
+        { name: 'Cher', playerId: 1},
+        { name: 'Lukas', playerId: 2},
+        { name: 'Aiden', playerId: 3}
+      ]
+    }
   }
   render() {
     const randomRoomId = db.getRandomNumber();
-    const randomRoomName = 'WingIt-' + new Date().getTime()
-    db.createNewRoom(randomRoomId, randomRoomName)
+    const players = this.state.players.map(function (player) {
+      return (
+        <li key={player.playerId} className="my-player-list-item">
+          <h2>{player.name}</h2>
+        </li>
+      );
+    });
+
+    // db.createNewRoom(randomRoomId, randomRoomName)
+
     return (
       <div>
         < Nav />
         <div className="wingit-main-container">
+          <ul>
+            {players}
+          </ul>
 
           <div className="generated-room-code">
-            Room Code: {randomRoomId}, Room Name : {randomRoomName}
+            Room Code: {randomRoomId}
           </div>
 
           <form action="/wherever-handling-form-page" method="post">
             <div className="player-field">
-              <label for="name">Enter Player Name:</label>
+              <label htmlFor="name">Enter Player Name:</label>
               <input type="text" id="name" name="user_name"/>
             </div>
           </form>
