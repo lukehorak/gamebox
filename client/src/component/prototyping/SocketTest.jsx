@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import INeedAnAdult from './INeedAnAdult';
 import socketIOClient from 'socket.io-client';
 
 class SocketTest extends Component {
@@ -26,7 +27,7 @@ class SocketTest extends Component {
   }
 
   sendMessageToServer = () => {
-    this.socket.emit('test-event', {text: 'i need an adult'});
+    this.socket.emit('need-an-adult', {text: 'i need an adult'});
   }
 
   createGame = () => {
@@ -46,12 +47,7 @@ class SocketTest extends Component {
     return (
       <div style={{ textAlign: "center" }}>
         {/* basic two-way messaging test */}
-        <div>
-          <div>
-            <img style={{height:"300px", width:"300px"}} src={ image } alt={response}/>
-          </div>
-          <button style={{ fontSize: "large" }} onClick={this.sendMessageToServer}>{response}</button>
-        </div>
+        <INeedAnAdult response={response} image={image} askForAdult={this.sendMessageToServer}/>
         {/*getting room code from game */}
         <button style={{ fontSize: "large" }} onClick={this.createGame}>Create Game</button>
         <p>room code: {roomcode}</p>
