@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
-import Card from './../component/Card';
-import Nav from './Nav';
-import '../stylesheets/Home.css';
-import '../stylesheets/wingit.css';
+import Nav from '../home/Nav';
+import '../../stylesheets/Home.css';
+import '../../stylesheets/wingit.css';
 
 class WingIt extends Component {
   constructor(props) {

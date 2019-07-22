@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { Route, Switch } from 'react-router-dom';
-import Home from './Home';
-import WingIt from './WingIt';
-import SocketTest from './SocketTest';
+import Home from './home/Home';
+import WingIt from './wingit/WingIt';
+import SocketTest from './prototyping/SocketTest';
 
 class App extends Component {
   render() {

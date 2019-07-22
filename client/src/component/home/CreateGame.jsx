@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import '../stylesheets/Home.css';
-import Card from './../component/Card';
+import Card from './Card';
+import '../../stylesheets/Home.css';
 
 
 class CreateGame extends Component {

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import '../stylesheets/Home.css';
+import '../../stylesheets/Home.css';
 
 
 class Card extends Component {
