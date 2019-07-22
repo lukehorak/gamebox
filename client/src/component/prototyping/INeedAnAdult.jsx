@@ -10,12 +10,12 @@ class INeedAnAdult extends Component {
   }
 
   render() {
-    {/* get vars from props to render */}
+    // get vars from props to render 
     const { response, image, askForAdult } = this.props;
     return (
       <div>
         <div>
-          <img style={{height:"300px", width:"300px"}} src={ image } alt={response}/>
+          <img style={{height:"300px", width:"300px"}} src={ image } alt={response || "" }/>
         </div>
         <button style={{ fontSize: "large" }} onClick={askForAdult}>{response}</button>
       </div>

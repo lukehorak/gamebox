@@ -15,6 +15,7 @@ io.on('connection', function(socket){
     socket.on('new-game', function(data){
         io.game = new Game();
         socket.emit('room-code', io.game.roomCode);
+        socket.join(io.game.roomCode);
         socket.username = data.username;
         io.game.addPlayerByName(socket.username);
         console.log(`Creating game room with room code ${io.game.roomCode} and joining room as ${socket.username}`);
@@ -25,19 +26,29 @@ io.on('connection', function(socket){
     })
 
     socket.on('new-player', function(data) {
-        io.game.addPlayerByName(data.username);
-        console.log(`Adding ${data.username} to game ${io.game.roomCode}`);
-        console.log(JSON.stringify(io.game.players));
+        try{
+            io.game.addPlayerByName(data.username);
+            console.log(`Adding ${data.username} to game ${io.game.roomCode}`);
+            console.log(JSON.stringify(io.game.players));
+            socketApi.sendPlayerList(io.game.roomCode)
+        }
+        catch(e){
+            console.warn(e);
+        }
     })
 
     // GURU test
-    socket.on('test-event', function(data){
+    socket.on('need-an-adult', function(data){
         socket.emit('guru', {msg: 'I AM AN ADULT', imgSrc: "https://camo.derpicdn.net/12f6f866643214d0ad51265bd10bfbdebc5765b9?url=http%3A%2F%2Fi4.ytimg.com%2Fvi%2FW9krnrEF0nI%2Fmqdefault.jpg"});
     })
 });
 
 socketApi.sendNotification = function() {
     io.sockets.emit('gohan', {msg: 'I need an adult', imgSrc: "https://i.ytimg.com/vi/kscG_gs2BOc/hqdefault.jpg"});
+}
+
+socketApi.sendPlayerList = function(roomCode) {
+    io.sockets.in(roomCode).emit('send-players', { players: JSON.stringify(io.game.players) })
 }
 
 socketApi.newPlayer = function(roomCode) {
