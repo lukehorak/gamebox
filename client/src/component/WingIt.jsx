@@ -1,18 +1,14 @@
 import React, { Component } from 'react';
-import '../stylesheets/Home.css';
 import Card from './../component/Card';
-// import db from './FakeDb';
 import Nav from './Nav';
+import '../stylesheets/Home.css';
 import '../stylesheets/wingit.css';
-import { getRandomNumber } from '../util/numbers';
-
-// Testing if random number is generated
-// console.log(`Random number is ${db.getRandomNumber()}`);
 
 class WingIt extends Component {
   constructor(props) {
     super(props)
     this.state = {
+      roomCode: "adEj",
       players: [
         { name: 'Cher', playerId: 1 },
         { name: 'Lukas', playerId: 2 },
@@ -21,7 +17,6 @@ class WingIt extends Component {
     }
   }
   render() {
-    const randomRoomId = getRandomNumber();
     const players = this.state.players.map(function (player) {
       return (
         <li key={player.playerId} className="my-player-list-item">
@@ -30,8 +25,6 @@ class WingIt extends Component {
       );
     });
 
-    // db.createNewRoom(randomRoomId, randomRoomName)
-
     return (
       <div>
         < Nav />
@@ -39,7 +32,7 @@ class WingIt extends Component {
           className="wingit-main-container" >
 
           < div className="generated-room-code">
-            Room Code: {randomRoomId}
+            Room Code: {this.state.roomCode}
           </div>
 
           <form action="/wherever-handling-form-page" method="post">
