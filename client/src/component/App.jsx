@@ -10,7 +10,7 @@ class App extends Component {
       <div>
         <Switch>
           <Route exact path="/" component={Home}/>
-          <Route exact path="/testing" component={SocketTest}/>
+          <Route exact path="/prototyping" component={SocketTest}/>
           <Route path="/wingit" component={WingIt} />
         </Switch>
       </div>
