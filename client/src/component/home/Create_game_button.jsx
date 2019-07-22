@@ -16,8 +16,8 @@ import CreateGame from './CreateGame'
       } 
     render(){
       return(
-        <div id="create-game" className="create-game columns is-mobile is-centered ">
-          <button onClick={this.toggleHidden.bind(this)} className="button button is-primary">
+        <div id="create-game" className="create-game">
+          <button onClick={this.toggleHidden.bind(this)} className="create-game-button">
             Create Game
           </button>
           {!this.state.isHidden && <CreateGame/>}

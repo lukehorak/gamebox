@@ -13,8 +13,12 @@ class Home extends Component {
     return (
       <div className="main-div">
         <Nav/>
-        <JoinButton/>
-        <CreateButton/>
+        <div id="main-wrapper">
+          <div id="button-container">
+            <JoinButton/>
+            <CreateButton/>
+          </div>
+        </div>
       </div>
     );
   }
