@@ -15,6 +15,7 @@ io.on('connection', function(socket){
     socket.on('new-game', function(data){
         io.game = new Game();
         socket.emit('room-code', io.game.roomCode);
+        socket.join(io.game.roomCode);
         socket.username = data.username;
         io.game.addPlayerByName(socket.username);
         console.log(`Creating game room with room code ${io.game.roomCode} and joining room as ${socket.username}`);
@@ -29,6 +30,7 @@ io.on('connection', function(socket){
             io.game.addPlayerByName(data.username);
             console.log(`Adding ${data.username} to game ${io.game.roomCode}`);
             console.log(JSON.stringify(io.game.players));
+            socketApi.sendPlayerList(io.game.roomCode)
         }
         catch(e){
             console.warn(e);
@@ -43,6 +45,10 @@ io.on('connection', function(socket){
 
 socketApi.sendNotification = function() {
     io.sockets.emit('gohan', {msg: 'I need an adult', imgSrc: "https://i.ytimg.com/vi/kscG_gs2BOc/hqdefault.jpg"});
+}
+
+socketApi.sendPlayerList = function(roomCode) {
+    io.sockets.in(roomCode).emit('send-players', { players: JSON.stringify(io.game.players) })
 }
 
 socketApi.newPlayer = function(roomCode) {
