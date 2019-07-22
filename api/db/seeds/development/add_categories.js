@@ -4,7 +4,7 @@ exports.seed = function(knex) {
   return knex('categories').del()
     .then(function () {
       // Inserts seed entries
-      return knex('table_name').insert([
+      return knex('categories').insert([
 
         {id: 1, title: 'Gimme a hand', description: "Time for a minor shoulder workout. Put those  hands up if you wanna win win win! Or don't. Depends on the question. The faker will be trying their best to be a social chameleon of sorts. Spot the person who doesn't quite blend in and vote for them unanimously to win the game.", prefix: "Raise your hand if " },
         
