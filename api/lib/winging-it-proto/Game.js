@@ -1,3 +1,5 @@
+const Player = require('./User').Player;
+
 class Game {
   
   constructor() {
@@ -28,6 +30,11 @@ class Game {
     else {
       console.log("A player with that name already exists!")
     };
+  }
+
+  addPlayerByName(playerName){
+    const newPlayer = new Player(playerName);
+    this.addPlayer(newPlayer);
   }
 
 
