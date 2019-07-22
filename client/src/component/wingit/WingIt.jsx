@@ -2,6 +2,9 @@ import React, { Component } from 'react';
 import Nav from '../home/Nav';
 import '../../stylesheets/Home.css';
 import '../../stylesheets/wingit.css';
+import Countdown10 from './Countdown10';
+import Countdown3 from './Countdown3';
+
 
 class WingIt extends Component {
   constructor(props) {
@@ -24,6 +27,7 @@ class WingIt extends Component {
       );
     });
 
+
     return (
       <div>
         < Nav />
@@ -45,10 +49,14 @@ class WingIt extends Component {
           <ul>
             {players}
           </ul>
-
         </div>
-      </div>
 
+        <Countdown10 />
+        <Countdown3 />
+
+
+        
+        </div>
     );
   }
 }
