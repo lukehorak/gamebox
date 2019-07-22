@@ -9,15 +9,17 @@ class Card extends Component {
   render() {
 
     return (
-      <div className="column card">
+      <div id="card-wrapper">
         <div className={this.props.cardClass}>
           <div className="card-image">
-            <figure className="image is-4by5">
-              <img src={this.props.imageSource} alt="Placeholder image" />
-            </figure>
-          </div>
-          <div className="card-content">
-            <p className="title">{this.props.gameTitle}</p>
+            <a className="game-link" href="#">
+              <figure className="image is-4by5">
+                <img src={this.props.imageSource} alt="Placeholder image" />
+                <span className="title-container">
+                <p className="title">{this.props.gameTitle}</p>
+                </span>
+              </figure>
+              </a>
           </div>
         </div>
       </div>

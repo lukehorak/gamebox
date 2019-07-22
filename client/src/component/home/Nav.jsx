@@ -9,7 +9,7 @@ class Nav extends Component{
         <span className="navbar-start">
           GameBox
         </span>
-        <a className="about-link" href="#" id="about-link">'
+        <a className="about-link" href="#" id="about-link">
           About
         </a>
       </nav>
