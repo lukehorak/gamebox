@@ -1,11 +1,8 @@
 import React, { Component } from 'react';
 import GameNav from './GameNav';
-import GameOverFooter from './Game_Over_Footer';
 
   class VotingPage extends Component{
-    constructor(props){
-      super()
-    }
+
 
     render(){
       const players = this.props.players.map(function (player) {

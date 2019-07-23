@@ -1,13 +1,18 @@
 const Player = require('./User').Player;
+const Round = require('./Round');
 
 class Game {
   
   constructor() {
     this.roomCode = this.generateCode();
     this.players = {};
+    this.currentRound = false;
     this.fakerIsFound = false;
     this.roundNumber = 0;
+  }
 
+  newRound(question, type) {
+    this.currentRound = new Round(question, this.players, type)
   }
 
   gameIsOver() {

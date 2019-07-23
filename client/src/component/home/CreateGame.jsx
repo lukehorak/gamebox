@@ -4,9 +4,7 @@ import '../../stylesheets/Home.css';
 
 
 class CreateGame extends Component {
-  constructor(props) {
-    super(props)
-  }
+
   render() {
     return (
       <div id="card-container">
