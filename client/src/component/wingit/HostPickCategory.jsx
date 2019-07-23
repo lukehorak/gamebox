@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import '../../stylesheets/host-pick-category.css';
+import Nav from '../home/Nav';
+
 
 
 class HostPickCategory extends Component {
@@ -69,11 +71,14 @@ class HostPickCategory extends Component {
 
     return (
       <div>
+        < Nav />
         <div className="pickcategory-main-container" >
+          <div>
           <p className="pick-category-title">PICK A CATEGORY:</p>
           {categories}
         </div>
         <span className={this.state.visibility + " chosen-category"}>{this.state.chosenCategory}</span>
+      </div>
       </div>
     );
   }

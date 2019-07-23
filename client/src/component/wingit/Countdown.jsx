@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import ReactCountdownClock from 'react-countdown-clock';
+import Nav from '../home/Nav';
+
 
 class Countdown extends Component {
   constructor(props) {
@@ -33,20 +35,24 @@ class Countdown extends Component {
     const myComponent = () => {
       return <div>
         <span>{this.state.timer}</span>
-        <div>
+        {/* <div>
           <ReactCountdownClock seconds={this.props.timer}
             color="#000"
             alpha={0.9}
             size={100} />
-        </div>
+        </div> */}
       </div>
     }
     
     return (
+      <div>
+        <Nav />
       <div className='clock'>
         <button onClick={this.startTimer.bind(this)}>Start {this.props.timer}-second Countdown</button>
         {this.state.visiblity && myComponent()}
       </div>
+      </div>
+
     );
   }
 }
