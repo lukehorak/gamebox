@@ -3,9 +3,6 @@ import socketIOClient       from 'socket.io-client';
 
 import Lobby                from './Lobby';
 
-import CreateGameForm       from './CreateGameForm';
-import Nav                  from '../home/Nav';
-import Countdown            from './Countdown';
 import HostPickCategory     from './HostPickCategory';
 import NonHostCat           from './NonHostCat';
 import DisplayQuestion      from './DisplayQuestion';
@@ -100,7 +97,10 @@ class WingIt extends Component {
           />
         );
       case 1:
-        return <Countdown />
+        //return <Countdown />
+        return (
+          <HostPickCategory 
+            player={this.state.thisPlayer}/>)
       case 2:
         return <HostPickCategory />
       case 3:

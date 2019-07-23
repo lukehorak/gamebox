@@ -6,9 +6,7 @@ import JoinButton from  './Join_game_button';
 
 //TODO -functional burger, form anime
 class Home extends Component {
-  constructor(props){
-    super(props)
-  }
+
   render() {
     return (
       <div className="main-div">
