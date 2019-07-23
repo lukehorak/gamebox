@@ -21,6 +21,7 @@ import GameOverFooter from './Game_Over_Footer';
             <div className="player-container">
               {players}
             </div>
+            <span className="voting-instrucrtions"> Vote for the faker! </span>
         </div>
       );
     };
