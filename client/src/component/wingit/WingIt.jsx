@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import Nav from '../home/Nav';
 import '../../stylesheets/Home.css';
 import '../../stylesheets/wingit.css';
-import Countdown10 from './Countdown10';
-import Countdown3 from './Countdown3';
+import Countdown from './Countdown';
+import HostPickCategory from './HostPickCategory';
 
 
 class WingIt extends Component {
@@ -11,6 +11,7 @@ class WingIt extends Component {
     super(props)
     this.state = {
       roomCode: "adEj",
+      showCategory: false,
       players: [
         { name: 'Cher', playerId: 1 },
         { name: 'Lukas', playerId: 2 },
@@ -18,6 +19,14 @@ class WingIt extends Component {
       ]
     }
   }
+
+  displayCategories = () => {
+    this.setState({
+      showCategory: !this.state.showCategory
+    })
+  }
+
+
   render() {
     const players = this.state.players.map(function (player) {
       return (
@@ -26,7 +35,6 @@ class WingIt extends Component {
         </li>
       );
     });
-
 
     return (
       <div>
@@ -50,12 +58,14 @@ class WingIt extends Component {
             {players}
           </ul>
         </div>
-
-        <Countdown10 />
-        <Countdown3 />
-
-
+        {/* The countdowns --------------------------------------------- */}
+        <Countdown timer={10} />
+        <Countdown timer={3} />
+        {/* Page where a host is shown the categories and pick one ------ */}
+        <button onClick={this.displayCategories}>Host pick a category</button>
+        {this.state.showCategory && <HostPickCategory />}
         
+
         </div>
     );
   }
