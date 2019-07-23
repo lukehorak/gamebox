@@ -6,7 +6,7 @@ import React, { Component } from 'react';
     }
     render(){
       return(
-        <nav className="game-navbar" role="navigation" aria-label="main navigation">
+        <nav id="game-navbar" role="navigation" aria-label="main navigation">
           <span className="nav-player-name">
             <h1>Goku</h1>
           </span>
@@ -18,8 +18,3 @@ import React, { Component } from 'react';
 
 export default GameNav
 
-
-
-
-
-export default GameNav

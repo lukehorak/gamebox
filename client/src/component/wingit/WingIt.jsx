@@ -7,6 +7,9 @@ import HostPickCategory from './HostPickCategory';
 import '../../stylesheets/host-pick-category.css';
 import NonHostCat from './NonHostCat';
 import DisplayQuestion from './DisplayQuestion';
+import VotingPage from './Voting_Page';
+import FakerLost from './Faker_Loss';
+import FakerWon from './Faker_win';
 
 
 
@@ -64,16 +67,22 @@ class WingIt extends Component {
           </ul>
         </div>
         --------------------------------------------------------THE COUNTDOWN TIMERS ------------------------------------
-        <Countdown timer={10} />
-        <Countdown timer={3} />
-        {/* Page where a host is shown the categories and pick one ------ */}
-        {/* <button onClick={this.displayCategories}>Host pick a category</button>
-        {this.state.showCategory && <HostPickCategory />} */}
-        ------------------------------------------------------HOST PICK A CATEGORY PAGE-----------------------------------
-        <HostPickCategory />
-        ------------------------------------------------------NON-HOST WAITING FOR HOST TO CHOOSE A CATEGORY-------------------
-        <NonHostCat timer={10} />
-        <DisplayQuestion />
+          <Countdown timer={10} />
+          <Countdown timer={3} />
+          {/* Page where a host is shown the categories and pick one ------ */}
+          {/* <button onClick={this.displayCategories}>Host pick a category</button>
+          {this.state.showCategory && <HostPickCategory />} */}
+          ------------------------------------------------------HOST PICK A CATEGORY PAGE-----------------------------------
+          <HostPickCategory />
+          ------------------------------------------------------NON-HOST WAITING FOR HOST TO CHOOSE A CATEGORY-------------------
+          <NonHostCat timer={10} />
+          <DisplayQuestion />
+          ---------------------
+          <VotingPage players={this.state.players}/>
+          -----------------------
+          <FakerLost/>
+    -------------------------------
+          <FakerWon/>
         </div>
     );
   }
