@@ -4,6 +4,24 @@ const socketApi = {};
 
 const Game = require('./lib/winging-it-proto/Game');
 
+const demoQuestions = {
+  hand: [
+  "you brushed your teeth today",
+  "you hate puppies",
+  "you like this game"
+  ],
+  count: [
+    "Disney movies you've seen this year",
+    "meals you've eaten today",
+    "feet you are tall"
+  ],
+  point: [
+    "you would eat first if you were all trapped on a desert island",
+    "is the tallest person playing",
+    "is your favourite developer"
+  ]
+}
+
 socketApi.io = io;
 
 
@@ -69,6 +87,21 @@ io.on('connection', function (socket) {
     console.log(socketApi.getPlayerList(data.roomCode))
     socket.emit('respond-all-players', socketApi.getPlayerList(data.roomCode))
   })
+
+  socket.on('send-category', (data) => {
+    socket.game.category = data.category;
+    console.log(`game category ==> ${socket.game.category}`)
+  })
+
+  socket.on('start-round', (data) => {
+    const { category } = data;
+    socket.game.setFaker();
+    socket.game.newRound(demoQuestions[category][0], category);
+    // test by logging host's question to console
+    console.log(socket.game.currentRound.getQuestion(socket.username))
+    socket.emit('phase-change', { phase: 2 });
+  })
+
 });
 
 socketApi.getHost = (roomCode) => {

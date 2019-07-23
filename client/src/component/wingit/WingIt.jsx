@@ -3,6 +3,8 @@ import socketIOClient       from 'socket.io-client';
 
 import Lobby                from './Lobby';
 
+import PickCategory         from './PickCategory';
+
 import HostPickCategory     from './HostPickCategory';
 import NonHostCat           from './NonHostCat';
 import DisplayQuestion      from './DisplayQuestion';
@@ -71,6 +73,11 @@ class WingIt extends Component {
     this.socket.emit('start-game', {code: this.state.roomCode});
   }
 
+  sendCategory = (category) => {
+    this.socket.emit('send-category', { category: category });
+    this.socket.emit('start-round', { category: category });
+  }
+
   listPlayers = (players) => {
     const playerList = players.map(function (player) {
       return (
@@ -97,21 +104,14 @@ class WingIt extends Component {
           />
         );
       case 1:
-        //return <Countdown />
-        return (
-          <HostPickCategory 
-            player={this.state.thisPlayer}/>)
+        return <PickCategory player={this.state.thisPlayer} sendCategory={this.sendCategory}/>
       case 2:
-        return <HostPickCategory />
-      case 3:
-        return <NonHostCat />
-      case 4:
         return <DisplayQuestion />
-      case 5:
+      case 4:
         return <VotingPage players={this.state.players} />
-      case 6:
+      case 5:
         return <FakerLost />
-      case 7:
+      case 6:
         return <FakerWon />
       default:
         return <h1>HELLO DEFAULT</h1>

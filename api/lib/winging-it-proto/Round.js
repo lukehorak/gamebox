@@ -25,7 +25,8 @@ class Round {
     }
   }
 
-  getQuestion(player) {
+  getQuestion(playerName) {
+    const player = this.players[playerName]
     if (player.isFaker){
       return this.fakerQuestion;
     }
