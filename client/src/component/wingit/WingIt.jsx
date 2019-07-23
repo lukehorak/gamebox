@@ -58,10 +58,10 @@ class WingIt extends Component {
             {players}
           </ul>
         </div>
-
+        {/* The countdowns --------------------------------------------- */}
         <Countdown timer={10} />
         <Countdown timer={3} />
-        {/* Page where a host is shown the categories and pick one */}
+        {/* Page where a host is shown the categories and pick one ------ */}
         <button onClick={this.displayCategories}>Host pick a category</button>
         {this.state.showCategory && <HostPickCategory />}
         
