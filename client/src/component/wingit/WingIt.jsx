@@ -19,8 +19,9 @@ class WingIt extends Component {
   constructor(props) {
     super(props)
     this.state = {
+      phase: 0,
       roomCode: "adEj",
-      showCategory: false,
+      isHidden: false,
       players: [
         { name: 'Cher', playerId: 1 },
         { name: 'Lukas', playerId: 2 },
@@ -28,66 +29,72 @@ class WingIt extends Component {
       ]
     }
   }
-
   // displayCategories = () => {
   //   this.setState({
   //     showCategory: !this.state.showCategory
   //   })
   // }
 
+    listPlayers = (players) => {
+      const playerList = players.map(function (player) {
+        return (
+          <li key={player.playerId} className="my-player-list-item">
+            <h2>{player.name}</h2>
+          </li>
+        );
+      });
+      return playerList;
+    };
+    
+    handleCase = (phase) => {
+      switch(phase){
+        case 0:
+          return ( 
+            <div>
+              < Nav />
+              <div className="wingit-main-container" >
+                <div className="generated-room-code">
+                  Room Code: {this.state.roomCode}
+              </div>
+              <form action="/wherever-handling-form-page" method="post">
+                <div className="enter-player-name">
+                  <label htmlFor="name">Enter Player Name:</label>
+                  <input
+                    className="name-field" type="text" id="name" name="user_name" />
+                </div>
+              </form>
+              <ul>
+                {this.listPlayers(this.state.players)}
+              </ul>
+              </div>
+            </div>
+          );
+        case 1:
+            return <Countdown/>
+          case 2: 
+            return <HostPickCategory/>
+          case 3:
+            return <NonHostCat/>
+          case 4: 
+            return <DisplayQuestion/>
+          case 5:
+            return <VotingPage players={this.state.players}/>
+          case 6:
+            return <FakerLost/>
+          case 7: 
+            return <FakerWon/>
+          default:
+            return <h1>HELLO DEFAULT</h1>
+      }
+    }
 
   render() {
-    const players = this.state.players.map(function (player) {
-      return (
-        <li key={player.playerId} className="my-player-list-item">
-          <h2>{player.name}</h2>
-        </li>
-      );
-    });
-
     return (
       <div>
-        < Nav />
-        <div
-          className="wingit-main-container" >
-
-          < div className="generated-room-code">
-            Room Code: {this.state.roomCode}
-          </div>
-
-          <form action="/wherever-handling-form-page" method="post">
-            <div className="enter-player-name">
-              <label htmlFor="name">Enter Player Name:</label>
-              <input
-                className="name-field" type="text" id="name" name="user_name" />
-            </div>
-          </form>
-
-          <ul>
-            {players}
-          </ul>
-        </div>
-        --------------------------------------------------------THE COUNTDOWN TIMERS ------------------------------------
-          <Countdown timer={10} />
-          <Countdown timer={3} />
-          {/* Page where a host is shown the categories and pick one ------ */}
-          {/* <button onClick={this.displayCategories}>Host pick a category</button>
-          {this.state.showCategory && <HostPickCategory />} */}
-          ------------------------------------------------------HOST PICK A CATEGORY PAGE-----------------------------------
-          <HostPickCategory />
-          ------------------------------------------------------NON-HOST WAITING FOR HOST TO CHOOSE A CATEGORY-------------------
-          <NonHostCat timer={10} />
-          <DisplayQuestion />
-          ---------------------
-          <VotingPage players={this.state.players}/>
-          -----------------------
-          <FakerLost/>
-    -------------------------------
-          <FakerWon/>
-        </div>
+        {this.handleCase(this.state.phase)}
+      </div>
     );
   }
-
 }
 
 export default WingIt;
