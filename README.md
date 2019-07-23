@@ -21,6 +21,16 @@ Play party games with friends!
 6. Visit `http://localhost:8080/`
 
 ## Environment Variables
+### Add environment variables for: 
+
+DEV_DATABASE_NAME=
+DEV_DATABASE_USER=
+DEV_DATABASE_PASSWORD=
+
+PROD_DATABASE_NAME=
+PROD_DATABASE_USER=
+PROD_DATABASE_PASSWORD=
+
 
 ### API
 
