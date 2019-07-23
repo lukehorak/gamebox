@@ -7,81 +7,101 @@ const Game = require('./lib/winging-it-proto/Game');
 socketApi.io = io;
 
 
-io.on('connection', function(socket){
-    console.log('A user connected');
-    socketApi.sendNotification();
-    socket.isHost = false;
+io.on('connection', function (socket) {
+  console.log('A user connected');
+  socket.isHost = false;
 
-    socket.on('new-game', function(data){
-        io.game = new Game();
-        // Create/Join Room, send roomCode to client
-        socket.join(io.game.roomCode);
-        socket.emit('room-code', io.game.roomCode);
-        // Create host player, add them to game, and set this socket as the host
-        socket.username = data.username;
-        io.game.addPlayerByName(socket.username);
-        console.log(`Creating game room with room code ${io.game.roomCode} and joining room as ${socket.username}`);
-        socket.isHost = true;
-        console.log(`${socket.username} is now the host of game ${io.game.roomCode}`)
+  /////////////////////////////////////////////////////////////////////////////////////////////////
+  // Message Response behavior
+  /////////////////////////////////////////////////////////////////////////////////////////////////
 
-        console.log(JSON.stringify(io.game.players));
-    })
 
-    socket.on('new-player', function(data) {
-        const room = io.sockets.adapter.rooms[data.roomCode];
+  // New game creation (including host player creation)
+  socket.on('new-game', function (data) {
+    socket.game = new Game();
+    // Create/Join Room, send roomCode to client
+    socket.join(socket.game.roomCode);
+    socket.emit('room-code', socket.game.roomCode);
+    // Create host player, add them to game, and set this socket as the host
+    socket.username = data.username;
+    socket.game.addPlayerByName(socket.username);
+    console.log(`Creating game room with room code ${socket.game.roomCode} and joining room as ${socket.username}`);
+    socket.isHost = true;
+    console.log(`${socket.username} is now the host of game ${ socket.game.roomCode}`)
+  })
 
-        if (room){
-            try{
-                
-                io.game.addPlayerByName(data.username);
-                console.log(`Adding ${data.username} to game ${data.roomCode}`);
-    
-                socketApi.sendPlayerList(data.roomCode)
-            }
-            catch(e){
-                console.warn(e);
-            }
-        }
-        else{
-            console.warn(`Unable to add user to room, as room with code '${data.roomCode}' room does not exist!`)
-            socket.emit('empty-room', {error: `Room with code '${data.roomCode}' room does not exist!`})
-        }
-    })
 
-    // GURU test
-    socket.on('need-an-adult', () => {
-        socket.emit('guru', {msg: 'I AM AN ADULT', imgSrc: "https://camo.derpicdn.net/12f6f866643214d0ad51265bd10bfbdebc5765b9?url=http%3A%2F%2Fi4.ytimg.com%2Fvi%2FW9krnrEF0nI%2Fmqdefault.jpg"});
-    })
+  // Creating/Adding a new player to an existing game
+  socket.on('new-player', function (data) {
+    try {
+      const hostID = socketApi.newPlayer(data.roomCode, data.username);
+      // Send roomcode to new player
+      socket.emit('room-code', io.sockets.connected[hostID].game.roomCode);
+      socket.join(io.sockets.connected[hostID].game.roomCode)
 
-    socket.on('toggle-gohan', () => {
-        socket.emit('toggle-gohan');
-    })
+      // set socket username
+      socket.username = data.username;
+      // Send all players to all connected sockets
+      io.in(data.roomCode).emit('respond-all-players', socketApi.getPlayerList(data.roomCode))
+    }
+    catch (e) {
+      console.warn(`Unable to add user to room, as room with code '${data.roomCode}' room does not exist!`, e)
+      socket.emit('empty-room', {
+        error: `Room with code '${data.roomCode}' does not exist!`
+      })
+    }
 
-    socket.on('start-game', () => {
-        console.log('starting game');
-    })
+  });
+
+  socket.on('start-game', (data) => {
+    io.to(data.code).emit('phase-change', {phase: 1})
+    console.log(`starting game ${data.code}`);
+  })
+
+  ///////
+
+  socket.on('request-player', () => {
+    socket.emit('respond-player', { player: { username: socket.username, id: socket.id, isHost: socket.isHost } })
+  })
+  //////
+
+  socket.on('request-all-players', (data) => {
+    console.log(socketApi.getPlayerList(data.roomCode))
+    socket.emit('respond-all-players', socketApi.getPlayerList(data.roomCode))
+  })
 });
 
-socketApi.sendNotification = function() {
-    io.sockets.emit('gohan', {msg: 'I need an adult', imgSrc: "https://i.ytimg.com/vi/kscG_gs2BOc/hqdefault.jpg"});
+socketApi.getHost = (roomCode) => {
+  const sockets = socketApi.getRoom(roomCode).sockets;
+  const ids = Object.keys(sockets);
+  return ids[0];
 }
 
-socketApi.sendPlayerList = function(roomCode) {
-    const players = io.of('/').in(roomCode).clients;
-    console.log(roomCode);
-    io.to(roomCode).emit('send-players', { players: players });
+socketApi.getPlayerInfo = (playerID) => {
+  return io.sockets.connected[playerID].username;
 }
 
-socketApi.toggleGohan = () => {
-    io.sockets.emit('toggle-gohan', 'toggling gohan');
+socketApi.getPlayerList = (roomCode) => {
+  const sockets = socketApi.getRoom(roomCode).sockets;
+  const ids = Object.keys(sockets);
+  const players = [];
+  ids.forEach( id => {
+    const name = socketApi.getPlayerInfo(id);
+    players.push({ id: id, name: name })
+  });
+  return players
 }
 
-socketApi.findGame = (roomCode) => {
-    //io.sockets.
+socketApi.getRoom = (roomCode) => {
+  return io.sockets.adapter.rooms[roomCode];
 }
 
-socketApi.newPlayer = function(roomCode) {
-    // add player to game with roomCode
+// Adds player to game with roomCode, returning the room's host's ID
+socketApi.newPlayer = function (roomCode, username) {
+  const hostID = socketApi.getHost(roomCode);
+  console.log(`Adding player ${username} to game room ${roomCode}`)
+  io.sockets.connected[hostID].game.addPlayerByName(username);
+  return hostID;
 }
 
 module.exports = socketApi;
