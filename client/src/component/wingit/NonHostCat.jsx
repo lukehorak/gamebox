@@ -54,9 +54,9 @@ class NonHostCat extends Component {
         <div className='clock'>
           <button onClick={this.startTimer.bind(this)}>Start {this.props.timer}-second Countdown</button>
           {this.state.visiblity && myComponent()}
-          <div className="nonhost-waiting-for-category">
+          <p className="nonhost-waiting-for-category">
           The host is choosing choosing a category
-          </div>
+          </p>
         </div>
       </div>
 
