@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import '../../stylesheets/about.css';
 import Nav from './Nav';
-// import CreateButton from './Create_game_button';
-// import JoinButton from './Join_game_button';
 
 class About extends Component {
   // constructor(props) {

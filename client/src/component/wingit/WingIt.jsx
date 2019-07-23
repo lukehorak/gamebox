@@ -7,8 +7,6 @@ import HostPickCategory from './HostPickCategory';
 import '../../stylesheets/host-pick-category.css';
 import NonHostCat from './NonHostCat';
 import DisplayQuestion from './DisplayQuestion';
-import About from '../home/About';
-
 
 
 
@@ -76,7 +74,6 @@ class WingIt extends Component {
         ------------------------------------------------------NON-HOST WAITING FOR HOST TO CHOOSE A CATEGORY-------------------
         <NonHostCat timer={10} />
         <DisplayQuestion />
-        <About />
         </div>
     );
   }
