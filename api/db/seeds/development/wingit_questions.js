@@ -6,24 +6,70 @@ exports.seed = function (knex) {
       return knex('questions').insert([
 
         {
-          id: 1,
-          question: ' a hand',
-          category_id: "",
+          question: 'You drank water today',
+          category_id: 1,
         },
-
         {
-          id: 2,
-          title: 'Get to the point',
-          description: "Haven't you ever heard that it's rude to point? Yeah, well, that doesn't apply around these parts. Use those arms of yours to respond to the question as best you can. The faker is among you. Find them. Capture them. No, just joking. Just vote for that person unanimously to win the game!",
-          prefix: "Point at the person who "
+          question: 'You are over 6ft tall',
+          category_id: 1,
         },
-
         {
-          id: 3,
-          title: 'Count me in!',
-          description: "Using the fingers on your hands, respond to the questions as best as you can. The faker's goal, as always, is to blend in as best as possible so be on the lookout for that friend of yours who seems a little lost. Vote for the faker at the end of each round, the vote must be unanimous for the faker to be caught!",
-          prefix: "By a show of fingers, "
+          question: 'You have never seen Batman in real life',
+          category_id: 1,
+        },
+        {
+          question: 'You are currently wearing glasses(not contacts)',
+          category_id: 1,
+        },
+        {
+          question: 'You see dead people',
+          category_id: 1,
+        },
+        {
+          question: 'You know who Ned Stark is',
+          category_id: 1,
+        },
+        {
+          question: 'You have never been to a job interview',
+          category_id: 1,
+        },
+        {
+          question: 'You ever had a parking ticket',
+          category_id: 1,
+        },
+        {
+          question: 'You have seen a Marvel movie',
+          category_id: 1,
+        },
+        {
+          question: 'You are currently wearing a shirt with buttons',
+          category_id: 1,
+        },
+        {
+          question: 'is sitting to your right',
+          category_id: 2,
+        },
+        {
+          question: 'is wearing red',
+          category_id: 2,
+        },
+        {
+          question: 'How many pizza slices have you had today',
+          category_id: 3,
+        }, 
+        {
+          question: 'How many tentacles does an octopus have',
+          category_id: 3,
+        }, 
+        {
+          question: '1 + 1 =',
+          category_id: 3,
+        }, 
+        {
+          question: 'How many wheels an airplane have',
+          category_id: 3,
         }
+
 
       ]);
     });
