@@ -53,6 +53,7 @@ class HostPickCategory extends Component {
     return (
       <div>
         <div className="pickcategory-main-container" >
+          
           {categories}
         </div>
         <span> {this.state.chosenCategory} </span>

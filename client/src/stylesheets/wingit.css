@@ -22,3 +22,15 @@
 .name-field {
   font-size: .7em;
 }
+
+.pickcategory-main-container {
+  background-color: rgb(171, 243, 243);
+  background-image: url(https://rlv.zcache.ca/wing_man_funny_aviation_cartoon_shirt-r8d22607edcaa426d8bbe7ebe6755083e_k21al_307.jpg?rvtype=content);
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin: 5em;
+}
+
+/* .clock {
+  margin: 2em;
+} */
