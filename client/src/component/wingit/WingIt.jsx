@@ -4,9 +4,14 @@ import '../../stylesheets/Home.css';
 import '../../stylesheets/wingit.css';
 import Countdown from './Countdown';
 import HostPickCategory from './HostPickCategory';
+import '../../stylesheets/host-pick-category.css';
+import NonHostCat from './NonHostCat';
+
+
 
 
 class WingIt extends Component {
+
   constructor(props) {
     super(props)
     this.state = {
@@ -20,11 +25,11 @@ class WingIt extends Component {
     }
   }
 
-  displayCategories = () => {
-    this.setState({
-      showCategory: !this.state.showCategory
-    })
-  }
+  // displayCategories = () => {
+  //   this.setState({
+  //     showCategory: !this.state.showCategory
+  //   })
+  // }
 
 
   render() {
@@ -58,17 +63,20 @@ class WingIt extends Component {
             {players}
           </ul>
         </div>
-        {/* The countdowns --------------------------------------------- */}
+        --------------------------------------------------------THE COUNTDOWN TIMERS ------------------------------------
         <Countdown timer={10} />
         <Countdown timer={3} />
         {/* Page where a host is shown the categories and pick one ------ */}
-        <button onClick={this.displayCategories}>Host pick a category</button>
-        {this.state.showCategory && <HostPickCategory />}
-        
-
+        {/* <button onClick={this.displayCategories}>Host pick a category</button>
+        {this.state.showCategory && <HostPickCategory />} */}
+        ------------------------------------------------------HOST PICK A CATEGORY PAGE-----------------------------------
+        <HostPickCategory />
+        ------------------------------------------------------NON-HOST WAITING FOR HOST TO CHOOSE A CATEGORY-------------------
+        <NonHostCat timer={10} />
         </div>
     );
   }
+
 }
 
 export default WingIt;

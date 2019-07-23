@@ -22,3 +22,32 @@
 .name-field {
   font-size: .7em;
 }
+
+.pickcategory-main-container {
+  background-color: rgb(171, 243, 243);
+  background-image: url(https://rlv.zcache.ca/wing_man_funny_aviation_cartoon_shirt-r8d22607edcaa426d8bbe7ebe6755083e_k21al_307.jpg?rvtype=content);
+  background-repeat: no-repeat;
+  background-size: cover;
+  /* margin: 5em; */
+}
+
+.nonhost-waiting-for-category {
+    /* display: inline-block; */
+    float: right;
+    border: none;
+    padding: 2rem 4rem;
+    margin: 0 1em;
+    text-decoration: none;
+    background: #84828d;
+    /* color: #ffffff; */
+    color: white;
+    font-family: sans-serif;
+    font-size: 3rem;
+    cursor: pointer;
+    text-align: center;
+    transition: background 250ms ease-in-out,
+    transform 150ms ease;
+    border: 1px solid rgb(61, 7, 21);
+    border-radius: 7em;
+    width: 5em;
+}
