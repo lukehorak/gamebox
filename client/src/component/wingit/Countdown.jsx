@@ -1,13 +1,19 @@
 import React, { Component } from 'react';
 
-class Countdown3 extends Component {
+class Countdown extends Component {
   constructor(props) {
-    super()
+    super(props)
     this.state = {
-      timer: 3
+      timer: this.props.timer,
+      visiblity: false
     }
   }
+
   startTimer() {
+    this.setState({
+      visiblity: true
+    })
+
     const interval = setInterval(() => {
       this.setState({
         timer: this.state.timer - 1
@@ -25,10 +31,10 @@ class Countdown3 extends Component {
   render() {
     return (
       <div>
-        <button onClick={this.startTimer.bind(this)}>Start 3-second Countdown</button>
-        <span>{this.state.timer}</span>
+        <button onClick={this.startTimer.bind(this)}>Start {this.props.timer}-second Countdown</button>
+        {this.state.visiblity && <span>{this.state.timer}</span>}
       </div>
     );
   }
 }
-export default Countdown3;
+export default Countdown;
