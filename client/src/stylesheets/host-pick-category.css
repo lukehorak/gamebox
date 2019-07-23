@@ -29,7 +29,9 @@
 .category-list-item:hover,
 .category-list-item:focus {
   /* background: #0053ba; */
-  background: #b0e2cf;
+  /* background: #b0e2cf; */
+  background: #ebb239;
+
 
 }
 
@@ -48,7 +50,7 @@
     padding: 1rem 2rem;
     margin: 2em;
     text-decoration: none;
-    background: #b0e2cf;
+    background: #ebb239;
     color: black;
     font-family: sans-serif;
     font-size: 1rem;
@@ -56,7 +58,8 @@
     text-align: center;
     transition: background 250ms ease-in-out,
     transform 150ms ease;
-    border: 3px solid rgb(28, 70, 133);
+    /* border: 3px solid rgb(28, 70, 133); */
+    border: 3px solid rgb(226, 161, 39);
     border-radius: 0.5em;
     width: 25em;
     font-weight: 900;
@@ -66,4 +69,25 @@
 
 .hidden {
   display: none;
+}
+
+.player-name {
+      display: inline-block;
+      border: none;
+      padding: 1rem 2rem;
+      margin: 2em;
+      text-decoration: none;
+      background: #b0e2cf;
+      color: black;
+      font-family: sans-serif;
+      font-size: 1rem;
+      cursor: pointer;
+      text-align: center;
+      transition: background 250ms ease-in-out,
+      transform 150ms ease;
+      border: 3px solid rgb(28, 70, 133);
+      border-radius: 0.5em;
+      width: 25em;
+      font-weight: 900;
+      text-align: center;
 }

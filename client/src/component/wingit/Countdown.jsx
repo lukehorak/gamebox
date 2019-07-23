@@ -7,6 +7,7 @@ class Countdown extends Component {
   constructor(props) {
     super(props)
     this.state = {
+      player: "John",
       timer: this.props.timer,
       visiblity: false
     }
@@ -47,6 +48,9 @@ class Countdown extends Component {
     return (
       <div>
         <Nav />
+        <div className="player-name">
+          Player: {this.state.player}
+        </div>
       <div className='clock'>
         <button onClick={this.startTimer.bind(this)}>Start {this.props.timer}-second Countdown</button>
         {this.state.visiblity && myComponent()}

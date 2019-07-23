@@ -9,6 +9,7 @@ class HostPickCategory extends Component {
     
     super(props)
     this.state = {
+      player: "John",
       categories: [
         {
           title: 'Gimme a hand',
@@ -72,6 +73,9 @@ class HostPickCategory extends Component {
     return (
       <div>
         < Nav />
+        <div className="player-name">
+          Player: {this.state.player}
+        </div>
         <div className="pickcategory-main-container" >
           <div>
           <p className="pick-category-title">PICK A CATEGORY:</p>
