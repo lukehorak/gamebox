@@ -25,11 +25,9 @@ io.on('connection', function (socket) {
     // Create host player, add them to game, and set this socket as the host
     socket.username = data.username;
     socket.game.addPlayerByName(socket.username);
-    console.log(`Creating game room with room code ${ socket.game.roomCode} and joining room as ${socket.username}`);
+    console.log(`Creating game room with room code ${socket.game.roomCode} and joining room as ${socket.username}`);
     socket.isHost = true;
     console.log(`${socket.username} is now the host of game ${ socket.game.roomCode}`)
-
-    console.log(JSON.stringify(socket.game.players));
   })
 
 
