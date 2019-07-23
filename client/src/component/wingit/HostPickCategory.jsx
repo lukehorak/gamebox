@@ -1,88 +1,40 @@
 import React, { Component } from 'react';
+import CategoryButton       from './CategoryButton';
 import '../../stylesheets/host-pick-category.css';
-import Nav from '../home/Nav';
-
-
 
 class HostPickCategory extends Component {
   constructor(props) {
-    
+
     super(props)
     this.state = {
-      player: "John",
-      categories: [
-        {
-          title: 'Gimme a hand',
-          categoryId: 1,
-          handler: () => {
-            console.log("Category One Picked");
-            this.setState({
-              chosenCategory: "Hands up!"
-            })
-            this.showChosenCat();
-          }
-        },
-        {
-          title: 'Get to the point',
-          categoryId: 2,
-          handler: () => {
-            console.log("Category Two Picked");
-            this.setState({
-              chosenCategory: "Get to the point now!"
-            })
-            this.showChosenCat();
-          }
-        },
-        {
-          title: 'Count me in',
-          categoryId: 3,
-          handler: () => {
-            console.log("Category Three Picked");
-            this.setState({
-              chosenCategory: "I'm in!"
-            })
-            this.showChosenCat();
-
-          }
-        }
-      ],
-      chosenCategory: undefined,
-      visibility: "hidden"
+      player: this.props.player,
+      category: false
     }
   }
 
-  showChosenCat() {
-    this.setState({
-      visibility: ""
-    })
-    console.log("Do that")
+  chooseCategory = (category) => {
+    this.setState({ category: category })
   }
 
   render() {
-    const categories = this.state.categories.map((category) => {
-      return (
-        <button
-          onClick={category.handler}
-          key={category.categoryId}
-          className="category-list-item">
-          {category.title}
-        </button>
-      );
-    });
 
     return (
       <div>
-        < Nav />
         <div className="player-name">
-          Player: {this.state.player}
+          Player: {this.state.player.username}
         </div>
         <div className="pickcategory-main-container" >
           <div>
-          <p className="pick-category-title">PICK A CATEGORY:</p>
-          {categories}
-        </div>
-        <span className={this.state.visibility + " chosen-category " + this.props.chosenCategory}>{this.state.chosenCategory}</span>
-      </div>
+            <p className="pick-category-title">PICK A CATEGORY:</p>
+            {/* Buttons are React Components so that they can be provided a category value, to be sent as a message on confirmation */}
+            <CategoryButton handleClick={this.chooseCategory} category="hand" buttonText="Give me a hand!"/>
+            <CategoryButton handleClick={this.chooseCategory} category="count" buttonText="Count me in!"/>
+            <CategoryButton handleClick={this.chooseCategory} category="point" buttonText="Get to the point!"/>
+          </div>
+          { this.state.category && 
+            <CategoryButton handleClick={this.props.sendCategory} category={this.state.category} buttonText="Confirm"/>
+          }
+          </div>
       </div>
     );
   }
