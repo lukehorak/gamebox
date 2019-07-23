@@ -81,10 +81,10 @@ class HostPickCategory extends Component {
           <p className="pick-category-title">PICK A CATEGORY:</p>
           {categories}
         </div>
-        <span className={this.state.visibility + " chosen-category"}>{this.state.chosenCategory}</span>
+        <span className={this.state.visibility + " chosen-category " + this.props.chosenCategory}>{this.state.chosenCategory}</span>
       </div>
       </div>
     );
   }
 }
-export default HostPickCategory;
+export default HostPickCategory; 

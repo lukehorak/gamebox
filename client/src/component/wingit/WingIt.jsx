@@ -6,6 +6,7 @@ import Countdown from './Countdown';
 import HostPickCategory from './HostPickCategory';
 import '../../stylesheets/host-pick-category.css';
 import NonHostCat from './NonHostCat';
+import DisplayQuestion from './DisplayQuestion';
 
 
 
@@ -20,7 +21,7 @@ class WingIt extends Component {
       players: [
         { name: 'Cher', playerId: 1 },
         { name: 'Lukas', playerId: 2 },
-        { name: 'Aiden', playerId: 3 }
+        { name: 'Aidan', playerId: 3 }
       ]
     }
   }
@@ -73,6 +74,7 @@ class WingIt extends Component {
         <HostPickCategory />
         ------------------------------------------------------NON-HOST WAITING FOR HOST TO CHOOSE A CATEGORY-------------------
         <NonHostCat timer={10} />
+        <DisplayQuestion />
         </div>
     );
   }
