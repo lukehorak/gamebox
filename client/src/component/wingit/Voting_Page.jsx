@@ -6,26 +6,21 @@ import GameOverFooter from './Game_Over_Footer';
     constructor(props){
       super()
     }
-    players = ["Jeb", "Jedediah", "Jodeci", "Jebediah", "Jeremiah"]
-    
-    renderPlayers = (players) => {
-      return players.map(function(player){
-        <article className="player-card">
-          <span className="player-name-voting-button">
-          {player}
-          </span>
-        </article>
-      });
-    };
 
     render(){
+      const players = this.props.players.map(function (player) {
+        return (
+          <button key={player.playerId} className="my-player-list-item">
+            <h2>{player.name}</h2>
+          </button>
+        );
+      });
       return(
         <div className="voting-page-wrapper">
           <GameNav/>
             <div className="player-container">
-              {renderPlayers(players)} {/* use this.props.players(array to render articles)*/}
+              {players}
             </div>
-          <GameOverFooter/>
         </div>
       );
     };
