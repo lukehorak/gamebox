@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-  const GameFooter  = () => {
+  
+const GameOverFooter  = () => {
     return(
       <div className="footer-container">
         <footer className="game-over-footer">
@@ -15,4 +16,4 @@ import React, { Component } from 'react';
   };
 
 
-export default GameFooter
+export default GameOverFooter

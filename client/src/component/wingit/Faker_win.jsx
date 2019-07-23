@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import GameFooter from './Game_Over_Footer';
+import GameOverFooter from './Game_Over_Footer';
 import GameNav from './GameNav';
 
   class FakerWon extends Component {
@@ -11,7 +11,7 @@ import GameNav from './GameNav';
           <div className="faker-wins-center-wrapper">
             <GameNav/> 
               <h1 className="faker-won-h1">You've been duped! Vegeta was the faker</h1>
-            <GameFooter/>
+            <GameOverFooter/>
           </div>
       );
     };
