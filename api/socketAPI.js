@@ -25,11 +25,9 @@ io.on('connection', function (socket) {
     // Create host player, add them to game, and set this socket as the host
     socket.username = data.username;
     socket.game.addPlayerByName(socket.username);
-    console.log(`Creating game room with room code ${ socket.game.roomCode} and joining room as ${socket.username}`);
+    console.log(`Creating game room with room code ${socket.game.roomCode} and joining room as ${socket.username}`);
     socket.isHost = true;
     console.log(`${socket.username} is now the host of game ${ socket.game.roomCode}`)
-
-    console.log(JSON.stringify(socket.game.players));
   })
 
 
@@ -44,7 +42,7 @@ io.on('connection', function (socket) {
       // set socket username
       socket.username = data.username;
       // Send all players to all connected sockets
-      socket.emit('give-all-players', socketApi.getPlayerList(data.roomCode))
+      io.in(data.roomCode).emit('respond-all-players', socketApi.getPlayerList(data.roomCode))
     }
     catch (e) {
       console.warn(`Unable to add user to room, as room with code '${data.roomCode}' room does not exist!`, e)
@@ -62,14 +60,14 @@ io.on('connection', function (socket) {
 
   ///////
 
-  socket.on('get-player', () => {
-    socket.emit('give-player', socket.id)
+  socket.on('request-player', () => {
+    socket.emit('respond-player', { player: { username: socket.username, id: socket.id, isHost: socket.isHost } })
   })
   //////
 
-  socket.on('get-all-players', (data) => {
+  socket.on('request-all-players', (data) => {
     console.log(socketApi.getPlayerList(data.roomCode))
-    socket.emit('give-all-players', socketApi.getPlayerList(data.roomCode))
+    socket.emit('respond-all-players', socketApi.getPlayerList(data.roomCode))
   })
 });
 
@@ -86,10 +84,10 @@ socketApi.getPlayerInfo = (playerID) => {
 socketApi.getPlayerList = (roomCode) => {
   const sockets = socketApi.getRoom(roomCode).sockets;
   const ids = Object.keys(sockets);
-  const players = {};
+  const players = [];
   ids.forEach( id => {
     const name = socketApi.getPlayerInfo(id);
-    players[name] = { id: id, name: name }
+    players.push({ id: id, name: name })
   });
   return players
 }

@@ -44,6 +44,7 @@ class SocketTest extends Component {
   submitUser = (e) => {
     e.preventDefault();
     const { username, roomcode } = e.target.elements;
+    console.log(username.value, roomcode.value)
     this.socket.emit('new-player', {username: username.value, roomCode: roomcode.value})
   }
 
