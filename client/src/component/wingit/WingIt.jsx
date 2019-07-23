@@ -5,6 +5,8 @@ import '../../stylesheets/wingit.css';
 import Countdown from './Countdown';
 import HostPickCategory from './HostPickCategory';
 import '../../stylesheets/host-pick-category.css';
+import NonHostCat from './NonHostCat';
+
 
 
 
@@ -69,6 +71,8 @@ class WingIt extends Component {
         {this.state.showCategory && <HostPickCategory />} */}
         ------------------------------------------------------HOST PICK A CATEGORY PAGE-----------------------------------
         <HostPickCategory />
+        ------------------------------------------------------NON-HOST WAITING FOR HOST TO CHOOSE A CATEGORY-------------------
+        <NonHostCat timer={10} />
         </div>
     );
   }

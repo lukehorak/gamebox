@@ -3,11 +3,11 @@ import React, { Component } from 'react';
 import Nav from '../home/Nav';
 
 
-class Countdown extends Component {
+class NonHostCat extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      player: "John",
+      player: "Janeeee",
       timer: this.props.timer,
       visiblity: false
     }
@@ -44,20 +44,23 @@ class Countdown extends Component {
         </div> */}
       </div>
     }
-    
+
     return (
       <div>
         <Nav />
         <div className="player-name">
           Player: {this.state.player}
         </div>
-      <div className='clock'>
-        <button onClick={this.startTimer.bind(this)}>Start {this.props.timer}-second Countdown</button>
-        {this.state.visiblity && myComponent()}
-      </div>
+        <div className='clock'>
+          <button onClick={this.startTimer.bind(this)}>Start {this.props.timer}-second Countdown</button>
+          {this.state.visiblity && myComponent()}
+          <div className="nonhost-waiting-for-category">
+          The host is choosing choosing a category
+          </div>
+        </div>
       </div>
 
     );
   }
 }
-export default Countdown;
+export default NonHostCat;
