@@ -1,7 +1,10 @@
 import React, { Component } from 'react';
+import '../../stylesheets/host-pick-category.css';
+
 
 class HostPickCategory extends Component {
   constructor(props) {
+    
     super(props)
     this.state = {
       categories: [
@@ -13,6 +16,7 @@ class HostPickCategory extends Component {
             this.setState({
               chosenCategory: "Hands up!"
             })
+            this.showChosenCat();
           }
         },
         {
@@ -23,6 +27,7 @@ class HostPickCategory extends Component {
             this.setState({
               chosenCategory: "Get to the point now!"
             })
+            this.showChosenCat();
           }
         },
         {
@@ -33,18 +38,30 @@ class HostPickCategory extends Component {
             this.setState({
               chosenCategory: "I'm in!"
             })
+            this.showChosenCat();
 
           }
         }
       ],
-      chosenCategory: undefined
+      chosenCategory: undefined,
+      visibility: "hidden"
     }
+  }
+
+  showChosenCat() {
+    this.setState({
+      visibility: ""
+    })
+    console.log("Do that")
   }
 
   render() {
     const categories = this.state.categories.map((category) => {
       return (
-        <button onClick={category.handler} key={category.categoryId} className="category-list-item">
+        <button
+          onClick={category.handler}
+          key={category.categoryId}
+          className="category-list-item">
           {category.title}
         </button>
       );
@@ -53,10 +70,10 @@ class HostPickCategory extends Component {
     return (
       <div>
         <div className="pickcategory-main-container" >
-          
+          <p className="pick-category-title">PICK A CATEGORY:</p>
           {categories}
         </div>
-        <span> {this.state.chosenCategory} </span>
+        <span className={this.state.visibility + " chosen-category"}>{this.state.chosenCategory}</span>
       </div>
     );
   }

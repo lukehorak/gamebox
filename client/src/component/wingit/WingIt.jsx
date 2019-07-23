@@ -4,6 +4,8 @@ import '../../stylesheets/Home.css';
 import '../../stylesheets/wingit.css';
 import Countdown from './Countdown';
 import HostPickCategory from './HostPickCategory';
+import '../../stylesheets/host-pick-category.css';
+
 
 
 class WingIt extends Component {
@@ -59,13 +61,13 @@ class WingIt extends Component {
             {players}
           </ul>
         </div>
-        ------------------THE COUNTDOWN TIMERS ------------------------------------
+        --------------------------------------------------------THE COUNTDOWN TIMERS ------------------------------------
         <Countdown timer={10} />
         <Countdown timer={3} />
         {/* Page where a host is shown the categories and pick one ------ */}
         {/* <button onClick={this.displayCategories}>Host pick a category</button>
         {this.state.showCategory && <HostPickCategory />} */}
-        ------------------HOST PICK A CATEGORY PAGE-----------------------------------
+        ------------------------------------------------------HOST PICK A CATEGORY PAGE-----------------------------------
         <HostPickCategory />
         </div>
     );
