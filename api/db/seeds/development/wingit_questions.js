@@ -45,12 +45,32 @@ exports.seed = function (knex) {
           question: 'You are currently wearing a shirt with buttons',
           category_id: 1,
         },
+         {
+           question: 'You hate puppies',
+           category_id: 1,
+         },
+        {
+          question: 'You like this game',
+          category_id: 1,
+        },
         {
           question: 'is sitting to your right',
           category_id: 2,
         },
         {
           question: 'is wearing red',
+          category_id: 2,
+        },
+        {
+          question: 'you would eat first if you were all trapped on a desert island',
+          category_id: 2,
+        },
+        {
+          question: 'is the tallest person playing',
+          category_id: 2,
+        },
+        {
+          question: 'is your favourite developer',
           category_id: 2,
         },
         {
@@ -67,6 +87,18 @@ exports.seed = function (knex) {
         }, 
         {
           question: 'How many wheels an airplane have',
+          category_id: 3,
+        },
+        {
+          question: 'feet you are tall',
+          category_id: 3,
+        },
+        {
+          question: 'Number of meals you\'ve eaten today',
+          category_id: 3,
+        },
+        {
+          question: 'Disney movies you\'ve seen this year',
           category_id: 3,
         }
 

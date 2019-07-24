@@ -1,5 +1,10 @@
 // Update with your config settings.
-require ('dotenv').config();
+require ('dotenv').config({
+  path:__dirname+'/.env'
+});
+
+// console.log("**********************", __dirname + '/.env')
+// console.log(process.env)
 module.exports = {
 
   development: {
