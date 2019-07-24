@@ -4,21 +4,18 @@ import GameNav from '../wingit/GameNav';
 
 
 class DisplayQuestion extends Component {
-  constructor(props){
-    super()
-}
-setStyle = (category) => {
-  switch(category){
-    case 'hand':
-      return '#76B3FC'
-    case 'count':
-      return '#F7CBA9'
-    case 'point':
-      return '#FC6A9D'
-    default: 
-      return '#956DD4'
+  setStyle = (category) => {
+    switch(category){
+      case 'hand':
+        return '#76B3FC'
+      case 'count':
+        return '#F7CBA9'
+      case 'point':
+        return '#FC6A9D'
+      default: 
+        return '#956DD4'
+    }
   }
-}
 
   componentDidMount(){
     if(this.props.isHost){

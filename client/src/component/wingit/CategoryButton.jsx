@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 
+
+let style = "category-list-item"
 class CategoryButton extends Component{
 
   _handleClick = () => {
@@ -7,10 +9,15 @@ class CategoryButton extends Component{
   }
 
   render(){
+    console.log(this.props.buttonText)
     return(
-      <button id={this.props.category} onClick={this._handleClick} className="category-list-item"> {this.props.buttonText}</button>
-    )
-  }
-}
+      <button 
+        id={this.props.category} 
+        onClick={this._handleClick} 
+        className={this.props.buttonText === "Confirm" ? style + " confirm-button" : style}> {this.props.buttonText}
+      </button>
+    );
+  };
+};
 
 export default CategoryButton;
