@@ -126,6 +126,7 @@ class WingIt extends Component {
         return <DisplayQuestion
                 isHost={this.state.thisPlayer.isHost}
                 question={this.state.question}
+                player={this.state.thisPlayer}
                 startClock={this.startClock} />
       case 4:
         return (
