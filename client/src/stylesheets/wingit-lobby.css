@@ -43,6 +43,7 @@ hr{
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-top: 6em;
 }
 
 .create-game-header,
@@ -138,11 +139,23 @@ button:hover{
     margin: 6em 28em 2em 4em;
   }
 }
-@media screen and (min-width: 1000px){
+@media screen and (min-width: 1020px){
   body{
     font-size: 1em
   }
   .wingit-main-container{
     height: 51.22em;
+  }
+}
+
+@media screen and (max-width: 1400px){
+  .wingit-main-container{
+    height: 58em;
+  }
+}
+
+@media screen and ( min-width: 1800px){
+  .wingit-main-container{
+    height: 58em;
   }
 }
