@@ -98,6 +98,7 @@ io.on('connection', function (socket) {
     socket.game.setFaker();
 
     const qText = socketApi.getQuestionFromDB(category);
+    // Goes in knex promise
     socket.game.newRound(qText, category);
     
     io.in(socket.game.roomCode).emit('phase-change', { phase: 2 });
@@ -108,6 +109,8 @@ io.on('connection', function (socket) {
       console.log(`sending question to ${player.id}`)
       io.to(`${player.id}`).emit('send-question', {questionText: questionText})
     })
+    // end knex promise
+
   })
 
   socket.on('reading-question', (data) => {
