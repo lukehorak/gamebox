@@ -22,7 +22,7 @@ class HostPickCategory extends Component {
     return (
       <div className="pickcategory-main-container" >
         <div className="nav-container">
-          <GameNav player={this.props.player.username}/>
+          <GameNav category={this.state.category} player={this.props.player.username}/>
         </div>
           <div className="title-container">
             <p className="pick-category-title">PICK A CATEGORY</p>

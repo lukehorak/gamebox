@@ -9,7 +9,8 @@ import FakerWon from './Faker_win';
 import '../../stylesheets/Home.css';
 import '../../stylesheets/wingit.css';
 import '../../stylesheets/host-pick-category.css';
-import '../../stylesheets/wingit-lobby.css'
+import '../../stylesheets/wingit-lobby.css';
+import '../../stylesheets/Question-page.css';
 class WingIt extends Component {
 
   constructor(props) {
@@ -111,7 +112,7 @@ class WingIt extends Component {
       case 1:
         return <PickCategory player={this.state.thisPlayer} sendCategory={this.sendCategory} />
       case 2:
-        return <DisplayQuestion question={this.state.question} />
+        return <DisplayQuestion question={this.state.question} player={this.state.thisPlayer}/>
       case 4:
         return <VotingPage players={this.state.players} />
       case 5:
