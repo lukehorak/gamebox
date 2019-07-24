@@ -21,6 +21,7 @@ class WingIt extends Component {
       isHidden: false,
       players: [],
       thisPlayer: false,
+      category: false,
       question: "test question"
     }
   }
@@ -56,6 +57,8 @@ class WingIt extends Component {
     })
   }
 
+  // Class Methods
+
   createGame = (e) => {
     e.preventDefault();
     const { username } = e.target.elements
@@ -74,8 +77,13 @@ class WingIt extends Component {
   }
 
   sendCategory = (category) => {
+    this.setState({ category: category })
     this.socket.emit('send-category', { category: category });
     this.socket.emit('start-round', { category: category });
+  }
+
+  startClock = () => {
+    this.socket.emit('reading-question', { roomCode: this.state.roomCode })
   }
 
   listPlayers = (players) => {
@@ -98,22 +106,31 @@ class WingIt extends Component {
     switch (phase) {
       case 0:
         return (
-          <Lobby
-            roomCode={this.state.roomCode}
-            createGame={this.createGame}
-            joinGame={this.joinGame}
-            startGame={this.startGame}
-            listPlayers={this.listPlayers}
-            players={this.state.players}
-            isHost={this.state.thisPlayer.isHost}
-          />
-        );
+              <Lobby
+                roomCode={this.state.roomCode}
+                createGame={this.createGame}
+                joinGame={this.joinGame}
+                startGame={this.startGame}
+                listPlayers={this.listPlayers}
+                players={this.state.players}
+                isHost={this.state.thisPlayer.isHost} />
+              );
       case 1:
-        return <PickCategory player={this.state.thisPlayer} sendCategory={this.sendCategory} />
+        return (
+              <PickCategory
+                player={this.state.thisPlayer}
+                sendCategory={this.sendCategory} />
+              );
       case 2:
-        return <DisplayQuestion question={this.state.question} />
+        return <DisplayQuestion
+                isHost={this.state.thisPlayer.isHost}
+                question={this.state.question}
+                startClock={this.startClock} />
       case 4:
-        return <VotingPage players={this.state.players} />
+        return (
+              <VotingPage
+                players={this.state.players} />
+              );
       case 5:
         return <FakerLost />
       case 6:
