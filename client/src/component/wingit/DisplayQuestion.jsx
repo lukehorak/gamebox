@@ -3,7 +3,6 @@ import '../../stylesheets/host-pick-category.css';
 import GameNav from '../wingit/GameNav';
 
 
-
 class DisplayQuestion extends Component {
   constructor(props){
     super()
@@ -20,6 +19,12 @@ setStyle = (category) => {
       return '#956DD4'
   }
 }
+
+  componentDidMount(){
+    if(this.props.isHost){
+      this.props.startClock();
+    }
+  }
 
   render() {
     console.log(this.props)
