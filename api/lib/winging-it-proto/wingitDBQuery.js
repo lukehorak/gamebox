@@ -6,7 +6,7 @@ const knex = require("knex")(knexConfig[ENV]);
 
 // module.exports = {
 
-let generateQuestion = function (category_id, question_id)
+let generateQuestion = function (category_id)
   {
     knex.select('question')
       .from('questions')
