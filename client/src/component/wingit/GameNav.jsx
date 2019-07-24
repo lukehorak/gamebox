@@ -19,7 +19,7 @@ import React, { Component } from 'react';
     }
 
     render(){
-      console.log({backgroundColor: this.setStyle(this.props.category)})
+      console.log(this.props.category)
       return(
         <div className="game-nav-container">
           <nav style={{backgroundColor: this.setStyle(this.props.category)}} id="game-navbar" role="navigation" aria-label="main navigation">

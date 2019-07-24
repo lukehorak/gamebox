@@ -80,9 +80,10 @@ body{
 }
 
 .confirm-button{
-  width: 16em;
-  height: 4em;
-  border-radius: 1.5em;
+  width: 11em;
+  height: 3em;
+  border-radius: 4em;
+  font-size: 2em;
 }
 
 .chosen-category {

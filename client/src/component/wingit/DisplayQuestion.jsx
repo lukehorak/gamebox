@@ -15,12 +15,14 @@ class DisplayQuestion extends Component {
     return (
       <div className="main-question-container">
         <div className="nav-container">
-          <GameNav player={this.props.player.username}/>
+          <GameNav category={this.props.category} player={this.props.player.username}/>
         </div>
         <div  className="question-container">
           <h1 className="question">{this.props.question}</h1>
         </div>
-        <section style={{backgroundColor: this.setStyle(this.props.category)}} className="question-footer">
+        <section 
+          style={{backgroundColor: this.props.setStyle(this.props.category)}} 
+          className="question-footer">
         </section>
       </div>
       
