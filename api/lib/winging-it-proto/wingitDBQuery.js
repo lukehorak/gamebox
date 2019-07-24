@@ -13,7 +13,6 @@ let generateQuestion = function (category)
       .where('category', '=', category)
       .orderByRaw('random()')
       .limit(1)
-      // .asCallback(cb)
       .then(rows => 
         rows.forEach(row => 
           {
