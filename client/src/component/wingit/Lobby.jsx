@@ -8,15 +8,18 @@ class Lobby extends Component {
     return (
       <div>
         <div className="wingit-main-container" >
-          <div className="generated-room-code">
-            Room Code:
-            <div className="room-code-container">
-              <span id="room-code">
-                {this.props.roomCode}
-                <hr  className="room-code-hr"/>
-              </span>
+          {
+            this.props.roomCode &&
+            <div className="generated-room-code">
+              Room Code:
+              <div className="room-code-container">
+                <span id="room-code">
+                  {this.props.roomCode}
+                  <hr  className="room-code-hr"/>
+                </span>
+              </div>
             </div>
-          </div>
+          }
           {!this.props.roomCode &&
             <div className="create-game-container">
               <span className="create-game-header">Create a Game:</span>

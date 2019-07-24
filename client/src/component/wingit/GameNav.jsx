@@ -4,13 +4,30 @@ import React, { Component } from 'react';
     constructor(props){
       super()
     }
+
+    setStyle = (category) => {
+      switch(category){
+        case 'hand':
+          return '#76B3FC'
+        case 'count':
+          return '#F7CBA9'
+        case 'point':
+          return '#FC6A9D'
+        default: 
+          return '#956DD4'
+      }
+    }
+
     render(){
+      console.log({backgroundColor: this.setStyle(this.props.category)})
       return(
-        <nav id="game-navbar" role="navigation" aria-label="main navigation">
-          <span className="nav-player-name">
-            <h1>Goku</h1>
-          </span>
-        </nav>
+        <div className="game-nav-container">
+          <nav style={{backgroundColor: this.setStyle(this.props.category)}} id="game-navbar" role="navigation" aria-label="main navigation">
+            <div className="nav-player-name">
+              {this.props.player} 
+            </div>
+          </nav>
+        </div>
       )
     }
   }
