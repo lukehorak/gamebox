@@ -4,17 +4,16 @@ const knexConfig = require("../../knexfile");
 const knex = require("knex")(knexConfig[ENV]);
 
 
-
 // module.exports = {
 
-let generateQuestion = function(category_id) 
+let generateQuestion = function (category_id, question_id)
   {
     knex.select('question')
       .from('questions')
       .where('category_id', '=', category_id)
+      .orderByRaw('random()')
       .limit(1)
       // .asCallback(cb)
-      // .then(rows => console.log(rows))
       .then(rows => 
         rows.forEach(row => 
           {
@@ -24,5 +23,7 @@ let generateQuestion = function(category_id)
       )
 
 }
+
+// }
 
 generateQuestion(3)
