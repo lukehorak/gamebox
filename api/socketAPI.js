@@ -99,15 +99,15 @@ io.on('connection', function (socket) {
     socket.game.newRound(demoQuestions[category][0], category);
     // test by logging host's question to console
     console.log(socket.game.currentRound.getQuestion(socket.username));
-    socket.emit('phase-change', { phase: 2 });
-    const questionArray = socketApi.getQuestions(socket.game.roomCode, socket.game);
-    console.log(questionArray);
-    questionArray.forEach( question => {
-      const questionText = socket.game.currentRound.getQuestion(question.name);
-      console.log(`sending ${questionText} to ${question.id}`)
-      io.to(`${question.id}`).emit('send-question', {questionText: questionText})
+    //socket.emit('phase-change', { phase: 2 });
+    io.in(socket.game.roomCode).emit('phase-change', { phase: 2 });
+    const questionData = socketApi.getQuestionData(socket.game.roomCode, socket.game);
+    console.log(questionData);
+    questionData.forEach( player => {
+      const questionText = socket.game.currentRound.getQuestion(player.name);
+      console.log(`sending ${questionText} to ${player.id}`)
+      io.to(`${player.id}`).emit('send-question', {questionText: questionText})
     })
-    //io.in(socket.game.roomCode).emit('send-question');
   })
 
 });
@@ -145,11 +145,11 @@ socketApi.newPlayer = function (roomCode, username) {
   return hostID;
 }
 
-socketApi.getQuestions = (roomCode, game) => {
+socketApi.getQuestionData = (roomCode, game) => {
   const playerList = socketApi.getPlayerList(roomCode);
-  return playerList.map( player => {return { name: player.name, id: player.id, isFaker: game.players[player.name].isFaker} });
-
-    //console.log(game.players[player.name].isFaker)
+  return playerList.map( player => {
+    return { name: player.name, id: player.id, isFaker: game.players[player.name].isFaker}
+  });
 }
 
 module.exports = socketApi;
