@@ -14,11 +14,7 @@ let generateQuestion = function (category)
       .orderByRaw('random()')
       .limit(1)
       .then(rows => 
-        rows.forEach(row => 
-          {
-            console.log(row.question)
-          }
-        )
+        console.log(rows[0].question)
       )
 
 }

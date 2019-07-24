@@ -2,6 +2,11 @@ const socket_io = require('socket.io');
 const io = socket_io();
 const socketApi = {};
 
+const ENV = process.env.ENV || "development";
+const knexConfig = require("./knexfile");
+const knex = require("knex")(knexConfig[ENV]);
+
+
 const Game = require('./lib/winging-it-proto/Game');
 
 const demoQuestions = {
@@ -97,18 +102,46 @@ io.on('connection', function (socket) {
     const { category } = data;
     socket.game.setFaker();
 
-    const qText = socketApi.getQuestionFromDB(category);
-    // Goes in knex promise
-    socket.game.newRound(qText, category);
+    knex.select('question')
+      .from('wingit')
+      .where('category', '=', category)
+      .orderByRaw('random()')
+      .limit(1)
+      .then(rows => {
+        console.log('from db--> ', rows[0].question);
+
+        const qText = rows[0].question;
+
+        socket.game.newRound(qText, category);
     
-    io.in(socket.game.roomCode).emit('phase-change', { phase: 2 });
-    const questionData = socketApi.getQuestionData(socket.game.roomCode, socket.game);
-    console.log(questionData);
-    questionData.forEach( player => {
-      const questionText = socket.game.currentRound.getQuestion(player.name);
-      console.log(`sending question to ${player.id}`)
-      io.to(`${player.id}`).emit('send-question', {questionText: questionText})
-    })
+        io.in(socket.game.roomCode).emit('phase-change', { phase: 2 });
+        const questionData = socketApi.getQuestionData(socket.game.roomCode, socket.game);
+        console.log(questionData);
+        questionData.forEach( player => {
+          const questionText = socket.game.currentRound.getQuestion(player.name);
+          console.log(`sending question to ${player.id}`)
+          io.to(`${player.id}`).emit('send-question', {questionText: questionText})
+        })
+
+      }
+      )
+      .finally( () => {
+        knex.destroy;
+      })
+
+
+    //const qText = socketApi.getQuestionFromDB(category);
+    // Goes in knex promise
+    // socket.game.newRound(qText, category);
+    
+    // io.in(socket.game.roomCode).emit('phase-change', { phase: 2 });
+    // const questionData = socketApi.getQuestionData(socket.game.roomCode, socket.game);
+    // console.log(questionData);
+    // questionData.forEach( player => {
+    //   const questionText = socket.game.currentRound.getQuestion(player.name);
+    //   console.log(`sending question to ${player.id}`)
+    //   io.to(`${player.id}`).emit('send-question', {questionText: questionText})
+    // })
     // end knex promise
 
   })
