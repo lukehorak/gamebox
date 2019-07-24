@@ -26,7 +26,8 @@ class WingIt extends Component {
       roomCode: false,
       isHidden: false,
       players: [],
-      thisPlayer: false
+      thisPlayer: false,
+      question: "test question"
     }
   }
 
@@ -53,7 +54,12 @@ class WingIt extends Component {
       this.socket.emit('join', data);
       this.socket.emit('request-player');
       this.socket.emit('request-all-players', { roomCode: this.state.roomCode })
-    });
+    })
+
+    this.socket.on('send-question', data => {
+      this.setState({ question: data.questionText });
+      console.log(JSON.stringify(data))
+    })
   }
 
   createGame = (e) => {
@@ -106,7 +112,7 @@ class WingIt extends Component {
       case 1:
         return <PickCategory player={this.state.thisPlayer} sendCategory={this.sendCategory}/>
       case 2:
-        return <DisplayQuestion />
+        return <DisplayQuestion question={this.state.question}/>
       case 4:
         return <VotingPage players={this.state.players} />
       case 5:
