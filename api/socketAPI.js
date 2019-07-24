@@ -99,7 +99,6 @@ io.on('connection', function (socket) {
     socket.game.newRound(demoQuestions[category][0], category);
     // test by logging host's question to console
     console.log(socket.game.currentRound.getQuestion(socket.username));
-    //socket.emit('phase-change', { phase: 2 });
     io.in(socket.game.roomCode).emit('phase-change', { phase: 2 });
     const questionData = socketApi.getQuestionData(socket.game.roomCode, socket.game);
     console.log(questionData);
