@@ -1,10 +1,13 @@
 import React, { Component } from 'react';
 import '../../stylesheets/host-pick-category.css';
-import Nav from '../home/Nav';
-
-
 
 class DisplayQuestion extends Component {
+
+  componentDidMount(){
+    if(this.props.isHost){
+      this.props.startClock();
+    }
+  }
 
   render() {
 
