@@ -1,14 +1,17 @@
 import React, { Component } from 'react';
 import GameNav from './GameNav';
+import VoteButton from './VoteButton';
 
   class VotingPage extends Component{
 
+    sendVote = (e) => {
+      alert(e.target.innerText);
+    }
+
     render(){
-      const players = this.props.players.map(function (player) {
+      const players = this.props.players.map( player => {
         return (
-          <button key={player.playerId} className="my-player-list-item">
-            <h2>{player.name}</h2>
-          </button>
+          <VoteButton keyProp={player.id} name={player.name} sendVote={this.sendVote}/>
         );
       });
       return(
