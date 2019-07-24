@@ -9,7 +9,7 @@ import FakerWon from './Faker_win';
 import '../../stylesheets/Home.css';
 import '../../stylesheets/wingit.css';
 import '../../stylesheets/host-pick-category.css';
-
+import '../../stylesheets/wingit-lobby.css'
 class WingIt extends Component {
 
   constructor(props) {
@@ -81,9 +81,14 @@ class WingIt extends Component {
   listPlayers = (players) => {
     const playerList = players.map(function (player) {
       return (
-        <li key={player.id} className="my-player-list-item">
-          <h2>{player.name}</h2>
-        </li>
+        <div className="player-card-container">
+            <div className="column">
+              <span key={player.playerId} className="player-menu-card">
+                <h2>{player.name}</h2>
+              </span>
+            </div>
+          </div>
+
       );
     });
     return playerList;
