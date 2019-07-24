@@ -17,14 +17,15 @@ testGame.setFaker();
 testGame.roundNumber += 1;
 let current_round = new Round("you brushed your teeth today", testGame.players, 'hand');
 
+
 // Show the questions being sent
 console.log(current_round.sendQuestions())
-current_round.voteFor('Player1')
-current_round.voteFor('Player1')
-current_round.voteFor('Player3')
-current_round.voteFor('Player1')
-current_round.voteFor('Player1')
-current_round.voteFor('Player2')
+current_round.voteFor('Player3', 'Player1')
+current_round.voteFor('Player1', 'Player2')
+current_round.voteFor('Player2', 'Player3')
+current_round.voteFor('Player1', 'Player4')
+current_round.voteFor('Player1', 'Player5')
+current_round.voteFor('Player2', 'Player6')
 let results = current_round.exposeFaker();
 
 if (!results.checked){
@@ -45,12 +46,12 @@ current_round = new Round("you would eat first if you were all trapped on a dese
 
 // Show the questions being sent
 console.log(current_round.sendQuestions())
-current_round.voteFor('Player2')
-current_round.voteFor('Player2')
-current_round.voteFor('Player2')
-current_round.voteFor('Player2')
-current_round.voteFor('Player2')
-current_round.voteFor('Player3')
+current_round.voteFor('Player2', 'Player1')
+current_round.voteFor('Player3', 'Player2')
+current_round.voteFor('Player2', 'Player3')
+current_round.voteFor('Player2', 'Player4')
+current_round.voteFor('Player2', 'Player5')
+current_round.voteFor('Player2', 'Player6')
 results = current_round.exposeFaker();
 
 if (!results.checked){
@@ -71,12 +72,12 @@ current_round = new Round("Disney movies you have watched this year", testGame.p
 
 // Show the questions being sent
 console.log(current_round.sendQuestions())
-current_round.voteFor('Player3')
-current_round.voteFor('Player3')
-current_round.voteFor('Player3')
-current_round.voteFor('Player3')
-current_round.voteFor('Player3')
-current_round.voteFor('Player4')
+current_round.voteFor('Player3', 'Player1')
+current_round.voteFor('Player3', 'Player2')
+current_round.voteFor('Player4', 'Player3')
+current_round.voteFor('Player3', 'Player4')
+current_round.voteFor('Player3', 'Player5')
+current_round.voteFor('Player3', 'Player6')
 results = current_round.exposeFaker();
 
 if (!results.checked){

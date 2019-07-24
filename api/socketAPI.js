@@ -96,17 +96,30 @@ io.on('connection', function (socket) {
   socket.on('start-round', (data) => {
     const { category } = data;
     socket.game.setFaker();
-    socket.game.newRound(demoQuestions[category][0], category);
-    // test by logging host's question to console
-    console.log(socket.game.currentRound.getQuestion(socket.username));
+
+    const qText = socketApi.getQuestionFromDB(category);
+    socket.game.newRound(qText, category);
+    
     io.in(socket.game.roomCode).emit('phase-change', { phase: 2 });
     const questionData = socketApi.getQuestionData(socket.game.roomCode, socket.game);
     console.log(questionData);
     questionData.forEach( player => {
       const questionText = socket.game.currentRound.getQuestion(player.name);
-      console.log(`sending ${questionText} to ${player.id}`)
+      console.log(`sending question to ${player.id}`)
       io.to(`${player.id}`).emit('send-question', {questionText: questionText})
     })
+  })
+
+  socket.on('reading-question', (data) => {
+    console.log('starting clock!')
+    setTimeout(function(){
+      io.in(data.roomCode).emit('phase-change', { phase: 4 })
+      }, 8000)
+  });
+
+  // Separate message to get real question, as regular question getting is dependent on a player
+  socket.on('request-real-question', (data) => {
+    console.log(socketApi.getRealQuestion(data.roomCode))
   })
 
 });
@@ -142,6 +155,19 @@ socketApi.newPlayer = function (roomCode, username) {
   console.log(`Adding player ${username} to game room ${roomCode}`)
   io.sockets.connected[hostID].game.addPlayerByName(username);
   return hostID;
+}
+
+
+// To be used for querying the DB later
+socketApi.getQuestionFromDB = (category) => {
+  return demoQuestions[category][0];
+}
+
+socketApi.getRealQuestion = (roomCode) => {
+  const hostID = socketApi.getHost(roomCode);
+  const round = io.sockets.connected[hostID].game.currentRound;
+  console.log(`Getting real question for game room ${roomCode}`)
+  return round.prefix + round.question;
 }
 
 socketApi.getQuestionData = (roomCode, game) => {
