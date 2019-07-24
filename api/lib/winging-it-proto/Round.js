@@ -8,7 +8,7 @@ class Round {
     this.playerVotes = {};
     // Populate this.players with k,v pairs of playername, 0 (initial vote count)
     for (let p in players){
-      this.playerVotes[p] = 0
+      this.playerVotes[p] = null;
     }
   }
 
@@ -36,13 +36,24 @@ class Round {
   sendQuestions() {
     const playerQuestions = {}
     for (let p in this.players){
-      playerQuestions[p] = this.getQuestion(this.players[p]);
+      //playerQuestions[p] = this.getQuestion(this.players[p]);
+      playerQuestions[p] = this.getQuestion(p);
     }
     return playerQuestions
   }
 
-  voteFor(player) {
-    this.playerVotes[player] += 1;
+  voteFor(player, voter) {
+    this.playerVotes[voter] = player;
+  }
+
+  countVotes(player) {
+    let count = 0;
+    for (let p in this.playerVotes){
+      if (this.playerVotes[p] === player){
+        count += 1
+      }
+    }
+    return count;
   }
 
   exposeFaker () {
@@ -50,7 +61,8 @@ class Round {
     const magicNumber = Object.keys(this.playerVotes).length - 1
     const response = { checked: false, player: null, foundFaker: false }
     for (let p in this.playerVotes) {
-      if (this.playerVotes[p] === magicNumber) {
+      //if (this.playerVotes[p] === magicNumber) {
+      if (this.countVotes(p) === magicNumber) {
         response.checked = true;
         response.player = p;
         response.foundFaker = this.players[p].isFaker;
