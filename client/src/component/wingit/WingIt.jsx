@@ -103,6 +103,19 @@ class WingIt extends Component {
     return playerList;
   };
 
+  setStyle = (category) => {
+    switch(category){
+      case 'hand':
+        return '#76B3FC'
+      case 'count':
+        return '#F7CBA9'
+      case 'point':
+        return '#FC6A9D'
+      default: 
+        return '#956DD4'
+    }
+  };
+
   handleCase = (phase) => {
     switch (phase) {
       case 0:
@@ -127,7 +140,9 @@ class WingIt extends Component {
                 isHost={this.state.thisPlayer.isHost}
                 question={this.state.question}
                 player={this.state.thisPlayer}
-                startClock={this.startClock} />
+                startClock={this.startClock}
+                setStyle={this.setStyle} 
+                category={this.state.category} />
       case 4:
         return (
               <VotingPage

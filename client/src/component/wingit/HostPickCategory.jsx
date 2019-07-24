@@ -35,7 +35,7 @@ class HostPickCategory extends Component {
           </div>
           <div className="confirm-button-footer">
           { this.state.category && 
-            <CategoryButton className="confirm-button" handleClick={this.props.sendCategory} category={this.state.category} buttonText="Confirm"/>
+            <CategoryButton  handleClick={this.props.sendCategory} category={this.state.category} buttonText="Confirm"/>
           }
           </div>
         </div>
