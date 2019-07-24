@@ -6,11 +6,11 @@ const knex = require("knex")(knexConfig[ENV]);
 
 // module.exports = {
 
-let generateQuestion = function (category_id)
+let generateQuestion = function (category)
   {
     knex.select('question')
-      .from('questions')
-      .where('category_id', '=', category_id)
+      .from('wingit')
+      .where('category', '=', category)
       .orderByRaw('random()')
       .limit(1)
       // .asCallback(cb)
@@ -26,4 +26,4 @@ let generateQuestion = function (category_id)
 
 // }
 
-generateQuestion(3)
+generateQuestion('hand')
