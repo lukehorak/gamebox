@@ -29,10 +29,19 @@
   .question{
     font-size: 2em;
   }
+  .question-container{
+    height: 15em;
+  }
 }
 
-@media screen and (max-width: 1440){
+@media screen and (min-width: 1024px){
   .question-footer{
-    /* height: */
+    height: 51.5em;
+  }
+}
+
+@media screen and (min-width: 2000px){
+  .question-footer{
+    height: 61.7em;
   }
 }
