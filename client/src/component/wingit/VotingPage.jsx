@@ -3,7 +3,6 @@ import GameNav from './GameNav';
 
   class VotingPage extends Component{
 
-
     render(){
       const players = this.props.players.map(function (player) {
         return (
@@ -15,10 +14,12 @@ import GameNav from './GameNav';
       return(
         <div className="voting-page-wrapper">
           <GameNav/>
-            <div className="player-container">
-              {players}
-            </div>
-            <span className="voting-instrucrtions"> Vote for the faker! </span>
+          <h2>The question was:</h2>
+          <h3>{this.props.realQuestion}</h3>
+          <div className="player-container">
+            {players}
+          </div>
+          <span className="voting-instrucrtions"> Vote for the faker! </span>
         </div>
       );
     };
