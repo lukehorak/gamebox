@@ -119,7 +119,8 @@ io.on('connection', function (socket) {
 
   // Separate message to get real question, as regular question getting is dependent on a player
   socket.on('request-real-question', (data) => {
-    console.log(socketApi.getRealQuestion(data.roomCode))
+    const realQuestion = socketApi.getRealQuestion(data.roomCode);
+    io.in(data.roomCode).emit('respond-real-question', { realQuestion: realQuestion})
   })
 
 });
@@ -156,7 +157,6 @@ socketApi.newPlayer = function (roomCode, username) {
   io.sockets.connected[hostID].game.addPlayerByName(username);
   return hostID;
 }
-
 
 // To be used for querying the DB later
 socketApi.getQuestionFromDB = (category) => {
