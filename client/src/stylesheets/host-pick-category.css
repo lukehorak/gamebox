@@ -1,20 +1,68 @@
-.pick-category-title {
-  font-weight: 500;
-  font-size: 5em;
-  background-color: antiquewhite;
+
+.nonhost-waiting-for-category {
+    /* display: inline-block; */
+    float: right;
+    border: none;
+    padding: 2rem 4rem;
+    margin: 0 1em;
+    text-decoration: none;
+    background: #84828d;
+    /* color: #ffffff; */
+    color: white;
+    font-family: sans-serif;
+    font-size: 3rem;
+    cursor: pointer;
+    text-align: center;
+    transition: background 250ms ease-in-out,
+    transform 150ms ease;
+    border: 1px solid rgb(61, 7, 21);
+    border-radius: 7em;
+    width: 5em;
+}
+
+.nav-container{
+  width: 100%;
 }
 
 .pickcategory-main-container {
-    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: white;
+}
+.title-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+}
+
+.pick-category-title {
+  font-weight: 500;
+  font-size: 2em;
+  text-align: center;
+  background-color: white;
+  margin: 1em 0 0 0;
+}
+
+.pick-a-category-hr{
+  width: 16em;
+}
+
+.button-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: white;
+  width: 100%;
 }
 
 .category-list-item {
   display: inline-block;
   border: none;
   padding: 1rem 2rem;
-  margin: 0 1em;
   text-decoration: none;
-  background: #dde02b;
   /* color: #ffffff; */
   color: black;
   font-family: sans-serif;
@@ -22,74 +70,42 @@
   cursor: pointer;
   text-align: center;
   transition: background 250ms ease-in-out, transform 150ms ease;
-  border: 2px solid rgb(226, 161, 39);
   border-radius: 1em;
+  margin: 1em 0 1em 0;
+  width: 12em;
 }
 
-.category-list-item:hover,
-.category-list-item:focus {
-  /* background: #0053ba; */
-  /* background: #b0e2cf; */
-  background: #ebb239;
-
-
-}
-
-.category-list-item:focus {
-  outline: 1px solid #fff;
-  outline-offset: -4px;
-}
-
-.category-list-item:active {
-  transform: scale(0.99);
-}
 
 .chosen-category {
-    display: inline-block;
-    border: none;
-    padding: 1rem 2rem;
-    margin: 2em;
-    text-decoration: none;
-    background: #ebb239;
-    color: black;
-    font-family: sans-serif;
-    font-size: 2rem;
-    cursor: pointer;
-    text-align: center;
-    transition: background 250ms ease-in-out,
-    transform 150ms ease;
-    /* border: 3px solid rgb(28, 70, 133); */
-    border: 3px solid rgb(226, 161, 39);
-    border-radius: 0.5em;
-    width: 20em;
-    font-weight: 900;
-    text-align: center;
+  display: inline-block;
+  border: none;
+  padding: 1rem 2rem;
+  margin: 2em;
+  text-decoration: none;
+  background: #ebb239;
+  color: black;
+  font-family: sans-serif;
+  font-size: 2rem;
+  cursor: pointer;
+  text-align: center;
+  transition: background 250ms ease-in-out,
+  transform 150ms ease;
+  /* border: 3px solid rgb(28, 70, 133); */
+  border: 3px solid rgb(226, 161, 39);
+  border-radius: 0.5em;
+  width: 20em;
+  font-weight: 900;
+  text-align: center;
 }
-
-
-.hidden {
-  display: none;
-}
-
-.player-name {
-      display: inline-block;
-      border: none;
-      padding: 1rem 2rem;
-      margin: 2em;
-      text-decoration: none;
-      background: #b0e2cf;
-      color: black;
-      font-family: sans-serif;
-      font-size: 1rem;
-      cursor: pointer;
-      text-align: center;
-      transition: background 250ms ease-in-out,
-      transform 150ms ease;
-      border: 3px solid rgb(28, 70, 133);
-      border-radius: 0.5em;
-      width: 25em;
-      font-weight: 900;
-      text-align: center;
+.confirm-button-footer{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content:center;
+  background-color: #956DD4;
+  width: 100%;
+  height: 17.909em;
+  margin-top: 1em;
 }
 
 .question-item {
@@ -112,4 +128,23 @@
     width: 20em;
     font-weight: 400;
     text-align: center;
+}
+
+
+#hand{
+  background-color: #76B3FC;
+}
+
+#count{
+  background-color:#F7CBA9;
+}
+
+#point{
+  background-color: #FC6A9D;
+}
+
+#hand:focus,
+#count:focus,
+#point:focus{
+  outline: none;
 }
