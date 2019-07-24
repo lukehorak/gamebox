@@ -140,7 +140,9 @@ button:hover{
 }
 @media screen and (min-width: 1000px){
   body{
-    font-size: 1em;
+    font-size: 1em
   }
-
+  .wingit-main-container{
+    height: 51.22em;
+  }
 }
