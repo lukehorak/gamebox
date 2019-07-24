@@ -15,7 +15,6 @@ import '../../stylesheets/Home.css';
 import '../../stylesheets/wingit.css';
 import '../../stylesheets/host-pick-category.css';
 
-
 class WingIt extends Component {
 
   constructor(props) {
