@@ -3,7 +3,7 @@ import socketIOClient from 'socket.io-client';
 import Lobby from './Lobby';
 import PickCategory from './PickCategory';
 import DisplayQuestion from './DisplayQuestion';
-import VotingPage from './Voting_Page';
+import VotingPage from './VotingPage';
 import FakerLost from './Faker_Loss';
 import FakerWon from './Faker_win';
 import '../../stylesheets/Home.css';
@@ -23,7 +23,8 @@ class WingIt extends Component {
       players: [],
       thisPlayer: false,
       category: false,
-      question: "test question"
+      question: "test question",
+      realQuestion: false
     }
   }
 
@@ -56,6 +57,10 @@ class WingIt extends Component {
       this.setState({ question: data.questionText });
       console.log(JSON.stringify(data))
     })
+
+    this.socket.on('respond-real-question', data => {
+      this.setState({ realQuestion: data.realQuestion })
+    })
   }
 
   // Class Methods
@@ -81,6 +86,7 @@ class WingIt extends Component {
     this.setState({ category: category })
     this.socket.emit('send-category', { category: category });
     this.socket.emit('start-round', { category: category });
+    this.socket.emit('request-real-question', { roomCode: this.state.roomCode })
   }
 
   startClock = () => {
@@ -131,7 +137,8 @@ class WingIt extends Component {
       case 4:
         return (
               <VotingPage
-                players={this.state.players} />
+                players={this.state.players}
+                realQuestion={this.state.realQuestion} />
               );
       case 5:
         return <FakerLost />
