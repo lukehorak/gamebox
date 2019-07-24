@@ -6,7 +6,7 @@ class CreateGameForm extends Component {
     return(
       <form id="create-game-form" onSubmit={this.props.createGame}>
         <input name="username" placeholder="Enter your username"></input>
-        <button style={{ fontSize: "large" }} >Create Game</button>
+        <button className="lobby-create-game-button" >Create Game</button>
       </form>
 
     )
