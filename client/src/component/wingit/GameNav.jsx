@@ -6,11 +6,13 @@ import React, { Component } from 'react';
     }
     render(){
       return(
-        <nav id="game-navbar" role="navigation" aria-label="main navigation">
-          <span className="nav-player-name">
-            <h1>Goku</h1>
-          </span>
-        </nav>
+        <div className="game-nav-container">
+          <nav id="game-navbar" role="navigation" aria-label="main navigation">
+            <div className="nav-player-name">
+              {this.props.player} 
+            </div>
+          </nav>
+        </div>
       )
     }
   }

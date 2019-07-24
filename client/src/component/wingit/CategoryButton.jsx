@@ -8,7 +8,7 @@ class CategoryButton extends Component{
 
   render(){
     return(
-      <button onClick={this._handleClick} className="category-list-item"> {this.props.buttonText}</button>
+      <button id={this.props.category} onClick={this._handleClick} className="category-list-item"> {this.props.buttonText}</button>
     )
   }
 }
