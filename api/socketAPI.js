@@ -108,12 +108,11 @@ io.on('connection', function (socket) {
       .orderByRaw('random()')
       .limit(1)
       .then(rows => {
-        console.log('from db--> ', rows[0].question);
-
+        // get questionText from db
         const qText = rows[0].question;
-
-        socket.game.newRound(qText, category);
-    
+        // Start round on server
+        socket.game.newRound(qText, category);   
+        // Signal round start on Clients 
         io.in(socket.game.roomCode).emit('phase-change', { phase: 2 });
         const questionData = socketApi.getQuestionData(socket.game.roomCode, socket.game);
         console.log(questionData);
@@ -122,7 +121,6 @@ io.on('connection', function (socket) {
           console.log(`sending question to ${player.id}`)
           io.to(`${player.id}`).emit('send-question', {questionText: questionText})
         })
-
       }
       )
       .finally( () => {
@@ -150,7 +148,10 @@ io.on('connection', function (socket) {
     const hostId = socketApi.getHost(data.roomCode);
     const round = io.sockets.connected[hostId].game.currentRound;
     round.voteFor(data.voteFor, socket.username);
-    console.log(round.countVotes(data.votefor))
+    const updatedCount = round.countVotes(data.votefor);
+    console.log(`votes for ${data.voteFor}: `, updatedCount)
+
+    io.in(data.roomCode).emit('update-vote-count', { voteFor: data.voteFor, updatedCount: updatedCount })
   })
 
 });
@@ -171,7 +172,7 @@ socketApi.getPlayerList = (roomCode) => {
   const players = [];
   ids.forEach( id => {
     const name = socketApi.getPlayerInfo(id);
-    players.push({ id: id, name: name })
+    players.push({ id: id, name: name, votes:0 })
   });
   return players
 }
