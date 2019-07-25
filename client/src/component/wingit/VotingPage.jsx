@@ -4,22 +4,31 @@ import GameNav from './GameNav';
   class VotingPage extends Component{
 
     render(){
+      console.log(this.props)
       const players = this.props.players.map(function (player) {
         return (
-          <button key={player.playerId} className="my-player-list-item">
-            <h2>{player.name}</h2>
+          <button className="player-vote-button" key={player.playerId}>
+            {player.name}
           </button>
         );
       });
       return(
-        <div className="voting-page-wrapper">
-          <GameNav/>
-          <h2>The question was:</h2>
-          <h3>{this.props.realQuestion}</h3>
-          <div className="player-container">
-            {players}
+        <div className="main-voting-page-wrapper">
+          <GameNav player={this.props.player.username}/>
+          <div className="voting-main-container">
+            <h2 className="the-question-was">The question was:</h2>
+            <h3 className="the-question">{this.props.realQuestion}</h3>
+          <hr className="voting-hr"/>
           </div>
-          <span className="voting-instrucrtions"> Vote for the faker! </span>
+          <div className="player-container">
+            <div className="column">
+              {players}
+            </div>
+          </div>
+          <section 
+          className="voting-footer">
+            <span className="voting-instructions"> Vote for the faker! </span>
+          </section>
         </div>
       );
     };

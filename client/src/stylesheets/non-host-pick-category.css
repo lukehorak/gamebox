@@ -31,7 +31,6 @@
   margin: 0 auto;
   margin-top: 5em;
   border-radius: 100em 100em 0 0;
-  background: #f00;
   transform-origin: bottom;
   animation: eating-top .5s infinite;
 }
@@ -104,4 +103,32 @@
     ;
   }
   
+}
+
+
+@media screen and (max-width: 800px){
+  .host-is-choosing-category{
+    font-size: 3em;
+  }
+}
+
+@media screen and (max-width: 320px){
+  .host-is-choosing-category{
+    font-size: 1.2em;
+  }
+  .non-host-category-body{
+    height: 15em;
+  }
+}
+
+@media screen and (min-width: 1024px){
+  .non-host-cat-footer{
+    height: 51.5em;
+  }
+}
+
+@media screen and (min-width: 2000px){
+  .non-host-cat-footer{
+    height: 61.7em;
+  }
 }

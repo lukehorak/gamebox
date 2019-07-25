@@ -12,6 +12,7 @@ import '../../stylesheets/host-pick-category.css';
 import '../../stylesheets/wingit-lobby.css';
 import '../../stylesheets/Question-page.css';
 import '../../stylesheets/non-host-pick-category.css'
+import '../../stylesheets/voting-page.css'
 class WingIt extends Component {
 
   constructor(props) {
@@ -154,7 +155,8 @@ class WingIt extends Component {
         return (
               <VotingPage
                 players={this.state.players}
-                realQuestion={this.state.realQuestion} />
+                realQuestion={this.state.realQuestion} 
+                player={this.state.thisPlayer}/>
               );
       case 5:
         return <FakerLost />
