@@ -19,13 +19,7 @@
   height: 11.22em;
 }
 
-@media screen and (max-width: 800px){
-  .question{
-    font-size: 3em;
-  }
-}
-
-@media screen and (max-width: 325px){
+@media screen and (min-width: 325px){
   .question{
     font-size: 2em;
   }
@@ -33,6 +27,22 @@
     height: 15em;
   }
 }
+
+@media screen and (min-width: 326px){
+  .question{
+    font-size: 1.5em;
+  }
+  .question-container{
+    height: 30em;
+  }
+}
+
+@media screen and (min-width: 800px){
+  .question{
+    font-size: 3em;
+  }
+}
+
 
 @media screen and (min-width: 1024px){
   .question-footer{
