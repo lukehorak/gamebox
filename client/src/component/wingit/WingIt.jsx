@@ -108,6 +108,11 @@ class WingIt extends Component {
     }
   };
 
+  sendVote = (voteFor) => {
+    console.log(`${this.state.thisPlayer.username} is voting for ${voteFor}`)
+    this.socket.emit('send-vote', { voteFor: voteFor, roomCode: this.state.roomCode });
+  }
+
   handleCase = (phase) => {
     switch (phase) {
       case 0:
@@ -139,7 +144,8 @@ class WingIt extends Component {
               <VotingPage
                 players={this.state.players}
                 realQuestion={this.state.realQuestion} 
-                player={this.state.thisPlayer}/>
+                player={this.state.thisPlayer}
+                sendVote={this.sendVote}/>
               );
       case 5:
         return <FakerLost />

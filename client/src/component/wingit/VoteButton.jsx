@@ -5,7 +5,7 @@ import React, { Component } from 'react';
     render(){
 
       return(
-        <button key={this.props.keyProp} className="my-player-list-item" onClick={this.props.sendVote}>
+        <button key={this.props.keyProp} className="player-vote-button" onClick={this.props.sendVote}>
           <h2>{this.props.name}</h2>
         </button>
       );
