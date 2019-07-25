@@ -115,7 +115,6 @@ class WingIt extends Component {
                 createGame={this.createGame}
                 joinGame={this.joinGame}
                 startGame={this.startGame}
-                listPlayers={this.listPlayers}
                 players={this.state.players}
                 isHost={this.state.thisPlayer.isHost} />
               );
