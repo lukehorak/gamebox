@@ -4,14 +4,14 @@ import VoteButton from './VoteButton';
 
   class VotingPage extends Component{
 
-    sendVote = (e) => {
+    vote = (e) => {
       alert(e.target.innerText);
     }
 
     render(){
       const players = this.props.players.map( player => {
         return (
-          <VoteButton keyProp={player.id} name={player.name} sendVote={this.sendVote}/>
+          <VoteButton keyProp={player.id} name={player.name} sendVote={this.vote}/>
         );
       });
       return(
