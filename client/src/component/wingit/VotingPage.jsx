@@ -16,7 +16,7 @@ import VoteButton from './VoteButton';
       });
       return(
         <div className="main-voting-page-wrapper">
-          <GameNav player={this.props.player.username}/>
+          <GameNav category={this.props.category} player={this.props.player.username}/>
           <div className="voting-main-container">
           <span className="voting-instructions"> Vote for the faker! </span>
             <h2 className="the-question-was">The question was:</h2>

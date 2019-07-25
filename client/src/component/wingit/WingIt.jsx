@@ -161,12 +161,13 @@ class WingIt extends Component {
                 players={this.state.players}
                 realQuestion={this.state.realQuestion} 
                 player={this.state.thisPlayer}
-                sendVote={this.sendVote}/>
+                sendVote={this.sendVote}
+                category={this.state.category}/>
               );
       case 5:
-        return <FakerLost />
+        return <FakerLost category={this.state.category} />
       case 6:
-        return <FakerWon />
+        return <FakerWon category={this.state.category} />
       default:
         return <h1>HOW DID YOU EVEN END UP HERE?</h1>
     }
