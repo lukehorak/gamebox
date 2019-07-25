@@ -26,6 +26,7 @@ class WingIt extends Component {
       thisPlayer: false,
       category: false,
       question: "test question",
+      playerVotes: {},
       realQuestion: false
     }
   }
@@ -36,7 +37,12 @@ class WingIt extends Component {
 
     // Message Handling
     this.socket.on('respond-all-players', data => {
-      this.setState({ players: data });
+      // init player votes
+      const votes = {};
+      for (let player of data){
+        votes[player.name] = 0;
+      }
+      this.setState({ players: data, playerVotes: votes });
     })
 
     this.socket.on('respond-player', data => {
@@ -59,27 +65,14 @@ class WingIt extends Component {
     })
 
     this.socket.on('respond-real-question', data => {
-      console.log(`[client] - getting real question ${data.realQuestion}`)
       this.setState({ realQuestion: data.realQuestion })
     })
 
-  //   this.socket.on('update-vote-count', data => {
+    this.socket.on('update-vote-count', data => {
 
-  //     let players = this.state.players;
-
-  //     console.log('data', data)
-
-  //     //players[data.voteFor].votes = data.updatedCount;
-
-  //     players.forEach( player => {
-  //       if (player.name == data.voteFor){
-  //         player.votes = data.updatedCount
-  //       }
-  //     })
-  //     console.log(players)
-  //     this.setState({ players: players })
-  //     console.log('[client] changed vote count!', this.state.players)
-  //   })
+      this.setState({ playerVotes: data.votes })
+      console.log('[client] changed vote count!', this.state.playerVotes)
+    })
   }
 
   // Class Methods
@@ -124,6 +117,10 @@ class WingIt extends Component {
     }
   };
 
+  getVotesForPlayer = (player) => {
+    return this.state.playerVotes[player];
+  }
+
   sendVote = (voteFor) => {
     console.log(`[client] ${this.state.thisPlayer.username} is voting for ${voteFor}`)
     this.socket.emit('send-vote', { voteFor: voteFor, roomCode: this.state.roomCode });
@@ -162,7 +159,8 @@ class WingIt extends Component {
                 realQuestion={this.state.realQuestion} 
                 player={this.state.thisPlayer}
                 sendVote={this.sendVote}
-                category={this.state.category}/>
+                category={this.state.category}
+                getVotesForPlayer={this.getVotesForPlayer}/>
               );
       case 5:
         return <FakerLost category={this.state.category} />
