@@ -128,8 +128,6 @@ io.on('connection', function (socket) {
       .finally( () => {
         knex.destroy;
       })
-
-
   })
 
   socket.on('reading-question', (data) => {
@@ -143,6 +141,16 @@ io.on('connection', function (socket) {
   socket.on('request-real-question', (data) => {
     const realQuestion = socketApi.getRealQuestion(data.roomCode);
     io.in(data.roomCode).emit('respond-real-question', { realQuestion: realQuestion})
+  });
+
+  socket.on('send-vote', (data) => {
+
+    console.log(`${socket.username} is voting for ${data.voteFor}`)
+
+    const hostId = socketApi.getHost(data.roomCode);
+    const round = io.sockets.connected[hostId].game.currentRound;
+    round.voteFor(data.voteFor, socket.username);
+    console.log(round.countVotes(data.votefor))
   })
 
 });
