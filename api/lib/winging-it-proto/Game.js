@@ -12,6 +12,7 @@ class Game {
   }
 
   newRound(question, type) {
+    this.roundNumber += 1;
     this.currentRound = new Round(question, this.players, type)
   }
 

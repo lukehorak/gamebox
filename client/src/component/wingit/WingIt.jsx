@@ -26,6 +26,7 @@ class WingIt extends Component {
       thisPlayer: false,
       category: false,
       question: "test question",
+      playerVotes: {},
       realQuestion: false
     }
   }
@@ -36,12 +37,20 @@ class WingIt extends Component {
 
     // Message Handling
     this.socket.on('respond-all-players', data => {
-      this.setState({ players: data });
+      // init player votes
+      const votes = {};
+      for (let player of data){
+        votes[player.name] = 0;
+      }
+      this.setState({ players: data, playerVotes: votes });
+    })
+
+    this.socket.on('set-category', data => {
+      this.setState({ category: data.category })
     })
 
     this.socket.on('respond-player', data => {
       this.setState({ thisPlayer: data.player });
-      console.log(this.state.thisPlayer)
     })
 
     this.socket.on('phase-change', data => {
@@ -57,11 +66,16 @@ class WingIt extends Component {
 
     this.socket.on('send-question', data => {
       this.setState({ question: data.questionText });
-      console.log(JSON.stringify(data))
     })
 
     this.socket.on('respond-real-question', data => {
       this.setState({ realQuestion: data.realQuestion })
+    })
+
+    this.socket.on('update-vote-count', data => {
+
+      this.setState({ playerVotes: data.votes })
+      console.log('[client] changed vote count!', this.state.playerVotes)
     })
   }
 
@@ -86,9 +100,8 @@ class WingIt extends Component {
 
   sendCategory = (category) => {
     this.setState({ category: category })
-    this.socket.emit('send-category', { category: category });
+    this.socket.emit('send-category', { category: category, roomCode: this.state.roomCode });
     this.socket.emit('start-round', { category: category });
-    this.socket.emit('request-real-question', { roomCode: this.state.roomCode })
   }
 
   startClock = () => {
@@ -108,8 +121,12 @@ class WingIt extends Component {
     }
   };
 
+  getVotesForPlayer = (player) => {
+    return this.state.playerVotes[player];
+  }
+
   sendVote = (voteFor) => {
-    console.log(`${this.state.thisPlayer.username} is voting for ${voteFor}`)
+    console.log(`[client] ${this.state.thisPlayer.username} is voting for ${voteFor}`)
     this.socket.emit('send-vote', { voteFor: voteFor, roomCode: this.state.roomCode });
   }
 
@@ -145,14 +162,16 @@ class WingIt extends Component {
                 players={this.state.players}
                 realQuestion={this.state.realQuestion} 
                 player={this.state.thisPlayer}
-                sendVote={this.sendVote}/>
+                sendVote={this.sendVote}
+                category={this.state.category}
+                getVotesForPlayer={this.getVotesForPlayer}/>
               );
       case 5:
-        return <FakerLost />
+        return <FakerLost category={this.state.category} />
       case 6:
-        return <FakerWon />
+        return <FakerWon category={this.state.category} />
       default:
-        return <h1>HELLO DEFAULT</h1>
+        return <h1>HOW DID YOU EVEN END UP HERE?</h1>
     }
   }
 

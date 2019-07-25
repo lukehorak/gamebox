@@ -95,6 +95,7 @@ io.on('connection', function (socket) {
 
   socket.on('send-category', (data) => {
     socket.game.category = data.category;
+    io.in(data.roomCode).emit('set-category', { category: data.category })
     console.log(`game category ==> ${socket.game.category}`)
   })
 
@@ -108,12 +109,11 @@ io.on('connection', function (socket) {
       .orderByRaw('random()')
       .limit(1)
       .then(rows => {
-        console.log('from db--> ', rows[0].question);
-
+        // get questionText from db
         const qText = rows[0].question;
-
-        socket.game.newRound(qText, category);
-    
+        // Start round on server
+        socket.game.newRound(qText, category);   
+        // Signal round start on Clients 
         io.in(socket.game.roomCode).emit('phase-change', { phase: 2 });
         const questionData = socketApi.getQuestionData(socket.game.roomCode, socket.game);
         console.log(questionData);
@@ -122,7 +122,6 @@ io.on('connection', function (socket) {
           console.log(`sending question to ${player.id}`)
           io.to(`${player.id}`).emit('send-question', {questionText: questionText})
         })
-
       }
       )
       .finally( () => {
@@ -131,16 +130,16 @@ io.on('connection', function (socket) {
   })
 
   socket.on('reading-question', (data) => {
-    console.log('starting clock!')
-    setTimeout(function(){
-      io.in(data.roomCode).emit('phase-change', { phase: 4 })
-      }, 8000)
-  });
-
-  // Separate message to get real question, as regular question getting is dependent on a player
-  socket.on('request-real-question', (data) => {
+    console.log('starting clock!');
+    // Send the real question for later
     const realQuestion = socketApi.getRealQuestion(data.roomCode);
     io.in(data.roomCode).emit('respond-real-question', { realQuestion: realQuestion})
+    setTimeout(function(){
+      io.in(data.roomCode).emit('phase-change', { phase: 4 });
+      setTimeout(function(){
+        io.in(data.roomCode).emit('phase-change', { phase: 5 });
+      }, 30000)
+      }, 8000)
   });
 
   socket.on('send-vote', (data) => {
@@ -150,7 +149,12 @@ io.on('connection', function (socket) {
     const hostId = socketApi.getHost(data.roomCode);
     const round = io.sockets.connected[hostId].game.currentRound;
     round.voteFor(data.voteFor, socket.username);
-    console.log(round.countVotes(data.votefor))
+
+    console.log(`votes:\n ${JSON.stringify(round.getAllVotes())}`);
+
+    const votes = round.getAllVotes();
+
+    io.in(data.roomCode).emit('update-vote-count', { votes: votes });
   })
 
 });
@@ -171,7 +175,7 @@ socketApi.getPlayerList = (roomCode) => {
   const players = [];
   ids.forEach( id => {
     const name = socketApi.getPlayerInfo(id);
-    players.push({ id: id, name: name })
+    players.push({ id: id, name: name, votes:0 })
   });
   return players
 }
@@ -197,7 +201,7 @@ socketApi.getRealQuestion = (roomCode) => {
   const hostID = socketApi.getHost(roomCode);
   const round = io.sockets.connected[hostID].game.currentRound;
   console.log(`Getting real question for game room ${roomCode}`)
-  return round.prefix + round.question;
+  return (round.prefix + round.question);
 }
 
 socketApi.getQuestionData = (roomCode, game) => {

@@ -104,6 +104,7 @@ form .room-code{
     overflow-y: scroll;
     scroll-behavior: smooth; 
     margin-bottom: 4em;
+    box-shadow: inset -8px 4px 16px 8px #846a6a;
   }
 
   figure{
