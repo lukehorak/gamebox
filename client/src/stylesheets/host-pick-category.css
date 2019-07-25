@@ -33,6 +33,7 @@ body{
     align-items: center;
     background-color: white;
 }
+
 .title-container{
   display: flex;
   flex-direction: column;
@@ -80,9 +81,10 @@ body{
 }
 
 .confirm-button{
-  width: 16em;
-  height: 4em;
-  border-radius: 1.5em;
+  width: 11em;
+  height: 3em;
+  border-radius: 4em;
+  font-size: 2em;
 }
 
 .chosen-category {
@@ -104,6 +106,7 @@ body{
   font-weight: 900;
   text-align: center;
 }
+
 .confirm-button-footer{
   display: flex;
   flex-direction: column;
@@ -154,4 +157,69 @@ body{
 #count:focus,
 #point:focus{
   outline: none;
+}
+
+@media screen and (min-width: 300px){
+  .category-list-item{
+    font-size: .7em;
+  }
+  .pick-category-title{
+    font-size: .9em;
+  }
+  .confirm-button{
+    margin-top: 0em;
+    font-size: 1.2em;
+  }
+}
+
+@media screen and (min-width: 360px){
+  .category-list-item{
+    font-size: 1em;
+  }
+  .pick-category-title{
+    font-size: 1em;
+  }
+  .confirm-button{
+    font-size: 1.5em;
+  }
+}
+
+@media screen and (min-width: 360px){
+  .pick-category-title{
+    font-size: 1em;
+  }
+  .confirm-button{
+    font-size: 1.5em;
+  }
+}
+
+@media screen and (min-width: 376px){
+  .pick-category-title{
+    font-size: 1em;
+  }
+  .confirm-button{
+    font-size: 2em;
+  }
+  .pick-category-title{
+    font-size: 2em;
+  }
+}
+
+@media screen and (min-width: 1000px){
+  .pick-category-title{
+    font-size: 4em;
+  }
+  .category-list-item{
+    font-size: 2em;
+  }
+  .confirm-button-footer{
+    padding-top: 5em;
+  }
+  .confirm-button{
+  width: 18em;
+  height: 12em;
+  border-radius: 4em;
+  font-size: 2em;
+
+  }
 }

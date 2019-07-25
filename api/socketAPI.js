@@ -2,6 +2,11 @@ const socket_io = require('socket.io');
 const io = socket_io();
 const socketApi = {};
 
+const ENV = process.env.ENV || "development";
+const knexConfig = require("./knexfile");
+const knex = require("knex")(knexConfig[ENV]);
+
+
 const Game = require('./lib/winging-it-proto/Game');
 
 const demoQuestions = {
@@ -97,17 +102,32 @@ io.on('connection', function (socket) {
     const { category } = data;
     socket.game.setFaker();
 
-    const qText = socketApi.getQuestionFromDB(category);
-    socket.game.newRound(qText, category);
+    knex.select('question')
+      .from('wingit')
+      .where('category', '=', category)
+      .orderByRaw('random()')
+      .limit(1)
+      .then(rows => {
+        console.log('from db--> ', rows[0].question);
+
+        const qText = rows[0].question;
+
+        socket.game.newRound(qText, category);
     
-    io.in(socket.game.roomCode).emit('phase-change', { phase: 2 });
-    const questionData = socketApi.getQuestionData(socket.game.roomCode, socket.game);
-    console.log(questionData);
-    questionData.forEach( player => {
-      const questionText = socket.game.currentRound.getQuestion(player.name);
-      console.log(`sending question to ${player.id}`)
-      io.to(`${player.id}`).emit('send-question', {questionText: questionText})
-    })
+        io.in(socket.game.roomCode).emit('phase-change', { phase: 2 });
+        const questionData = socketApi.getQuestionData(socket.game.roomCode, socket.game);
+        console.log(questionData);
+        questionData.forEach( player => {
+          const questionText = socket.game.currentRound.getQuestion(player.name);
+          console.log(`sending question to ${player.id}`)
+          io.to(`${player.id}`).emit('send-question', {questionText: questionText})
+        })
+
+      }
+      )
+      .finally( () => {
+        knex.destroy;
+      })
   })
 
   socket.on('reading-question', (data) => {
@@ -121,6 +141,16 @@ io.on('connection', function (socket) {
   socket.on('request-real-question', (data) => {
     const realQuestion = socketApi.getRealQuestion(data.roomCode);
     io.in(data.roomCode).emit('respond-real-question', { realQuestion: realQuestion})
+  });
+
+  socket.on('send-vote', (data) => {
+
+    console.log(`${socket.username} is voting for ${data.voteFor}`)
+
+    const hostId = socketApi.getHost(data.roomCode);
+    const round = io.sockets.connected[hostId].game.currentRound;
+    round.voteFor(data.voteFor, socket.username);
+    console.log(round.countVotes(data.votefor))
   })
 
 });
