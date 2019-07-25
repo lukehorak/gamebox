@@ -41,7 +41,6 @@ class WingIt extends Component {
 
     this.socket.on('respond-player', data => {
       this.setState({ thisPlayer: data.player });
-      console.log(this.state.thisPlayer)
     })
 
     this.socket.on('phase-change', data => {
@@ -57,12 +56,29 @@ class WingIt extends Component {
 
     this.socket.on('send-question', data => {
       this.setState({ question: data.questionText });
-      console.log(JSON.stringify(data))
     })
 
     this.socket.on('respond-real-question', data => {
       this.setState({ realQuestion: data.realQuestion })
     })
+
+  //   this.socket.on('update-vote-count', data => {
+
+  //     let players = this.state.players;
+
+  //     console.log('data', data)
+
+  //     //players[data.voteFor].votes = data.updatedCount;
+
+  //     players.forEach( player => {
+  //       if (player.name == data.voteFor){
+  //         player.votes = data.updatedCount
+  //       }
+  //     })
+  //     console.log(players)
+  //     this.setState({ players: players })
+  //     console.log('[client] changed vote count!', this.state.players)
+  //   })
   }
 
   // Class Methods
@@ -109,7 +125,7 @@ class WingIt extends Component {
   };
 
   sendVote = (voteFor) => {
-    console.log(`${this.state.thisPlayer.username} is voting for ${voteFor}`)
+    console.log(`[client] ${this.state.thisPlayer.username} is voting for ${voteFor}`)
     this.socket.emit('send-vote', { voteFor: voteFor, roomCode: this.state.roomCode });
   }
 
@@ -152,7 +168,7 @@ class WingIt extends Component {
       case 6:
         return <FakerWon />
       default:
-        return <h1>HELLO DEFAULT</h1>
+        return <h1>HOW DID YOU EVEN END UP HERE?</h1>
     }
   }
 

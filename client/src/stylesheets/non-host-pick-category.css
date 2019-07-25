@@ -106,13 +106,7 @@
 }
 
 
-@media screen and (max-width: 800px){
-  .host-is-choosing-category{
-    font-size: 3em;
-  }
-}
-
-@media screen and (max-width: 320px){
+@media screen and (min-width: 320px){
   .host-is-choosing-category{
     font-size: 1.2em;
   }
@@ -121,9 +115,19 @@
   }
 }
 
+@media screen and (min-width: 800px){
+  .host-is-choosing-category{
+    font-size: 3em;
+  }
+}
+
+
 @media screen and (min-width: 1024px){
   .non-host-cat-footer{
     height: 51.5em;
+  }
+  .non-host-category-body{
+    height: 20em;
   }
 }
 
