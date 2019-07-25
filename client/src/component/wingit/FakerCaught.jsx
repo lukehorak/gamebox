@@ -1,17 +1,15 @@
 import React, { Component } from 'react';
-import GameOverFooter from './Game_Over_Footer';
+import GameOverFooter from './GameOverFooter';
 import GameNav from './GameNav';
 
   class FakerLost extends Component {
-    constructor(props){
-      super()
-    }
+
     render(){
       return (
           <div className="faker-wins-center-wrapper">
             <GameNav/> 
-              <h1 className="faker-won-h1">You caught the faker!</h1>
-            <GameOverFooter/>
+              <h1 className="faker-won-h1">{this.props.faker} WAS wingin' it. BUSTED!</h1>
+            <GameOverFooter nextPhase={this.props.nextPhase}/>
           </div>
       );
     };

@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import GameNav from './GameNav';
-
+import FakerCaught from './FakerCaught';
+import WrongPerson from './WrongPerson';
+import NotEnoughVotes from './NotEnoughVotes';
 
 class RoundResult extends Component {
-
-  // result;
 
   render() {
     if(!this.props.roundResult){
@@ -21,9 +21,9 @@ class RoundResult extends Component {
 
         <div className="round-results-main-container">
 
-          {this.props.result === "not-enough-votes" && <h1>Not Enough Votes</h1>}
-          {this.props.result === "not-the-faker" && <h1>Not the Faker</h1>}
-          {this.props.result === "faker-caught" && <h1>Faker Caught</h1>}
+          {this.props.roundResult === "not-enough-votes" && <NotEnoughVotes player={this.props.player} category={this.props.category} />}
+          {this.props.roundResult === "not-the-faker" && <WrongPerson player={this.props.player} category={this.props.category} faker={this.props.faker} />}
+          {this.props.roundResult === "faker-caught" && <FakerCaught player={this.props.player} category={this.props.category} faker={this.props.faker} />}
 
         </div>
       

@@ -81,7 +81,7 @@ class WingIt extends Component {
     });
 
     this.socket.on('respond-results', data => {
-      this.setState({ roundResult: data.resultCode,  })
+      this.setState({ roundResult: data.resultCode, faker: data.faker })
     })
   }
 

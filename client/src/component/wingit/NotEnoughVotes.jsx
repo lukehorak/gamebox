@@ -4,7 +4,7 @@ import React, { Component } from 'react';
       return(
         <div className="not-enough-votes-container">
           <h1 className="not-enough-votes">
-            Close but no cigar! You didn't have enough votes to catch the person Wingin' it.
+            Uh oh! Nobody got enough votes, so whoever was Wingin' It is still at large!
           </h1>
         </div>
       )

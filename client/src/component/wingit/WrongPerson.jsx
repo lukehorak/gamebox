@@ -4,7 +4,7 @@ import React, { Component } from 'react';
       return(
         <div className="wrong-person-container">
           <h1 className="wrong-person">
-            You did it! Congratulations! You all voted for the wrong person.
+            Good news! You all voted for the same person! Bad news is, {this.props.faker} WASN'T the faker...
           </h1>
         </div>
       );

@@ -161,7 +161,7 @@ io.on('connection', function (socket) {
     console.log('results requested')
     const results = socket.game.currentRound.exposeFaker();
     const resultCode = socketApi.getRoundResults(results);
-    io.in(data.roomCode).emit('respond-results', { resultCode: resultCode, player: results.player })
+    io.in(data.roomCode).emit('respond-results', { resultCode: resultCode, faker: results.player })
   })
   
 });
