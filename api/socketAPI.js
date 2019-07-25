@@ -138,7 +138,7 @@ io.on('connection', function (socket) {
       io.in(data.roomCode).emit('phase-change', { phase: 4 });
       setTimeout(function(){
         io.in(data.roomCode).emit('phase-change', { phase: 5 });
-      }, 5000)
+      }, 30000)
       }, 8000)
   });
 
@@ -155,9 +155,28 @@ io.on('connection', function (socket) {
     const votes = round.getAllVotes();
 
     io.in(data.roomCode).emit('update-vote-count', { votes: votes });
-  })
+  });
 
+  socket.on('request-round-results', (data) => {
+    console.log('results requested')
+    const results = socket.game.currentRound.exposeFaker();
+    const resultCode = socketApi.getRoundResults(results);
+    io.in(data.roomCode).emit('respond-results', { resultCode: resultCode, player: results.player })
+  })
+  
 });
+
+socketApi.getRoundResults = (results) => {
+  const{ checked, foundFaker } = results;
+  if (!checked){
+    return 'not-enough-votes';
+  }
+  if (foundFaker) {
+    return 'faker-caught';
+  }
+  return 'not-the-faker';
+  
+}
 
 socketApi.getHost = (roomCode) => {
   const sockets = socketApi.getRoom(roomCode).sockets;

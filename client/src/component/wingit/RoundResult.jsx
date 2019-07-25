@@ -7,6 +7,12 @@ class RoundResult extends Component {
   // result;
 
   render() {
+    if(!this.props.roundResult){
+      this.props.getRoundResults();
+    }
+    else{
+      console.log(`round result ===> ${this.props.roundResult}`)
+    }
 
     return (
       <div className="round-results-page-wrapper">

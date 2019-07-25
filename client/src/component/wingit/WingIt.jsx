@@ -29,6 +29,8 @@ class WingIt extends Component {
       category: false,
       question: "test question",
       playerVotes: {},
+      roundResult:false,
+      faker: false,
       realQuestion: false
     }
   }
@@ -75,8 +77,11 @@ class WingIt extends Component {
     })
 
     this.socket.on('update-vote-count', data => {
-
       this.setState({ playerVotes: data.votes })
+    });
+
+    this.socket.on('respond-results', data => {
+      this.setState({ roundResult: data.resultCode,  })
     })
   }
 
@@ -129,6 +134,12 @@ class WingIt extends Component {
     this.socket.emit('send-vote', { voteFor: voteFor, roomCode: this.state.roomCode });
   }
 
+  getRoundResults = () => {
+    if (this.state.thisPlayer.isHost){
+      this.socket.emit('request-round-results', { roomCode: this.state.roomCode });
+    }
+  }
+
   handleCase = (phase) => {
     switch (phase) {
       case 0:
@@ -168,7 +179,10 @@ class WingIt extends Component {
       case 5:
         return <RoundResult
                 player={this.state.thisPlayer}
-                category={this.state.category} />
+                category={this.state.category}
+                getRoundResults={this.getRoundResults}
+                roundResult={this.state.roundResult}
+                faker={this.state.faker} />
         //return <FakerLost category={this.state.category} />
       case 6:
         //return <FakerWon category={this.state.category} />
