@@ -134,7 +134,10 @@ io.on('connection', function (socket) {
     const realQuestion = socketApi.getRealQuestion(data.roomCode);
     io.in(data.roomCode).emit('respond-real-question', { realQuestion: realQuestion})
     setTimeout(function(){
-      io.in(data.roomCode).emit('phase-change', { phase: 4 })
+      io.in(data.roomCode).emit('phase-change', { phase: 4 });
+      setTimeout(function(){
+        io.in(data.roomCode).emit('phase-change', { phase: 5 });
+      }, 30000)
       }, 8000)
   });
 
@@ -145,10 +148,12 @@ io.on('connection', function (socket) {
     const hostId = socketApi.getHost(data.roomCode);
     const round = io.sockets.connected[hostId].game.currentRound;
     round.voteFor(data.voteFor, socket.username);
-    const updatedCount = round.countVotes(data.votefor);
-    console.log(`votes for ${data.voteFor}: `, updatedCount)
 
-    io.in(data.roomCode).emit('update-vote-count', { voteFor: data.voteFor, updatedCount: updatedCount })
+    console.log(`votes:\n ${JSON.stringify(round.getAllVotes())}`);
+
+    const votes = round.getAllVotes();
+
+    io.in(data.roomCode).emit('update-vote-count', { votes: votes });
   })
 
 });
@@ -195,7 +200,6 @@ socketApi.getRealQuestion = (roomCode) => {
   const hostID = socketApi.getHost(roomCode);
   const round = io.sockets.connected[hostID].game.currentRound;
   console.log(`Getting real question for game room ${roomCode}`)
-  console.log(`[server] - round: ${round}`)
   return (round.prefix + round.question);
 }
 
