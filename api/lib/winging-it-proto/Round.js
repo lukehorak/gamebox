@@ -44,12 +44,13 @@ class Round {
 
   voteFor(player, voter) {
     this.playerVotes[voter] = player;
+    console.log("player-->",player, "voter -->", voter, this.playerVotes)
   }
 
   countVotes(player) {
     let count = 0;
     for (let p in this.playerVotes){
-      if (this.playerVotes[p] === player){
+      if (this.playerVotes[p] == player){
         count += 1
       }
     }

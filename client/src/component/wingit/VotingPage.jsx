@@ -10,9 +10,9 @@ import VoteButton from './VoteButton';
 
     render(){
       const players = this.props.players.map( player => {
-        return (
-          <VoteButton keyProp={player.id} name={player.name} sendVote={this.vote}/>
-        );
+        if (this.props.player.username !== player.name){
+          return <VoteButton keyProp={player.id} name={player.name} sendVote={this.vote}/>
+        }
       });
       return(
         <div className="main-voting-page-wrapper">
