@@ -41,7 +41,6 @@ class WingIt extends Component {
 
     this.socket.on('respond-player', data => {
       this.setState({ thisPlayer: data.player });
-      console.log(this.state.thisPlayer)
     })
 
     this.socket.on('phase-change', data => {
@@ -57,30 +56,29 @@ class WingIt extends Component {
 
     this.socket.on('send-question', data => {
       this.setState({ question: data.questionText });
-      console.log(JSON.stringify(data))
     })
 
     this.socket.on('respond-real-question', data => {
       this.setState({ realQuestion: data.realQuestion })
     })
 
-    this.socket.on('update-vote-count', data => {
+  //   this.socket.on('update-vote-count', data => {
 
-      let players = this.state.players;
+  //     let players = this.state.players;
 
-      console.log('data', data)
+  //     console.log('data', data)
 
-      //players[data.voteFor].votes = data.updatedCount;
+  //     //players[data.voteFor].votes = data.updatedCount;
 
-      players.forEach( player => {
-        if (player.name == data.voteFor){
-          player.votes = data.updatedCount
-        }
-      })
-      console.log(players)
-      this.setState({ players: players })
-      console.log('[client] changed vote count!', this.state.players)
-    })
+  //     players.forEach( player => {
+  //       if (player.name == data.voteFor){
+  //         player.votes = data.updatedCount
+  //       }
+  //     })
+  //     console.log(players)
+  //     this.setState({ players: players })
+  //     console.log('[client] changed vote count!', this.state.players)
+  //   })
   }
 
   // Class Methods
