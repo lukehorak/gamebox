@@ -129,7 +129,9 @@ io.on('connection', function (socket) {
   })
 
   socket.on('reading-question', (data) => {
-    console.log('starting clock!')
+    console.log('starting clock!');
+    const realQuestion = socketApi.getRealQuestion(data.roomCode);
+    io.in(data.roomCode).emit('respond-real-question', { realQuestion: realQuestion})
     setTimeout(function(){
       io.in(data.roomCode).emit('phase-change', { phase: 4 })
       }, 8000)
@@ -137,8 +139,9 @@ io.on('connection', function (socket) {
 
   // Separate message to get real question, as regular question getting is dependent on a player
   socket.on('request-real-question', (data) => {
-    const realQuestion = socketApi.getRealQuestion(data.roomCode);
-    io.in(data.roomCode).emit('respond-real-question', { realQuestion: realQuestion})
+    
+    console.log(`[server] - sending real question to ${data.roomCode}`)
+    //io.in(data.roomCode).emit('respond-real-question', { realQuestion: realQuestion})
   });
 
   socket.on('send-vote', (data) => {
@@ -198,7 +201,8 @@ socketApi.getRealQuestion = (roomCode) => {
   const hostID = socketApi.getHost(roomCode);
   const round = io.sockets.connected[hostID].game.currentRound;
   console.log(`Getting real question for game room ${roomCode}`)
-  return round.prefix + round.question;
+  console.log(`[server] - round: ${round}`)
+  return (round.prefix + round.question);
 }
 
 socketApi.getQuestionData = (roomCode, game) => {
