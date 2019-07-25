@@ -172,6 +172,7 @@ class WingIt extends Component {
         //return <FakerLost category={this.state.category} />
       case 6:
         //return <FakerWon category={this.state.category} />
+        break;
       default:
         return <h1>HOW DID YOU EVEN END UP HERE?</h1>
     }
