@@ -21,8 +21,10 @@ import GameNav from './GameNav';
           <hr className="voting-hr"/>
           </div>
           <div className="player-container">
-            <div className="column">
-              {players}
+            <div className="voting-column">
+              <span className="player-voting-card">
+                {players}
+              </span>
             </div>
           </div>
           <section 
