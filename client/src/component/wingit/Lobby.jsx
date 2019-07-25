@@ -9,7 +9,7 @@ class Lobby extends Component {
       return (
         <div className="player-card-container">
             <div className="column">
-              <span key={player.playerId} className="player-menu-card">
+              <span key={player.id} className="player-menu-card">
                 <h2>{player.name}</h2>
               </span>
             </div>
