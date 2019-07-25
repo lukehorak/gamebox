@@ -14,92 +14,76 @@ exports.seed = function (knex) {
           answer: 'SHOTGUN',
         },
         {
-          question: 'you have never seen Batman in real life',
-          answer: 'hand',
+          question: 'Jacobite Cruises purchased unusual insurance to protect it from damage caused by _____.',
+          answer: 'THE LOCH NESS MONSTER',
         },
         {
-          question: 'you are currently wearing glasses(not contacts)',
-          answer: 'hand',
+          question: 'The sound of E.T. walking was made by someone squishing _____.',
+          answer: 'JELL-O',
         },
         {
-          question: 'you see dead people',
-          answer: 'hand',
+          question: 'Oddly enough, Albert Einstein\'s eyeballs can be found in a _____ in New York City.',
+          answer: 'SAFE DEPOSIT BOX',
         },
         {
-          question: 'you know who Ned Stark is',
-          answer: 'hand',
+          question: 'In 2013, a wealthy Michagan man bought the house next to his ex -wife and erected a giant bronze statue of a _____.',
+          answer: 'MIDDLE FINGER',
         },
         {
-          question: 'you have never been to a job interview',
-          answer: 'hand',
+          question: 'For $180, the Shizuka New York skin care salon offeres the unusual but traditional Japanese facial that is part rice bran and part _____.',
+          answer: 'BIRD POOP',
         },
         {
-          question: 'you ever had a parking ticket',
-          answer: 'hand',
+          question: 'The name for a group of porcupines.',
+          answer: 'PRICKLE',
         },
         {
-          question: 'you have seen a Marvel movie',
-          answer: 'hand',
+          question: 'The name of the dog that won the 2012 World\'s Ugliest Dog Competition.',
+          answer: 'MUGLY',
         },
         {
-          question: 'you are currently wearing a shirt with buttons',
-          answer: 'hand',
+          question: 'The original name for the search engine that became Google.',
+          answer: 'BACKRUB',
         },
         {
-          question: 'you hate puppies',
-          answer: 'hand',
+          question: 'Miley Cyrus\'s real first name.',
+          answer: 'DESTINY',
         },
         {
-          question: 'you like this game',
-          answer: 'hand',
+          question: 'In 1976 boxing legend Muhammad Ali released an education children\'s album titled "Ali and His Gang Vs. Mr. _____."',
+          answer: 'TOOTH DECAY',
         },
         {
-          question: 'is sitting to your right',
-          answer: 'point',
+          question: 'On January 13, 2014, U.S. Secretary of State John Kerry presented to Russian Foreign Minister Sergei Lavrow the odd gift of two very large _____.',
+          answer: 'POTATOES',
         },
         {
-          question: 'is wearing red',
-          answer: 'point',
+          question: 'Huggies Brazil developed a phone app that tells you when a baby\'s diaper is wet. The app is called _____.',
+          answer: 'TWEETPEE',
         },
         {
-          question: 'you would eat first if you were all trapped on a desert island',
-          answer: 'point',
+          question: 'Tashirojima is an island off of Japan that is complete overrun by _____.',
+          answer: 'CATS',
         },
         {
-          question: 'is the tallest person playing',
-          answer: 'point',
+          question: 'In 2003, Morocco made the highly unusual offer to send 2,000 _____ to assist the United States\'war efforts in Iraq.',
+          answer: 'MONKEYS',
         },
         {
-          question: 'is your favourite developer',
-          answer: 'point',
+          question: 'In 2007, to make a point, Nebraskain State Sen. Ernie Chambers filed a frivolous lawsuit against _____.',
+          answer: 'GOD',
         },
         {
-          question: 'the number of pizza slices have you had today',
-          answer: 'count',
+          question: 'In 2009, a Russian man shocked the medical world when it was discovered he had a 5 centimeter long _____ growing in his lung.',
+          answer: 'TREE BRANCH',
         },
         {
-          question: 'the number of tentacles an octopus have',
-          answer: 'count',
+          question: 'Moviegoers who use their cell phones at the Prince Charles Cinema in London are escorted out by people dressed as ____.',
+          answer: 'NINJAS',
         },
         {
-          question: '1 + 1 =',
-          answer: 'count',
-        },
-        {
-          question: 'the number of wheels an airplane have',
-          answer: 'count',
-        },
-        {
-          question: 'how many feet you are tall',
-          answer: 'count',
-        },
-        {
-          question: 'the number of meals you\'ve eaten today',
-          answer: 'count',
-        },
-        {
-          question: 'the Disney movies you\'ve seen this year',
-          answer: 'count',
+          question: 'Over the course of 35 years, artist Scott Weaver has built a replica of the city of San Francisco using over 100,000 ______.',
+          answer: 'TOOTHPICKS',
         }
 
 
