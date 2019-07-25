@@ -130,18 +130,12 @@ io.on('connection', function (socket) {
 
   socket.on('reading-question', (data) => {
     console.log('starting clock!');
+    // Send the real question for later
     const realQuestion = socketApi.getRealQuestion(data.roomCode);
     io.in(data.roomCode).emit('respond-real-question', { realQuestion: realQuestion})
     setTimeout(function(){
       io.in(data.roomCode).emit('phase-change', { phase: 4 })
       }, 8000)
-  });
-
-  // Separate message to get real question, as regular question getting is dependent on a player
-  socket.on('request-real-question', (data) => {
-    
-    console.log(`[server] - sending real question to ${data.roomCode}`)
-    //io.in(data.roomCode).emit('respond-real-question', { realQuestion: realQuestion})
   });
 
   socket.on('send-vote', (data) => {
