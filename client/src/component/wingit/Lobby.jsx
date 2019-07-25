@@ -4,6 +4,22 @@ import CreateGameForm from './CreateGameForm';
 
 class Lobby extends Component {
 
+  listPlayers = (players) => {
+    const playerList = players.map(function (player) {
+      return (
+        <div className="player-card-container">
+            <div className="column">
+              <span key={player.playerId} className="player-menu-card">
+                <h2>{player.name}</h2>
+              </span>
+            </div>
+          </div>
+
+      );
+    });
+    return playerList;
+  };
+
   render() {
     return (
       <div>
@@ -38,7 +54,7 @@ class Lobby extends Component {
 
           {this.props.roomCode &&
             <div className="player-list-container">
-              {this.props.listPlayers(this.props.players)}
+              {this.listPlayers(this.props.players)}
             </div>}
 
           { this.props.isHost && <button className="start-game-button" onClick={this.props.startGame}>Start Game</button>}

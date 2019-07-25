@@ -93,22 +93,6 @@ class WingIt extends Component {
     this.socket.emit('reading-question', { roomCode: this.state.roomCode })
   }
 
-  listPlayers = (players) => {
-    const playerList = players.map(function (player) {
-      return (
-        <div className="player-card-container">
-            <div className="column">
-              <span key={player.playerId} className="player-menu-card">
-                <h2>{player.name}</h2>
-              </span>
-            </div>
-          </div>
-
-      );
-    });
-    return playerList;
-  };
-
   setStyle = (category) => {
     switch(category){
       case 'hand':
@@ -131,7 +115,6 @@ class WingIt extends Component {
                 createGame={this.createGame}
                 joinGame={this.joinGame}
                 startGame={this.startGame}
-                listPlayers={this.listPlayers}
                 players={this.state.players}
                 isHost={this.state.thisPlayer.isHost} />
               );
