@@ -6,51 +6,51 @@ exports.seed = function (knex) {
       return knex('wingit').insert([
 
         {
-          question: 'You drank water today',
+          question: 'you drank water today',
           category: 'hand',
         },
         {
-          question: 'You are over 6ft tall',
+          question: 'you are over 6ft tall',
           category: 'hand',
         },
         {
-          question: 'You have never seen Batman in real life',
+          question: 'you have never seen Batman in real life',
           category: 'hand',
         },
         {
-          question: 'You are currently wearing glasses(not contacts)',
+          question: 'you are currently wearing glasses(not contacts)',
           category: 'hand',
         },
         {
-          question: 'You see dead people',
+          question: 'you see dead people',
           category: 'hand',
         },
         {
-          question: 'You know who Ned Stark is',
+          question: 'you know who Ned Stark is',
           category: 'hand',
         },
         {
-          question: 'You have never been to a job interview',
+          question: 'you have never been to a job interview',
           category: 'hand',
         },
         {
-          question: 'You ever had a parking ticket',
+          question: 'you ever had a parking ticket',
           category: 'hand',
         },
         {
-          question: 'You have seen a Marvel movie',
+          question: 'you have seen a Marvel movie',
           category: 'hand',
         },
         {
-          question: 'You are currently wearing a shirt with buttons',
+          question: 'you are currently wearing a shirt with buttons',
           category: 'hand',
         },
          {
-           question: 'You hate puppies',
+           question: 'you hate puppies',
           category: 'hand',
          },
         {
-          question: 'You like this game',
+          question: 'you like this game',
           category: 'hand',
         },
         {
@@ -74,11 +74,11 @@ exports.seed = function (knex) {
           category: 'point',
         },
         {
-          question: 'How many pizza slices have you had today',
+          question: 'the number of pizza slices have you had today',
           category: 'count',
         }, 
         {
-          question: 'How many tentacles does an octopus have',
+          question: 'the number of tentacles an octopus have',
           category: 'count',
         }, 
         {
@@ -86,19 +86,19 @@ exports.seed = function (knex) {
           category: 'count',
         }, 
         {
-          question: 'How many wheels an airplane have',
+          question: 'the number of wheels an airplane have',
           category: 'count',
         },
         {
-          question: 'feet you are tall',
+          question: 'how many feet you are tall',
           category: 'count',
         },
         {
-          question: 'Number of meals you\'ve eaten today',
+          question: 'the number of meals you\'ve eaten today',
           category: 'count',
         },
         {
-          question: 'Disney movies you\'ve seen this year',
+          question: 'the Disney movies you\'ve seen this year',
           category: 'count',
         }
 
