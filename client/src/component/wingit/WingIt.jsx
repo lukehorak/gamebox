@@ -59,6 +59,7 @@ class WingIt extends Component {
     })
 
     this.socket.on('respond-real-question', data => {
+      console.log(`[client] - getting real question ${data.realQuestion}`)
       this.setState({ realQuestion: data.realQuestion })
     })
 
@@ -104,7 +105,6 @@ class WingIt extends Component {
     this.setState({ category: category })
     this.socket.emit('send-category', { category: category });
     this.socket.emit('start-round', { category: category });
-    this.socket.emit('request-real-question', { roomCode: this.state.roomCode })
   }
 
   startClock = () => {
