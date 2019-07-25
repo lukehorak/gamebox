@@ -6,100 +6,100 @@ exports.seed = function (knex) {
       return knex('close_enough').insert([
 
         {
-          question: 'you drank water today',
-          category: 'hand',
+          question: 'In 2002, Bruce Willis sent 12,000 boxes of _____ to U.S. soldiers in Afghanistan.',
+          answer: 'GIRL SCOUT COOKIES',
         },
         {
-          question: 'you are over 6ft tall',
-          category: 'hand',
+          question: 'A woman in Muncie, Indiana was hospitalized after trying to remove a callus on her foot with a _____.',
+          answer: 'SHOTGUN',
         },
         {
           question: 'you have never seen Batman in real life',
-          category: 'hand',
+          answer: 'hand',
         },
         {
           question: 'you are currently wearing glasses(not contacts)',
-          category: 'hand',
+          answer: 'hand',
         },
         {
           question: 'you see dead people',
-          category: 'hand',
+          answer: 'hand',
         },
         {
           question: 'you know who Ned Stark is',
-          category: 'hand',
+          answer: 'hand',
         },
         {
           question: 'you have never been to a job interview',
-          category: 'hand',
+          answer: 'hand',
         },
         {
           question: 'you ever had a parking ticket',
-          category: 'hand',
+          answer: 'hand',
         },
         {
           question: 'you have seen a Marvel movie',
-          category: 'hand',
+          answer: 'hand',
         },
         {
           question: 'you are currently wearing a shirt with buttons',
-          category: 'hand',
+          answer: 'hand',
         },
         {
           question: 'you hate puppies',
-          category: 'hand',
+          answer: 'hand',
         },
         {
           question: 'you like this game',
-          category: 'hand',
+          answer: 'hand',
         },
         {
           question: 'is sitting to your right',
-          category: 'point',
+          answer: 'point',
         },
         {
           question: 'is wearing red',
-          category: 'point',
+          answer: 'point',
         },
         {
           question: 'you would eat first if you were all trapped on a desert island',
-          category: 'point',
+          answer: 'point',
         },
         {
           question: 'is the tallest person playing',
-          category: 'point',
+          answer: 'point',
         },
         {
           question: 'is your favourite developer',
-          category: 'point',
+          answer: 'point',
         },
         {
           question: 'the number of pizza slices have you had today',
-          category: 'count',
+          answer: 'count',
         },
         {
           question: 'the number of tentacles an octopus have',
-          category: 'count',
+          answer: 'count',
         },
         {
           question: '1 + 1 =',
-          category: 'count',
+          answer: 'count',
         },
         {
           question: 'the number of wheels an airplane have',
-          category: 'count',
+          answer: 'count',
         },
         {
           question: 'how many feet you are tall',
-          category: 'count',
+          answer: 'count',
         },
         {
           question: 'the number of meals you\'ve eaten today',
-          category: 'count',
+          answer: 'count',
         },
         {
           question: 'the Disney movies you\'ve seen this year',
-          category: 'count',
+          answer: 'count',
         }
 
 
