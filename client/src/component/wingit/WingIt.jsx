@@ -45,6 +45,10 @@ class WingIt extends Component {
       this.setState({ players: data, playerVotes: votes });
     })
 
+    this.socket.on('set-category', data => {
+      this.setState({ category: data.category })
+    })
+
     this.socket.on('respond-player', data => {
       this.setState({ thisPlayer: data.player });
     })
@@ -96,7 +100,7 @@ class WingIt extends Component {
 
   sendCategory = (category) => {
     this.setState({ category: category })
-    this.socket.emit('send-category', { category: category });
+    this.socket.emit('send-category', { category: category, roomCode: this.state.roomCode });
     this.socket.emit('start-round', { category: category });
   }
 
