@@ -138,7 +138,7 @@ io.on('connection', function (socket) {
       io.in(data.roomCode).emit('phase-change', { phase: 4 });
       setTimeout(function(){
         io.in(data.roomCode).emit('phase-change', { phase: 5 });
-      }, 30000)
+      }, 5000)
       }, 8000)
   });
 

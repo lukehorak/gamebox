@@ -15,9 +15,9 @@ class RoundResult extends Component {
 
         <div className="round-results-main-container">
 
-          {this.props.result == "not-enough-votes" && <insert not enough votes component here>}
-          {this.props.result == "not-the-faker" && <insert faker still at large component>}
-          {this.props.result == "faker-caught" && <insert faker caught component>}
+          {this.props.result == "not-enough-votes" && <h1>Not Enough Votes</h1>}
+          {this.props.result == "not-the-faker" && <h1>Not the Faker</h1>}
+          {this.props.result == "faker-caught" && <h1>Faker Caught</h1>}
 
         </div>
       
@@ -28,5 +28,6 @@ class RoundResult extends Component {
       </div>
     );
   };
+}
 
 export default RoundResult;

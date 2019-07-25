@@ -4,8 +4,10 @@ import Lobby from './Lobby';
 import PickCategory from './PickCategory';
 import DisplayQuestion from './DisplayQuestion';
 import VotingPage from './VotingPage';
-import FakerLost from './Faker_Loss';
-import FakerWon from './Faker_win';
+import RoundResult from './RoundResult';
+
+// import FakerLost from './Faker_Loss';
+// import FakerWon from './Faker_win';
 import '../../stylesheets/Home.css';
 import '../../stylesheets/wingit.css';
 import '../../stylesheets/host-pick-category.css';
@@ -167,9 +169,12 @@ class WingIt extends Component {
                 getVotesForPlayer={this.getVotesForPlayer}/>
               );
       case 5:
-        return <FakerLost category={this.state.category} />
+        return <RoundResult
+                player={this.state.thisPlayer}
+                category={this.state.category} />
+        //return <FakerLost category={this.state.category} />
       case 6:
-        return <FakerWon category={this.state.category} />
+        //return <FakerWon category={this.state.category} />
       default:
         return <h1>HOW DID YOU EVEN END UP HERE?</h1>
     }
