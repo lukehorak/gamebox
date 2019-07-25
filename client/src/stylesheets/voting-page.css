@@ -84,7 +84,7 @@
   }
 }
 
-@media screen and (min-width: 375px){
+@media screen and (min-width: 360px){
   .the-question{
     font-size: 1.5em;
   }
