@@ -7,9 +7,9 @@ class Lobby extends Component {
   listPlayers = (players) => {
     const playerList = players.map(function (player) {
       return (
-        <div className="player-card-container">
+        <div key={player.id} className="player-card-container">
             <div className="column">
-              <span key={player.id} className="player-menu-card">
+              <span className="player-menu-card">
                 <h2>{player.name}</h2>
               </span>
             </div>

@@ -39,7 +39,7 @@
 }
 
 .voting-instructions{
-  margin-top: 1em;
+  margin-top: 4em;
   font-size: 2em;
 }
 
@@ -95,29 +95,36 @@
     font-size: 1.5em;
   }
   .player-vote-button{
-    font-size: 1em;
+    font-size: 0.5px;
+  }
+  .voting-instructions{
+    margin-top: 5em;
+  }
+  .voting-list-container{
+    margin-top: 8em;
   }
 }
 
 @media screen and (min-width: 600px){
 
   .the-question{
-    font-size: 1em;
+    font-size: 2em;
   }
   .question-container{
     height: 15em;
   }
   .voting-instructions{
-    margin-top: 2em;
+    margin-top: 5em;
+    font-size: 2em;
   }
 }
 
 @media screen and (min-width: 800px){
   .the-question{
-    font-size: 2em;
+    font-size: 1em;
   }
   .the-question-was{
-    font-size: 2em;
+    font-size: 1em;
   }
   .voting-instructions{
     padding-top: 0;
@@ -128,24 +135,26 @@
 }
 
 
-@media screen and (min-width: 1023px){
+@media screen and (min-width: 1024px){
   .voting-footer{
     height: 31.9em;
   }
   .voting-main-container{
-      height: 25em;
+      height: 15em;
   }
   .the-question-was{
-    font-size: 3em;
+    font-size: 2em;
+    margin-bottom: 0em;
   }
   .the-question{
-    font-size: 3em;
+    font-size: 2em;
+    margin-bottom: 4em;
   }
   .voting-hr{
     display: none;
   }
   .voting-instructions{
-    font-size: 4em;
+    font-size: 3em;
   } 
 
   .voting-column{
@@ -159,10 +168,16 @@
     margin: 6em 28em 2em 4em;
     font-size: 1em;
   }
+  .voting-card-container{
+    margin-top: 10em;
+  }
 }
 
 @media screen and (min-width: 2000px){
   .question-footer{
     height: 62.7em;
+  }
+  .the-question{
+    font-size: 4em;
   }
 }
