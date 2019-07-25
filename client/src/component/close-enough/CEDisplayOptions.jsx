@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import CategoryButton from './CategoryButton';
 import '../../stylesheets/host-pick-category.css';
 import GameNav from './GameNav';
 

@@ -16,7 +16,7 @@ class CEDisplayQuestion extends Component {
       <div className="main-question-container">
 
         <div className="nav-container">
-          {/* <GameNav player={this.props.player.username}/> */}
+          <GameNav player={this.props.player.username} />
         </div>
 
         <div  className="question-container">
