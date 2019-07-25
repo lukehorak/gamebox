@@ -77,7 +77,6 @@ class WingIt extends Component {
     this.socket.on('update-vote-count', data => {
 
       this.setState({ playerVotes: data.votes })
-      console.log('[client] changed vote count!', this.state.playerVotes)
     })
   }
 
@@ -96,7 +95,6 @@ class WingIt extends Component {
   }
 
   startGame = () => {
-    console.log('starting game')
     this.socket.emit('start-game', { code: this.state.roomCode });
   }
 
@@ -128,7 +126,6 @@ class WingIt extends Component {
   }
 
   sendVote = (voteFor) => {
-    console.log(`[client] ${this.state.thisPlayer.username} is voting for ${voteFor}`)
     this.socket.emit('send-vote', { voteFor: voteFor, roomCode: this.state.roomCode });
   }
 
