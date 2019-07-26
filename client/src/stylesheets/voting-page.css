@@ -38,6 +38,7 @@
   flex-direction: row;
   align-items: center;
   justify-content: center;
+
 }
 
 .vote-count{
@@ -48,6 +49,9 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
+  box-shadow: inset 1px 1px 8px 2px #363535;
+  color: white;
 }
 
 .voting-player-names{
@@ -191,7 +195,16 @@
   .voting-card-container{
     margin-top: 10em;
   }
+  .player-vote-button{
+  font-size: 1em;
+  width: 10em;
+  height: 6em;
+  border: none;
+  margin: 1.8em;
+  border-radius: 4em; 
+  }
 }
+
 
 @media screen and (min-width: 2000px){
   .question-footer{
@@ -199,5 +212,13 @@
   }
   .the-question{
     font-size: 4em;
+  }
+  .player-vote-button{
+    font-size: 1em;
+    width: 12em;
+    height: 8em;
+    border: none;
+    margin: 1.8em;
+    border-radius: 4em; 
   }
 }

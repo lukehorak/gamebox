@@ -9,7 +9,7 @@ import VoteButton from './VoteButton';
         if (this.props.player.username !== player.name){
           const voteNum = this.props.getVotesForPlayer(player.name);
           console.log(`voteNum: ${voteNum}`)
-          return <VoteButton keyProp={player.id} name={player.name} sendVote={this.props.sendVote} votes={voteNum}/>
+          return <VoteButton key={player.id} keyProp={player.id} name={player.name} sendVote={this.props.sendVote} votes={voteNum}/>
         }
       });
       return(
@@ -22,7 +22,7 @@ import VoteButton from './VoteButton';
           <hr className="voting-hr"/>
           </div>
           <div className="player-container">
-            <div className="voting-list-container">
+            <div  className="voting-list-container">
               {players} 
             </div>
           </div>
