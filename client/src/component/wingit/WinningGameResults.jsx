@@ -3,11 +3,13 @@ import React, { Component } from 'react';
 class WinningGameResults extends Component {
   render() {
     return(
-      <div className="losing-stuff-container">
+      <div className="winning-stuff-container">
         <div className="word-wrapper">
-          <h1>You've been duped! {this.props.faker} was Wingin' It the whole time!</h1>
-          <h2>Way to go, {this.props.faker}!</h2>
-          <p>As for the rest of you, well... don't quit your day jobs.</p>
+          <h1>  GAME OVER  </h1>
+          <h2 className="faker-caught">{this.props.faker} got caught wingin' it!</h2>
+          <button  action="/" method="GET" id="home-button">
+            Play more games
+          </button>
         </div>
       </div>
     );

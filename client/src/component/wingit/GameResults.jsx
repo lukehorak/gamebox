@@ -9,8 +9,8 @@ class GameResults extends Component {
     return (
       <div className="game-results-center-wrapper">
         <GameNav category={this.props.category} player={this.props.player.username} />
-        {!this.props.foundFaker && <LosingGameResults/>}
-        {this.props.foundFaker && <WinningGameResults/>}
+        {!this.props.foundFaker && <LosingGameResults faker={this.props.faker}/>}
+        {this.props.foundFaker && <WinningGameResults faker={this.props.faker}/>}
         <section 
         style={{backgroundColor: this.props.setStyle(this.props.category)}} 
         category={this.props.category} 
