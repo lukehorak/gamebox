@@ -66,3 +66,9 @@
     height: 61.7em;
   }
 }
+
+@media screen and (min-height: 1000px){
+  .question-footer{
+    height: 80em;
+  }
+}

@@ -12,26 +12,3 @@
     font-size: 3em;
     font-weight: bolder;
   }
-
-.faker-wins-center-wrapper{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background-color: #F76C6C;
-  color: #F7E9A1;
-}
-
-.game-over-footer{
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  background-color: #24305E;
-  height: 2em;
-  width: 100%;
-}
-
-.voting-page-wrapper{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}

@@ -7,9 +7,11 @@ class WinningGameResults extends Component {
         <div className="word-wrapper">
           <h1>  GAME OVER  </h1>
           <h2 className="faker-caught">{this.props.faker} got caught wingin' it!</h2>
-          <button  action="/" method="GET" id="home-button">
-            Play more games
-          </button>
+          <form  action="/" method="get">
+            <button  id="home-button">
+              Play more games
+            </button>
+          </form>
         </div>
       </div>
     );

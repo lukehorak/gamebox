@@ -4,6 +4,15 @@ import CreateGameForm from './CreateGameForm';
 
 class Lobby extends Component {
 
+  checkForTakenUser = (e, players) => {
+    players.ForEach(function (player) {
+      if(player.name === e.target.value){
+        return true;
+      }
+    }) 
+    return false;
+  }; 
+
   listPlayers = (players) => {
     const playerList = players.map(function (player) {
       return (
@@ -14,7 +23,6 @@ class Lobby extends Component {
               </span>
             </div>
           </div>
-
       );
     });
     return playerList;
