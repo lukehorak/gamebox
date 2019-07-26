@@ -8,7 +8,7 @@ class WrongPerson extends Component {
         <h1 className="wrong-person">
           Good news! You all voted for the same person! Bad news is, {this.props.faker} WASN'T the faker...
           </h1>
-        {this.props.isHost && <RoundOverFooter nextRound={this.props.nextRound} />}
+        {this.props.isHost && <RoundOverFooter setStyle={this.props.setStyle} category={this.props.category} nextRound={this.props.nextRound} />}
       </div>
     );
   };

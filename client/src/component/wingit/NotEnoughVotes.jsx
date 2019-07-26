@@ -7,8 +7,9 @@ class NotEnoughVotes extends Component {
       <div className="not-enough-votes-container">
         <h1 className="not-enough-votes">
           Uh oh! Nobody got enough votes, so whoever was Wingin' It is still at large!
-          </h1>
-        {this.props.isHost && <RoundoverFooter nextRound={this.props.nextRound}/>}
+        </h1>
+        {this.props.isHost && <RoundoverFooter category={this.props.category} setStyle={this.props.setStyle} 
+        nextRound={this.props.nextRound}/>}
       </div>
     )
   }

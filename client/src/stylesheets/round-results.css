@@ -1,0 +1,115 @@
+.not-enough-votes-container,
+.faker-wins-center-wrapper{
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+}
+
+.faker-wins-center-wrapper{
+  background-color: black;
+  color: white;
+}
+.not-enough-votes,
+.faker-won-h1{
+  margin: 2em;
+  font-size: 2em;
+}
+
+.footer-container,
+.rounds-footer{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%; 
+  height: 10em;
+}
+
+.next-button{
+  background-color: #956DD4;
+  border-radius: 0.5em;
+  height: 3em;
+  width: 6em;
+  border: none;
+  margin-top: 3em;
+  box-shadow: -3px 5px 10px #887e7e;
+}
+
+
+@media screen and (min-width: 300px){
+  .not-enough-votes,
+  .faker-won-h1{
+    font-size: 1.5em;
+  }
+  .footer-container,
+  .rounds-footer{
+    height: 13em;
+  }
+}
+
+@media screen and (min-width: 375px){
+  .not-enough-votes,
+  .faker-won-h1{
+    font-size: 1.8em;
+  }
+  .footer-container,
+  .rounds-footer{
+    height: 16.8em;
+  }
+}
+
+@media screen and (min-width: 400px){
+  .not-enough-votes,
+  .faker-won-h1{
+    font-size: 2em;
+  }
+  .footer-container,
+  .rounds-footer{
+    height: 16em;
+  }
+}
+
+
+@media screen and (min-width: 700px){
+  .not-enough-votes,
+  .faker-won-h1{
+    font-size: 3.5em;
+  }
+  .footer-container,
+  .rounds-footer{
+    height: 18em;
+  }
+  .next-button{
+    font-size: 2em;
+    margin-top: 1em;
+  }
+}
+
+@media screen and (min-width: 1000px){
+  .not-enough-votes,
+  .faker-won-h1{
+    font-size: 4em;
+  }
+  .footer-container,
+  .rounds-footer{
+    height: 55em;
+  }
+  .next-button{
+    font-size: 3em;
+    margin-top: 2em;
+  }
+}
+
+@media screen and (min-width: 2000px){
+  .not-enough-votes,
+  .faker-won-h1{
+    font-size: 8em;
+  }
+  .footer-container,
+  .rounds-footer{
+    height: 80em;
+  }
+  .next-button{
+    font-size: 6em;
+    margin-top: 4em;
+  }
+}
