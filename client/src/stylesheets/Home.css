@@ -12,7 +12,8 @@ html, body{
 
 nav{
   height: 5em;
-  background-color: #AC3B61;
+  /* background-color: #AC3B61; */
+  background-color: rgb(47, 48, 49);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -29,6 +30,8 @@ nav{
   font-size: 2em;
   font-weight: 120em;
   color: white;
+  align-items: center;
+  margin: 4em auto;
 }
 
 .name-container{
@@ -42,7 +45,11 @@ nav{
 }
 
 .game-container{
-  margin: 0 0 2em 0;
+  /* margin: 0 0 2em 0; */
+  /* float: center; */
+  /* flex: 25%; */
+  /* padding: 20px; */
+
 }
 
 #join-game{
@@ -76,7 +83,11 @@ form .room-code{
   img{
     width: 10em;
     height: 12em;
-    padding: 1em 1em 0em 1em;
+    /* padding: 1em 1em 0em 1em; */
+    padding: 3px 3px 0px 3px;
+    /* box-shadow: -3px 4px 4px 0 rgb(85, 84, 84); */
+    border-radius: 1em;
+
   }
 
   input{
@@ -99,25 +110,28 @@ form .room-code{
     justify-content: center;
     background-color: rgba(0,0,0, 0.2);
     border-radius: .5em;
-    height: 30em;
+    /* height: 30em; */
     width: 40em;
-    overflow-y: scroll;
+    /* overflow-y: scroll; */
     scroll-behavior: smooth; 
-    margin-bottom: 4em;
+    margin: 4em auto;
     box-shadow: inset -8px 4px 16px 8px #846a6a;
+    display: flex;
+    flex-wrap: wrap;
   }
 
   figure{
     border: 0.1em solid #EEE2DC;
-    background-color: white;
+    background-color:#846a6a;
     border-radius: 0.5em;
-    box-shadow:  -3px 4px 11px 0 rgb(85, 84, 84);
+    box-shadow:  -3px 4px 4px 0 rgb(85, 84, 84);
     margin: 1.5em;
   }
   
   figure .title-container{
     display: flex;
     justify-content: center;
+    /* background-color: rgb(52, 48, 48); */
   }
 
   p .title{
@@ -141,5 +155,12 @@ form .room-code{
     text-decoration: none;
   }
 
-  /* game css */
+  @media screen and (max-width: 992px) {
+    #card-container {
+      width: 80%;
+    }
+  }
 
+  .typist {
+    border-radius: 2em;
+  }
