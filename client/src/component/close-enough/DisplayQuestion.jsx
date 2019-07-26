@@ -11,7 +11,6 @@ class DisplayQuestion extends Component {
   }
 
   render() {
-    console.log(this.props)
     return (
       <div className="main-question-container">
         <div className="nav-container">
