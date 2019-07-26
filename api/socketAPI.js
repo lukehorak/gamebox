@@ -95,6 +95,7 @@ io.on('connection', function (socket) {
 
   socket.on('send-category', (data) => {
     socket.game.category = data.category;
+    io.in(data.roomCode).emit('set-category', { category: data.category })
     console.log(`game category ==> ${socket.game.category}`)
   })
 
