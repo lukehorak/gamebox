@@ -25,7 +25,6 @@ class RoundResult extends Component {
         <section className="rounds-footer">
 
         </section>
-
       </div>
     );
   };
