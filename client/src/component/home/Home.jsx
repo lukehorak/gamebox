@@ -45,7 +45,7 @@ class Home extends Component {
                 <Card
                   cardClass="close-enough"
                   imageSource="http://thumbpress.com/wp-content/uploads/2012/02/Close-enough.jpg"
-                  gameTitle="Close enough!"
+                  gameTitle="Close enough."
                 />
               </span>
 
