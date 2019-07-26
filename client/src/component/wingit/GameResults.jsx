@@ -20,9 +20,8 @@ class GameResults extends Component {
     else {
       stuff = (
         <div>
-          <h1>You did it! {this.props.faker} was Wingin' It the whole time!</h1>
-          <h2>Sucks to be {this.props.faker}!</h2>
-          <p>{this.props.faker}, you should try being better at this game. Maybe that'll help you win!</p>
+          <h1>{this.props.faker} was caught Wingin' It! Great job everyone*!</h1>
+          <p>*(Everyone except {this.props.faker}. Next time, try being better.)</p>
         </div>
       )
     }
