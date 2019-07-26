@@ -13,7 +13,7 @@ import '../../stylesheets/wingit-lobby.css';
 import '../../stylesheets/Question-page.css';
 import '../../stylesheets/non-host-pick-category.css'
 import '../../stylesheets/voting-page.css'
-class WingIt extends Component {
+class CloseEnough extends Component {
 
   constructor(props) {
     super(props)
@@ -159,10 +159,15 @@ class WingIt extends Component {
   render() {
     return (
       <div>
+        Play CLOSE ENOUGH!
+        This game page is for close enough.
+        Not Wingit. <br></br>
+        {/* It looks like Wingit right now, but (a reminder for us) this game is for Close Enough. */}
+
         {this.handleCase(this.state.phase)}
       </div>
     );
   }
 }
 
-export default WingIt;
+export default CloseEnough;
