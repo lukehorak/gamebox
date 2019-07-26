@@ -69,9 +69,10 @@ class Round {
     // The magic number is the required votes to expose a faker (one less than the total of players)
     const magicNumber = Object.keys(this.playerVotes).length - 1
     const response = { checked: false, player: null, foundFaker: false }
-    for (let p in this.playerVotes) {
+    const voteTotals = this.getAllVotes();
+    for (let p in voteTotals) {
       //if (this.playerVotes[p] === magicNumber) {
-      if (this.countVotes(p) === magicNumber) {
+      if (voteTotals[p] === magicNumber) {
         response.checked = true;
         response.player = p;
         response.foundFaker = this.players[p].isFaker;
