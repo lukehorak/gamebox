@@ -23,7 +23,8 @@ class Home extends Component {
           <div id="card-container">
 
 
-            <div className="game-container">
+            <div className="game-container" >
+
               <Card
                 cardClass="wingItCard"
                 imageSource="https://proxy.duckduckgo.com/iu/?u=http%3A%2F%2Ftrophy01.np.community.playstation.net%2Ftrophy%2Fnp%2FNPWR11790_00_01BCC972BD625278DB5379A92D7402F7DD436EA73B%2F809062AAAF2C879E0D3F5FE30421DCBFB37F14A9.PNG&f=1"
