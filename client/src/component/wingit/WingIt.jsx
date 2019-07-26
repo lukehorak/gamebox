@@ -209,7 +209,7 @@ class WingIt extends Component {
                 player={this.state.thisPlayer}
                 faker={this.state.faker}
                 foundFaker={this.state.foundFaker}
-                />
+                setStyle={this.setStyle}/>
       default:
         return <h1>HOW DID YOU EVEN END UP HERE?</h1>
     }

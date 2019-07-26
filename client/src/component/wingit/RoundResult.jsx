@@ -19,7 +19,12 @@ class RoundResult extends Component {
           {this.props.roundResult === "not-the-faker" && <WrongPerson nextRound={this.props.nextRound} isHost={this.props.isHost} setStyle={this.props.setStyle} nextRound={this.props.nextRound} isHost={this.props.isHost} category={this.props.category} faker={this.props.faker} />}
           {this.props.roundResult === "faker-caught" && <FakerCaught setStyle={this.props.setStyle} nextRound={this.props.nextRound} isHost={this.props.isHost} nextRound={this.props.nextRound} isHost={this.props.isHost} category={this.props.category} faker={this.props.faker} />}
         </div>
-        <section style={{backgroundColor: this.props.setStyle(this.props.category)}} category={this.props.category} className="rounds-footer"> </section> </div>
+        <section 
+        style={{backgroundColor: this.props.setStyle(this.props.category)}} 
+        category={this.props.category} 
+        className="rounds-footer"> 
+        </section> 
+      </div>
     );
   };
 }

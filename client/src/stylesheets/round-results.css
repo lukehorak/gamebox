@@ -1,16 +1,39 @@
 .not-enough-votes-container,
-.faker-wins-center-wrapper{
+.faker-wins-center-wrapper,
+.wrong-person-container,
+.winning-stuff-container,
+.losing-stuff-container{
   display: flex;
   flex-direction: column;
   align-items: center; 
+}
+
+.game-results-center-wrapper{
+  justify-content: center;
+}
+
+.winning-stuff-container,
+.losing-stuff-container{
+  background-color: black;
+  color: white;
+}
+
+.word-wrapper{
+  margin: 1em 1em 1em 1em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  word-break: break-word;
 }
 
 .faker-wins-center-wrapper{
   background-color: black;
   color: white;
 }
+
 .not-enough-votes,
-.faker-won-h1{
+.faker-won-h1,
+.wrong-person{
   margin: 2em;
   font-size: 2em;
 }
@@ -37,7 +60,8 @@
 
 @media screen and (min-width: 300px){
   .not-enough-votes,
-  .faker-won-h1{
+  .faker-won-h1,
+  .wrong-person{
     font-size: 1.5em;
   }
   .footer-container,
@@ -48,7 +72,8 @@
 
 @media screen and (min-width: 375px){
   .not-enough-votes,
-  .faker-won-h1{
+  .faker-won-h1,
+  .wrong-person{
     font-size: 1.8em;
   }
   .footer-container,
@@ -59,7 +84,8 @@
 
 @media screen and (min-width: 400px){
   .not-enough-votes,
-  .faker-won-h1{
+  .faker-won-h1,
+  .wrong-person{
     font-size: 2em;
   }
   .footer-container,
@@ -71,7 +97,8 @@
 
 @media screen and (min-width: 700px){
   .not-enough-votes,
-  .faker-won-h1{
+  .faker-won-h1,
+  .wrong-person{
     font-size: 3.5em;
   }
   .footer-container,
@@ -86,7 +113,8 @@
 
 @media screen and (min-width: 1000px){
   .not-enough-votes,
-  .faker-won-h1{
+  .faker-won-h1,
+  .wrong-person{
     font-size: 4em;
   }
   .footer-container,
@@ -101,7 +129,8 @@
 
 @media screen and (min-width: 2000px){
   .not-enough-votes,
-  .faker-won-h1{
+  .faker-won-h1,
+  .wrong-person{
     font-size: 8em;
   }
   .footer-container,
