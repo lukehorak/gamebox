@@ -10,7 +10,7 @@ class Card extends Component {
       <div id="card-wrapper">
         <div className={this.props.cardClass}>
           <div className="card-image">
-            <a className="game-link" href="#">
+            <a className="game-link" href={this.props.link}>
               <figure className="image is-4by5">
                 <img src={this.props.imageSource} alt="Placeholder" />
                 <span className="title-container">

@@ -28,6 +28,8 @@ class Home extends Component {
                 cardClass="wingItCard"
                 imageSource="https://static1.squarespace.com/static/53f222ece4b0607c74c991b4/t/572fb2841bbee07454dcb8f6/1462743697345/Just+wing+it"
                 gameTitle="Wing it!"
+                link="/wingit"
+
               />
               <Card
                 cardClass="typist"
@@ -45,6 +47,7 @@ class Home extends Component {
                   cardClass="close-enough"
                   imageSource="http://thumbpress.com/wp-content/uploads/2012/02/Close-enough.jpg"
                   gameTitle="Close enough."
+                  link="/closeenough"
                 />
 
               </span>
