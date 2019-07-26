@@ -126,20 +126,15 @@ io.on('connection', function (socket) {
         const resultCode = socketApi.getRoundResults(results);
         io.in(data.roomCode).emit('respond-results', { resultCode: resultCode, faker: results.player })
         io.in(data.roomCode).emit('phase-change', { phase: 5 });
-      }, 8000)
+      }, 20000)
       }, 8000)
   });
 
   socket.on('send-vote', (data) => {
-
-
     const hostId = socketApi.getHost(data.roomCode);
     const round = io.sockets.connected[hostId].game.currentRound;
     round.voteFor(data.voteFor, socket.username);
-
-
     const votes = round.getAllVotes();
-
     io.in(data.roomCode).emit('update-vote-count', { votes: votes });
   });
 
@@ -172,6 +167,10 @@ io.on('connection', function (socket) {
   })
   
 });
+
+  /////////////////////////////////////////////////////////////////////////////////////////////////
+  // SocketAPI methods
+  /////////////////////////////////////////////////////////////////////////////////////////////////
 
 socketApi.getRoundResults = (results) => {
   const{ checked, foundFaker } = results;
