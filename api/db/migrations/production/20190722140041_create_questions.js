@@ -5,6 +5,9 @@ exports.up = function(knex) {
       table.increments('id');
       table.string('question', 1000);
       table.string('category', 1000);
+      // table.foreign('category')
+      //   .references('id')
+      //   .inTable('categories');
     })
   ])
 };
