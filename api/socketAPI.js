@@ -110,6 +110,9 @@ io.on('connection', function (socket) {
         })
       }
       )
+      .catch((e) => {
+        console.log('ERROR => ', e)
+      })
       .finally( () => {
         knex.destroy;
       })
