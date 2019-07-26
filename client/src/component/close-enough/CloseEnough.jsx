@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import socketIOClient from 'socket.io-client';
-import Lobby from './Lobby';
+import CELobby from './CELobby';
 import PickCategory from './PickCategory';
 import DisplayQuestion from './DisplayQuestion';
 import VotingPage from './VotingPage';
@@ -117,7 +117,7 @@ class CloseEnough extends Component {
     switch (phase) {
       case 0:
         return (
-              <Lobby
+              <CELobby
                 roomCode={this.state.roomCode}
                 createGame={this.createGame}
                 joinGame={this.joinGame}
