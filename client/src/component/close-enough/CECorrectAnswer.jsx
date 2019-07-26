@@ -3,7 +3,7 @@ import '../../stylesheets/host-pick-category.css';
 import GameNav from '../wingit/GameNav';
 
 
-class CEShowAnswersPicked extends Component {
+class CECorrectAnswer extends Component {
 
 
   render() {
@@ -17,15 +17,15 @@ class CEShowAnswersPicked extends Component {
         </div>
 
         <div className="answer-container">
-          <h1 className="answer">{this.props.answer}</h1>
+          <h1 className="correct-answer">{this.props.correctAnswer}</h1>
         </div>
 
-      {/* This is where the players who picked this answer goes, and the points they get */}
+        {/* This is where the players who picked the correct answer goes, and the points they get */}
 
 
 
         <footer
-          className="question-footer">
+          className="answer-footer">
         </footer>
 
       </div>
@@ -33,4 +33,4 @@ class CEShowAnswersPicked extends Component {
     );
   }
 }
-export default CEShowAnswersPicked; 
+export default CECorrectAnswer; 
