@@ -5,9 +5,9 @@ import WingIt from './wingit/WingIt';
 import CloseEnough from './close-enough/CloseEnough';
 
 // DotEnv
-require ('dotenv').config({
-  path:'../.env'
-});
+// require ('dotenv').config({
+//   path:__dirname + '../.env'
+// });
 
 import SocketTest from './prototyping/SocketTest';
 
