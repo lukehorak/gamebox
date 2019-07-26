@@ -8,25 +8,6 @@ const knex = require("knex")(knexConfig[ENV]);
 
 
 const Game = require('./lib/winging-it-proto/Game');
-
-const demoQuestions = {
-  hand: [
-  "you brushed your teeth today",
-  "you hate puppies",
-  "you like this game"
-  ],
-  count: [
-    "Disney movies you've seen this year",
-    "meals you've eaten today",
-    "feet you are tall"
-  ],
-  point: [
-    "you would eat first if you were all trapped on a desert island",
-    "is the tallest person playing",
-    "is your favourite developer"
-  ]
-}
-
 socketApi.io = io;
 
 
@@ -235,11 +216,6 @@ socketApi.newPlayer = function (roomCode, username) {
   console.log(`Adding player ${username} to game room ${roomCode}`)
   io.sockets.connected[hostID].game.addPlayerByName(username);
   return hostID;
-}
-
-// To be used for querying the DB later
-socketApi.getQuestionFromDB = (category) => {
-  return demoQuestions[category][0];
 }
 
 socketApi.getRealQuestion = (roomCode) => {
