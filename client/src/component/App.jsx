@@ -4,6 +4,11 @@ import Home from './home/Home';
 import WingIt from './wingit/WingIt';
 import CloseEnough from './close-enough/CloseEnough';
 
+// DotEnv
+require ('dotenv').config({
+  path:'../.env'
+});
+
 import SocketTest from './prototyping/SocketTest';
 
 class App extends Component {
