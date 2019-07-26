@@ -86,6 +86,7 @@ form .room-code{
     /* padding: 1em 1em 0em 1em; */
     padding: 3px 3px 0px 3px;
     /* box-shadow: -3px 4px 4px 0 rgb(85, 84, 84); */
+    border-radius: 1em;
 
   }
 
@@ -130,6 +131,7 @@ form .room-code{
   figure .title-container{
     display: flex;
     justify-content: center;
+    /* background-color: rgb(52, 48, 48); */
   }
 
   p .title{
@@ -157,4 +159,8 @@ form .room-code{
     #card-container {
       width: 80%;
     }
+  }
+
+  .typist {
+    border-radius: 2em;
   }

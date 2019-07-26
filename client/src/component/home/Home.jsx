@@ -30,12 +30,12 @@ class Home extends Component {
                 imageSource="https://static1.squarespace.com/static/53f222ece4b0607c74c991b4/t/572fb2841bbee07454dcb8f6/1462743697345/Just+wing+it"
                 gameTitle="Wing it!"
               />
-
               <Card
                 cardClass="typist"
                 imageSource="https://payload.cargocollective.com/1/1/50182/605229/typeordie-01_900.jpg"
                 gameTitle="The Typist"
               />
+
 
             </div>
 
@@ -47,6 +47,7 @@ class Home extends Component {
                   imageSource="http://thumbpress.com/wp-content/uploads/2012/02/Close-enough.jpg"
                   gameTitle="Close enough."
                 />
+
               </span>
 
               <Card
