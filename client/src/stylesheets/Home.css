@@ -83,7 +83,10 @@ form .room-code{
   img{
     width: 10em;
     height: 12em;
-    padding: 1em 1em 0em 1em;
+    /* padding: 1em 1em 0em 1em; */
+    padding: 3px 3px 0px 3px;
+    /* box-shadow: -3px 4px 4px 0 rgb(85, 84, 84); */
+
   }
 
   input{
@@ -118,9 +121,9 @@ form .room-code{
 
   figure{
     border: 0.1em solid #EEE2DC;
-    background-color: white;
+    background-color:#846a6a;
     border-radius: 0.5em;
-    box-shadow:  -3px 4px 11px 0 rgb(85, 84, 84);
+    box-shadow:  -3px 4px 4px 0 rgb(85, 84, 84);
     margin: 1.5em;
   }
   
