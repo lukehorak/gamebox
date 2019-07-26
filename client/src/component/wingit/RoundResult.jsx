@@ -7,12 +7,7 @@ import NotEnoughVotes from './NotEnoughVotes';
 class RoundResult extends Component {
 
   render() {
-    if(!this.props.roundResult){
-      this.props.getRoundResults();
-    }
-    else{
-      console.log(`round result ===> ${this.props.roundResult}`)
-    }
+    console.log('roundResult --> ', this.props.roundResult)
 
     return (
       <div className="round-results-page-wrapper">
@@ -21,9 +16,9 @@ class RoundResult extends Component {
 
         <div className="round-results-main-container">
 
-          {this.props.roundResult === "not-enough-votes" && <NotEnoughVotes player={this.props.player} category={this.props.category} />}
-          {this.props.roundResult === "not-the-faker" && <WrongPerson player={this.props.player} category={this.props.category} faker={this.props.faker} />}
-          {this.props.roundResult === "faker-caught" && <FakerCaught player={this.props.player} category={this.props.category} faker={this.props.faker} />}
+          {this.props.roundResult == "not-enough-votes" && <NotEnoughVotes nextRound={this.props.nextRound} isHost={this.props.isHost} category={this.props.category} />}
+          {this.props.roundResult == "not-the-faker" && <WrongPerson nextRound={this.props.nextRound} isHost={this.props.isHost} category={this.props.category} faker={this.props.faker} />}
+          {this.props.roundResult == "faker-caught" && <FakerCaught nextRound={this.props.nextRound} isHost={this.props.isHost} category={this.props.category} faker={this.props.faker} />}
 
         </div>
       

@@ -5,9 +5,8 @@ import PickCategory from './PickCategory';
 import DisplayQuestion from './DisplayQuestion';
 import VotingPage from './VotingPage';
 import RoundResult from './RoundResult';
+import GameResults from './GameResults';
 
-// import FakerLost from './Faker_Loss';
-// import FakerWon from './Faker_win';
 import '../../stylesheets/Home.css';
 import '../../stylesheets/wingit.css';
 import '../../stylesheets/host-pick-category.css';
@@ -31,6 +30,7 @@ class WingIt extends Component {
       playerVotes: {},
       roundResult:false,
       faker: false,
+      foundFaker: false,
       realQuestion: false
     }
   }
@@ -83,6 +83,17 @@ class WingIt extends Component {
     this.socket.on('respond-results', data => {
       this.setState({ roundResult: data.resultCode, faker: data.faker })
     })
+    
+    this.socket.on('set-faker', data => {
+      
+      this.setState({ faker: data.faker, foundFaker: data.foundFaker })
+    })
+
+    this.socket.on('clear-round-results', () => {
+      console.log('clearing round results!')
+      this.setState({ roundResult: false })
+      //console.log(this.state)
+    })
   }
 
   // Class Methods
@@ -106,7 +117,7 @@ class WingIt extends Component {
   sendCategory = (category) => {
     this.setState({ category: category })
     this.socket.emit('send-category', { category: category, roomCode: this.state.roomCode });
-    this.socket.emit('start-round', { category: category });
+    this.socket.emit('start-round', { category: category, faker: this.state.faker });
   }
 
   startClock = () => {
@@ -135,10 +146,15 @@ class WingIt extends Component {
   }
 
   getRoundResults = () => {
+    console.log('getting round results!')
     if (this.state.thisPlayer.isHost){
       this.socket.emit('request-round-results', { roomCode: this.state.roomCode });
     }
   }
+
+  nextRound = () => {
+    this.socket.emit('next-round', { roomCode: this.state.roomCode });
+  } 
 
   handleCase = (phase) => {
     switch (phase) {
@@ -177,15 +193,22 @@ class WingIt extends Component {
                 getVotesForPlayer={this.getVotesForPlayer}/>
               );
       case 5:
+        //const roundResult = this.getRoundResults();
         return <RoundResult
                 player={this.state.thisPlayer}
                 category={this.state.category}
                 getRoundResults={this.getRoundResults}
                 roundResult={this.state.roundResult}
-                faker={this.state.faker} />
-        //return <FakerLost category={this.state.category} />
+                faker={this.state.faker}
+                isHost={this.state.thisPlayer.isHost}
+                nextRound={this.nextRound} />
       case 6:
-        //return <FakerWon category={this.state.category} />
+        return <GameResults
+                category={this.state.category}
+                player={this.state.thisPlayer}
+                faker={this.state.faker}
+                foundFaker={this.state.foundFaker}
+                 />
         break;
       default:
         return <h1>HOW DID YOU EVEN END UP HERE?</h1>

@@ -16,7 +16,7 @@ class Game {
     this.currentRound = new Round(question, this.players, type)
   }
 
-  gameIsOver() {
+  isOver() {
     return (this.fakerIsFound || this.roundNumber > 2)
   }
 
