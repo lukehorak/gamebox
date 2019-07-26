@@ -7,6 +7,7 @@ import VotingPage from './VotingPage';
 import RoundResult from './RoundResult';
 import GameResults from './GameResults';
 
+
 import '../../stylesheets/Home.css';
 import '../../stylesheets/wingit.css';
 import '../../stylesheets/host-pick-category.css';
@@ -19,7 +20,7 @@ class WingIt extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      endpoint: "http://localhost:9000",
+      endpoint: process.env.REACT_APP_API_URL,
       phase: 0,
       roomCode: false,
       isHidden: false,
