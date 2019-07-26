@@ -37,6 +37,11 @@ class WingIt extends Component {
   }
 
   componentDidMount() {
+
+    window.onbeforeunload = function() {
+      return true;
+    }
+
     const { endpoint } = this.state;
     this.socket = socketIOClient(endpoint);
 
