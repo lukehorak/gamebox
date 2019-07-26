@@ -74,11 +74,11 @@ exports.seed = function (knex) {
           category: 'point',
         },
         {
-          question: 'the number of pizza slices have you had today',
+          question: 'the number of pizza slices you had today',
           category: 'count',
         }, 
         {
-          question: 'the number of tentacles an octopus have',
+          question: 'the number of tentacles an octopus has',
           category: 'count',
         }, 
         {
@@ -86,11 +86,11 @@ exports.seed = function (knex) {
           category: 'count',
         }, 
         {
-          question: 'the number of wheels an airplane have',
+          question: 'the number of wheels an airplane has',
           category: 'count',
         },
         {
-          question: 'how many feet you are tall',
+          question: 'feet you are tall',
           category: 'count',
         },
         {
@@ -98,7 +98,7 @@ exports.seed = function (knex) {
           category: 'count',
         },
         {
-          question: 'the Disney movies you\'ve seen this year',
+          question: 'the number of Disney movies you\'ve seen this year',
           category: 'count',
         }
 
