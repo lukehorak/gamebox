@@ -193,7 +193,6 @@ class WingIt extends Component {
                 getVotesForPlayer={this.getVotesForPlayer}/>
               );
       case 5:
-        //const roundResult = this.getRoundResults();
         return <RoundResult
                 player={this.state.thisPlayer}
                 category={this.state.category}
@@ -209,7 +208,6 @@ class WingIt extends Component {
                 faker={this.state.faker}
                 foundFaker={this.state.foundFaker}
                  />
-        break;
       default:
         return <h1>HOW DID YOU EVEN END UP HERE?</h1>
     }

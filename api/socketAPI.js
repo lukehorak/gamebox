@@ -38,8 +38,9 @@ io.on('connection', function (socket) {
   // Creating/Adding a new player to an existing game
   socket.on('new-player', function (data) {
     try {
+      // Create new player, add them to their game, and get back ID of their game's host
       const hostID = socketApi.newPlayer(data.roomCode, data.username);
-      // Send roomcode to new player
+      // Send roomcode to new player (getting the actual game's code isntead of what they fed it)
       socket.emit('room-code', io.sockets.connected[hostID].game.roomCode);
       socket.join(io.sockets.connected[hostID].game.roomCode)
 
