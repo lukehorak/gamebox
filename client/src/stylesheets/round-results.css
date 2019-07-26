@@ -1,0 +1,208 @@
+.not-enough-votes-container,
+.faker-wins-center-wrapper,
+.wrong-person-container,
+.winning-stuff-container,
+.losing-stuff-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+  text-align: center;
+}
+
+.game-results-center-wrapper{
+  justify-content: center;
+}
+
+.winning-stuff-container,
+.losing-stuff-container{
+  background-color: white;
+  color: black;
+}
+
+.word-wrapper{
+  margin: 1em 1em 1em 1em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  word-break: break-word;
+}
+
+.faker-wins-center-wrapper{
+  background-color: white;
+  color: black;
+}
+
+.not-enough-votes,
+.wrong-person{
+  margin: 2em;
+  font-size: 2em;
+}
+
+.faker-won-h1{
+  margin: 1em 2em 0.5em 2em;
+}
+
+
+
+.faker-caught{
+  color: red;
+  font-size: 6em;
+  font-weight: 800;
+}
+
+.footer-container,
+.rounds-footer{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%; 
+  height: 10em;
+}
+
+.was-not-faker{
+  color: red;
+  font-weight: 800;
+}
+
+
+.next-button{
+  background-color: #956DD4;
+  border-radius: 0.5em;
+  height: 3em;
+  width: 6em;
+  border: none;
+  margin-top: 3em;
+  box-shadow: -3px 5px 10px #887e7e;
+}
+
+.faker-was{
+  color: red;
+  font-weight: 800;
+}
+
+#home-button{
+  background-color: #96f5ff;
+  border-radius: 0.5em;
+  font-size: 1.5em;
+  width: 8em;
+  height: 3em;
+  border: none;
+  box-shadow: -4px 8px 11px grey;
+}
+
+.busted-faker{
+  color: red;
+  font-size: 8em;
+  font-weight: 900;
+}
+
+@media screen and (min-width: 300px){
+  .not-enough-votes,
+  .faker-won-h1,
+  .wrong-person,
+  .busted-faker{
+    font-size: 1.5em;
+  }
+  .footer-container,
+  .rounds-footer{
+    height: 13em;
+  }
+}
+
+@media screen and (min-width: 305px){
+  .not-enough-votes,
+  .faker-won-h1,
+  .wrong-person,
+  .busted-faker{
+    font-size: 1.5em;
+  }
+  .footer-container,
+  .rounds-footer{
+    height: 80em;
+  }
+  .faker-caught{
+    color: red;
+    font-size: 2em;
+    font-weight: 800;
+  }
+  .next-button{
+    font-size: 2em;
+  }
+}
+
+@media screen and (min-width: 400px){
+  .not-enough-votes,
+  .faker-won-h1,
+  .wrong-person,
+  .busted-faker{
+    font-size: 2em;
+  }
+  .footer-container,
+  .rounds-footer{
+    height: 28em;
+  }
+}
+
+
+@media screen and (min-width: 700px){
+  .not-enough-votes,
+  .faker-won-h1,
+  .wrong-person,
+  .busted-faker{
+    font-size: 3.5em;
+  }
+  .footer-container,
+  .rounds-footer{
+    height: 18em;
+  }
+  .next-button{
+    font-size: 2em;
+    margin-top: 1em;
+  }
+  .busted-img{
+    height: 10em;;
+    width: 20em;
+  }
+}
+
+@media screen and (min-width: 1000px){
+  .not-enough-votes,
+  .faker-won-h1,
+  .wrong-person,
+  .busted-faker{
+    font-size: 4em;
+  }
+  .footer-container,
+  .rounds-footer{
+    height: 55em;
+  }
+  .next-button{
+    font-size: 3em;
+    margin-top: 2em;
+  }
+
+  .busted-img{
+    height: 12em;;
+    width: 24em;
+  }
+  .busted-faker{
+    font-size: 8em;
+  }
+}
+
+@media screen and (min-width: 2000px){
+  .not-enough-votes,
+  .faker-won-h1,
+  .wrong-person,
+  .busted-faker{
+    font-size: 7em;
+  }
+  .footer-container,
+  .rounds-footer{
+    height: 80em;
+  }
+  .next-button{
+    font-size: 6em;
+    margin-top: 4em;
+  }
+}

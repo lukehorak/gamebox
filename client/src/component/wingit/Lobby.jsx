@@ -4,17 +4,25 @@ import CreateGameForm from './CreateGameForm';
 
 class Lobby extends Component {
 
+  checkForTakenUser = (e, players) => {
+    players.ForEach(function (player) {
+      if(player.name === e.target.value){
+        return true;
+      }
+    }) 
+    return false;
+  }; 
+
   listPlayers = (players) => {
     const playerList = players.map(function (player) {
       return (
         <div key={player.id} className="player-card-container">
             <div className="column">
               <span className="player-menu-card">
-                <h2>{player.name}</h2>
+                <h2 className="player-name-lobby">{player.name}</h2>
               </span>
             </div>
           </div>
-
       );
     });
     return playerList;
@@ -24,8 +32,7 @@ class Lobby extends Component {
     return (
       <div>
         <div className="wingit-main-container" >
-          {
-            this.props.roomCode &&
+          {this.props.roomCode &&
             <div className="generated-room-code">
               Room Code:
               <div className="room-code-container">
@@ -57,7 +64,7 @@ class Lobby extends Component {
               {this.listPlayers(this.props.players)}
             </div>}
 
-          { this.props.isHost && <button className="start-game-button" onClick={this.props.startGame}>Start Game</button>}
+          {this.props.isHost && <button className="start-game-button" onClick={this.props.startGame}>Start Game</button>}
 
         </div>
 

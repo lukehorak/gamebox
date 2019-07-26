@@ -6,20 +6,20 @@ import DisplayQuestion from './DisplayQuestion';
 import VotingPage from './VotingPage';
 import RoundResult from './RoundResult';
 import GameResults from './GameResults';
-
 import '../../stylesheets/Home.css';
 import '../../stylesheets/wingit.css';
 import '../../stylesheets/host-pick-category.css';
 import '../../stylesheets/wingit-lobby.css';
 import '../../stylesheets/Question-page.css';
-import '../../stylesheets/non-host-pick-category.css'
-import '../../stylesheets/voting-page.css'
+import '../../stylesheets/non-host-pick-category.css';
+import '../../stylesheets/voting-page.css';
+import '../../stylesheets/round-results.css';
 class WingIt extends Component {
 
   constructor(props) {
     super(props)
     this.state = {
-      endpoint: "http://localhost:9000",
+      endpoint: process.env.REACT_APP_API_URL,
       phase: 0,
       roomCode: false,
       isHidden: false,
@@ -36,6 +36,11 @@ class WingIt extends Component {
   }
 
   componentDidMount() {
+
+    window.onbeforeunload = function() {
+      return true;
+    }
+
     const { endpoint } = this.state;
     this.socket = socketIOClient(endpoint);
 
@@ -193,7 +198,6 @@ class WingIt extends Component {
                 getVotesForPlayer={this.getVotesForPlayer}/>
               );
       case 5:
-        //const roundResult = this.getRoundResults();
         return <RoundResult
                 player={this.state.thisPlayer}
                 category={this.state.category}
@@ -201,15 +205,15 @@ class WingIt extends Component {
                 roundResult={this.state.roundResult}
                 faker={this.state.faker}
                 isHost={this.state.thisPlayer.isHost}
-                nextRound={this.nextRound} />
+                nextRound={this.nextRound} 
+                setStyle={this.setStyle}/>
       case 6:
         return <GameResults
                 category={this.state.category}
                 player={this.state.thisPlayer}
                 faker={this.state.faker}
                 foundFaker={this.state.foundFaker}
-                 />
-        break;
+                setStyle={this.setStyle} />
       default:
         return <h1>HOW DID YOU EVEN END UP HERE?</h1>
     }

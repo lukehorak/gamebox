@@ -14,7 +14,7 @@ exports.seed = function (knex) {
           category: 'hand',
         },
         {
-          question: 'you have never seen Batman in real life',
+          question: 'you have ever seen Batman in real life',
           category: 'hand',
         },
         {
@@ -30,7 +30,7 @@ exports.seed = function (knex) {
           category: 'hand',
         },
         {
-          question: 'you have never been to a job interview',
+          question: 'you have ever been to a job interview',
           category: 'hand',
         },
         {
@@ -38,7 +38,7 @@ exports.seed = function (knex) {
           category: 'hand',
         },
         {
-          question: 'you have seen a Marvel movie',
+          question: 'you have ever seen a Marvel movie',
           category: 'hand',
         },
         {
