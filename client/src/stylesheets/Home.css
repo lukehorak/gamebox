@@ -99,11 +99,11 @@ form .room-code{
     justify-content: center;
     background-color: rgba(0,0,0, 0.2);
     border-radius: .5em;
-    height: 30em;
+    /* height: 30em; */
     width: 40em;
-    overflow-y: scroll;
+    /* overflow-y: scroll; */
     scroll-behavior: smooth; 
-    margin-bottom: 4em;
+    margin: 4em;
     box-shadow: inset -8px 4px 16px 8px #846a6a;
   }
 
