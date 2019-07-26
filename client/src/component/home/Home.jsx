@@ -27,7 +27,7 @@ class Home extends Component {
 
               <Card
                 cardClass="wingItCard"
-                imageSource="https://proxy.duckduckgo.com/iu/?u=http%3A%2F%2Ftrophy01.np.community.playstation.net%2Ftrophy%2Fnp%2FNPWR11790_00_01BCC972BD625278DB5379A92D7402F7DD436EA73B%2F809062AAAF2C879E0D3F5FE30421DCBFB37F14A9.PNG&f=1"
+                imageSource="https://static1.squarespace.com/static/53f222ece4b0607c74c991b4/t/572fb2841bbee07454dcb8f6/1462743697345/Just+wing+it"
                 gameTitle="Wing it!"
               />
 
@@ -44,7 +44,7 @@ class Home extends Component {
               <span className="card-wrapper">
                 <Card
                   cardClass="close-enough"
-                  imageSource="https://proxy.duckduckgo.com/iu/?u=https%3A%2F%2Fs-media-cache-ak0.pinimg.com%2F736x%2F4e%2F52%2F74%2F4e5274ae468d4970a7e3268269a5f8af.jpg&amp;f=1"
+                  imageSource="http://thumbpress.com/wp-content/uploads/2012/02/Close-enough.jpg"
                   gameTitle="Close enough!"
                 />
               </span>
