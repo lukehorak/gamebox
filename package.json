@@ -1,0 +1,20 @@
+{
+  "name": "gamebox",
+  "version": "1.0.0",
+  "description": "## Description",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "cd api/ && npm start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lukehorak/gamebox.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lukehorak/gamebox/issues"
+  },
+  "homepage": "https://github.com/lukehorak/gamebox#readme"
+}
