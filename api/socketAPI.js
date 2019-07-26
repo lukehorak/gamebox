@@ -101,7 +101,10 @@ io.on('connection', function (socket) {
 
   socket.on('start-round', (data) => {
     const { category } = data;
-    socket.game.setFaker();
+    if(!data.faker){
+      console.log('setting faker')
+      socket.game.setFaker();
+    }
 
     knex.select('question')
       .from('wingit')
@@ -112,7 +115,8 @@ io.on('connection', function (socket) {
         // get questionText from db
         const qText = rows[0].question;
         // Start round on server
-        socket.game.newRound(qText, category);   
+        socket.game.newRound(qText, category); 
+        console.log(`Round ${socket.game.roundNumber}`)  
         // Signal round start on Clients 
         io.in(socket.game.roomCode).emit('phase-change', { phase: 2 });
         const questionData = socketApi.getQuestionData(socket.game.roomCode, socket.game);
@@ -137,27 +141,68 @@ io.on('connection', function (socket) {
     setTimeout(function(){
       io.in(data.roomCode).emit('phase-change', { phase: 4 });
       setTimeout(function(){
+        const results = socket.game.currentRound.exposeFaker();
+        const resultCode = socketApi.getRoundResults(results);
+        io.in(data.roomCode).emit('respond-results', { resultCode: resultCode, faker: results.player })
         io.in(data.roomCode).emit('phase-change', { phase: 5 });
-      }, 30000)
+      }, 8000)
       }, 8000)
   });
 
   socket.on('send-vote', (data) => {
 
-    console.log(`${socket.username} is voting for ${data.voteFor}`)
 
     const hostId = socketApi.getHost(data.roomCode);
     const round = io.sockets.connected[hostId].game.currentRound;
     round.voteFor(data.voteFor, socket.username);
 
-    console.log(`votes:\n ${JSON.stringify(round.getAllVotes())}`);
 
     const votes = round.getAllVotes();
 
     io.in(data.roomCode).emit('update-vote-count', { votes: votes });
-  })
+  });
 
+  socket.on('request-round-results', (data) => {
+    console.log('results requested')
+    const results = socket.game.currentRound.exposeFaker();
+    const resultCode = socketApi.getRoundResults(results);
+    io.in(data.roomCode).emit('respond-results', { resultCode: resultCode, faker: results.player })
+  });
+
+  socket.on('next-round', (data) => {
+    console.log('next round!')
+    const { player, foundFaker } = socket.game.currentRound.exposeFaker();
+    // SET FAKER IS FOUND IN GAME
+    socket.game.fakerIsFound = foundFaker;
+    console.log('sending faker: ', player, foundFaker)
+    io.in(data.roomCode).emit('set-faker', { faker: player, foundFaker: foundFaker })
+    if(socket.game.isOver()){
+      //io.in(data.roomCode).emit('clear-state');
+      console.log(`${player} was the faker: ${foundFaker}`)
+      io.in(data.roomCode).emit('phase-change', { phase: 6 });
+    }
+    else {
+      // Clear player votes in state
+      io.in(data.roomCode).emit('respond-all-players', socketApi.getPlayerList(data.roomCode));
+      // clear roundResults
+      io.in(data.roomCode).emit('clear-round-results');
+      io.in(data.roomCode).emit('phase-change', { phase: 1 });
+    }
+  })
+  
 });
+
+socketApi.getRoundResults = (results) => {
+  const{ checked, foundFaker } = results;
+  if (!checked){
+    return 'not-enough-votes';
+  }
+  if (foundFaker) {
+    return 'faker-caught';
+  }
+  return 'not-the-faker';
+  
+}
 
 socketApi.getHost = (roomCode) => {
   const sockets = socketApi.getRoom(roomCode).sockets;

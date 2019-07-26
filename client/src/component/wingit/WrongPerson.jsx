@@ -1,15 +1,18 @@
 import React, { Component } from 'react';
-  class WrongPerson extends Component{
-    render(){
-      return(
-        <div className="wrong-person-container">
-          <h1 className="wrong-person">
-            You did it! Congratulations! You all voted for the wrong person.
+import RoundOverFooter from './RoundOverFooter'
+
+class WrongPerson extends Component {
+  render() {
+    return (
+      <div className="wrong-person-container">
+        <h1 className="wrong-person">
+          Good news! You all voted for the same person! Bad news is, {this.props.faker} WASN'T the faker...
           </h1>
-        </div>
-      );
-    };
+        {this.props.isHost && <RoundOverFooter nextRound={this.props.nextRound} />}
+      </div>
+    );
   };
+};
 
 
 export default WrongPerson;

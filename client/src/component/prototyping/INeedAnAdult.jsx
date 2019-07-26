@@ -5,7 +5,6 @@ class INeedAnAdult extends Component {
   submitUser = (e) => {
     e.preventDefault();
     const { username } = e.target.elements;
-    console.log("username ==> ", username.value)
     this.socket.emit('new-player', {username: username.value})
   }
 

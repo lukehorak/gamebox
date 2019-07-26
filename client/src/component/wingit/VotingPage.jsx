@@ -8,7 +8,6 @@ import VoteButton from './VoteButton';
       const players = this.props.players.map( player => {
         if (this.props.player.username !== player.name){
           const voteNum = this.props.getVotesForPlayer(player.name);
-          console.log(`voteNum: ${voteNum}`)
           return <VoteButton keyProp={player.id} name={player.name} sendVote={this.props.sendVote} votes={voteNum}/>
         }
       });

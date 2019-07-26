@@ -9,7 +9,6 @@ class CategoryButton extends Component{
   }
 
   render(){
-    console.log(this.props.buttonText)
     return(
       <button 
         id={this.props.category} 
