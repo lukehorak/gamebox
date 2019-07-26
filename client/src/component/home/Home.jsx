@@ -7,7 +7,6 @@ import About from '../home/About';
 import Card from './Card';
 
 
-
 //TODO -functional burger, form anime
 class Home extends Component {
 
