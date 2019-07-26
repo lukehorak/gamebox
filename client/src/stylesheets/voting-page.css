@@ -33,6 +33,22 @@
   align-items: center;
 }
 
+.vote-count-container{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.vote-count{
+  background-color: #f0457e;
+  border-radius: 20em;
+  height: 1.5em;
+  width: 1.5em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
 .voting-player-names{
   font-size: 2em;
@@ -171,6 +187,7 @@
     margin: 6em 28em 2em 4em;
     font-size: 1em;
   }
+
   .voting-card-container{
     margin-top: 10em;
   }

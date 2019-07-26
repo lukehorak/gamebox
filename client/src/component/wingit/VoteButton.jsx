@@ -12,7 +12,12 @@ import React, { Component } from 'react';
         <div className="voting-card-container">
           <div className="voting-column">
             <button key={this.props.keyProp} className="player-vote-button" onClick={this.vote}>
-              <h2>{this.props.name}</h2><h3>{`${this.props.votes}`}</h3>
+              <h2>{this.props.name}</h2>
+              <div className="vote-count-container">
+                <span className="vote-count">
+                  {`${this.props.votes}`}
+                </span>
+              </div>
             </button> 
           </div>
         </div>
