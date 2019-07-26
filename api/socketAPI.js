@@ -8,25 +8,6 @@ const knex = require("knex")(knexConfig[ENV]);
 
 
 const Game = require('./lib/winging-it-proto/Game');
-
-const demoQuestions = {
-  hand: [
-  "you brushed your teeth today",
-  "you hate puppies",
-  "you like this game"
-  ],
-  count: [
-    "Disney movies you've seen this year",
-    "meals you've eaten today",
-    "feet you are tall"
-  ],
-  point: [
-    "you would eat first if you were all trapped on a desert island",
-    "is the tallest person playing",
-    "is your favourite developer"
-  ]
-}
-
 socketApi.io = io;
 
 
@@ -57,8 +38,9 @@ io.on('connection', function (socket) {
   // Creating/Adding a new player to an existing game
   socket.on('new-player', function (data) {
     try {
+      // Create new player, add them to their game, and get back ID of their game's host
       const hostID = socketApi.newPlayer(data.roomCode, data.username);
-      // Send roomcode to new player
+      // Send roomcode to new player (getting the actual game's code isntead of what they fed it)
       socket.emit('room-code', io.sockets.connected[hostID].game.roomCode);
       socket.join(io.sockets.connected[hostID].game.roomCode)
 
@@ -145,20 +127,15 @@ io.on('connection', function (socket) {
         const resultCode = socketApi.getRoundResults(results);
         io.in(data.roomCode).emit('respond-results', { resultCode: resultCode, faker: results.player })
         io.in(data.roomCode).emit('phase-change', { phase: 5 });
-      }, 8000)
+      }, 20000)
       }, 8000)
   });
 
   socket.on('send-vote', (data) => {
-
-
     const hostId = socketApi.getHost(data.roomCode);
     const round = io.sockets.connected[hostId].game.currentRound;
     round.voteFor(data.voteFor, socket.username);
-
-
     const votes = round.getAllVotes();
-
     io.in(data.roomCode).emit('update-vote-count', { votes: votes });
   });
 
@@ -191,6 +168,10 @@ io.on('connection', function (socket) {
   })
   
 });
+
+  /////////////////////////////////////////////////////////////////////////////////////////////////
+  // SocketAPI methods
+  /////////////////////////////////////////////////////////////////////////////////////////////////
 
 socketApi.getRoundResults = (results) => {
   const{ checked, foundFaker } = results;
@@ -235,11 +216,6 @@ socketApi.newPlayer = function (roomCode, username) {
   console.log(`Adding player ${username} to game room ${roomCode}`)
   io.sockets.connected[hostID].game.addPlayerByName(username);
   return hostID;
-}
-
-// To be used for querying the DB later
-socketApi.getQuestionFromDB = (category) => {
-  return demoQuestions[category][0];
 }
 
 socketApi.getRealQuestion = (roomCode) => {

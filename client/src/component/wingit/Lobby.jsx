@@ -24,8 +24,7 @@ class Lobby extends Component {
     return (
       <div>
         <div className="wingit-main-container" >
-          {
-            this.props.roomCode &&
+          {this.props.roomCode &&
             <div className="generated-room-code">
               Room Code:
               <div className="room-code-container">
@@ -57,7 +56,7 @@ class Lobby extends Component {
               {this.listPlayers(this.props.players)}
             </div>}
 
-          { this.props.isHost && <button className="start-game-button" onClick={this.props.startGame}>Start Game</button>}
+          {this.props.isHost && <button className="start-game-button" onClick={this.props.startGame}>Start Game</button>}
 
         </div>
 
