@@ -20,8 +20,8 @@ class CreateGameForm extends Component {
   render(){
     return(
       <div>
-        <form id="create-game-form" onSubmit={this.state.error === false && this.props.createGame}>
-          <input onBlur={this.checkForEmptyString} onClick={this.removeError} name="username" placeholder="Enter your username"></input>
+        <form onBlur={this.checkForEmptyString} id="create-game-form" onSubmit={this.state.error === false && this.props.createGame}>
+          <input onClick={this.removeError} name="username" placeholder="Enter your username"></input>
           <button className="lobby-create-game-button">Create Game</button>
           {this.state.error === true && <span className="empty-string-error">
             Please enter a username

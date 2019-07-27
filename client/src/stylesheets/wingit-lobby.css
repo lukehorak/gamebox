@@ -1,5 +1,5 @@
 .wingit-main-container {
-  background-color:rgba(65, 250, 248, 0.74);;
+  background-color:rgba(65, 250, 248, 0.74);
   height: 76.9em;
   display: flex; 
   flex-direction: column;
@@ -32,6 +32,11 @@
 
 hr{
   width: 5em;
+}
+
+button:focus,
+button:active{
+  outline: none;
 }
 
 .create-game-hr{
@@ -86,6 +91,10 @@ input{
   align-items: center;
 }
 
+input:focus{
+  outline: none;
+}
+
 .name-field{
   width: 15em;
   height: 2em;
@@ -119,6 +128,7 @@ input{
 .join-game-button{
   margin-top: 1em;
 }
+
 
 button:hover{
   box-shadow: -3px 6px 10px rgba(22, 23, 23, 0.74);

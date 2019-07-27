@@ -3,14 +3,17 @@ import CreateGameForm from './CreateGameForm';
 
 
 class Lobby extends Component {
+  constructor(props){
+    super()
+    this.state = ({ error: false })
+  }
 
   checkForTakenUser = (e, players) => {
     players.ForEach(function (player) {
       if(player.name === e.target.value){
-        return true;
+        this.setState({error: true});
       }
     }) 
-    return false;
   }; 
 
   listPlayers = (players) => {
@@ -52,10 +55,13 @@ class Lobby extends Component {
           {!this.props.roomCode &&
             <div className="join-game-container">
               <span className="join-game-header">Join a Game:</span>
-              <form className="lobby-join-game-form" onSubmit={this.props.joinGame}>
+              <form onBlur={this.checkForTakenUser} className="lobby-join-game-form" onSubmit={this.state.error === false && this.props.joinGame}>
                 <input className="name-field" name="username" placeholder="Enter your username" />
                 <input className="name-field" name="roomCode" placeholder="Enter your game's room code" />
                 <button className="join-game-button">Join Game</button>
+                {this.state.error === true && <span className="player-name-taken-error">
+                  That username is already in use!
+                </span>}
               </form>
             </div>}
 
