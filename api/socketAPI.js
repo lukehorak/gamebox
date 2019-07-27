@@ -88,6 +88,7 @@ io.on('connection', function (socket) {
       socket.game.setFaker();
     }
 
+    console.log('env test-->', process.env.PROD_DATABASE_NAME)
     knex.select('question')
       .from('wingit')
       .where('category', '=', category)
@@ -95,7 +96,6 @@ io.on('connection', function (socket) {
       .limit(1)
       .then(rows => {
         // get questionText from db
-        console.log(process.env.PROD_DATABASE_NAME)
         const qText = rows[0].question;
         // Start round on server
         socket.game.newRound(qText, category); 
