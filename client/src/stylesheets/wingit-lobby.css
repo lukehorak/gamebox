@@ -1,5 +1,5 @@
 .wingit-main-container {
-  background-color: #956DD4;
+  background-color:rgba(65, 250, 248, 0.74);;
   height: 76.9em;
   display: flex; 
   flex-direction: column;
@@ -39,6 +39,11 @@ hr{
   width: 20rem;
 }
 
+.empty-string-error{
+  padding-top: 1em;
+  color: black;
+}
+
 .create-game-container{
   display: flex;
   flex-direction: column;
@@ -49,6 +54,8 @@ hr{
 .join-game-header{
   font-size: 2em;
   font-weight: 500;
+  color: black;
+  font-weight: bolder;
 }
 
 .join-game-header{
@@ -96,12 +103,13 @@ input{
 .lobby-create-game-button,
 .join-game-button,
 .start-game-button{
-  background-color: #76B3FC;
+  background-color: #ff568e;
   border-radius: 0.5em;
   font-size: 1.5em;
   width: 10em;
   height: 2em;
   border: none;
+  color: white;
 }
 
 .start-game-button{
