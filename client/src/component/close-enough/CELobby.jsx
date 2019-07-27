@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import CreateGameForm from './CreateGameForm';
 
-
+//This is an optional component, can try to use Wingit's Lobby 
 class CELobby extends Component {
 
   listPlayers = (players) => {
