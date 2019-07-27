@@ -38,7 +38,7 @@ module.exports = {
       ssl: true
       //url: process.env.DATABASE_URL
     },
-    //connection: process.env.DATABASE_URL,
+    // connection: process.env.DATABASE_URL,
     pool: {
       min: 2,
       max: 20
