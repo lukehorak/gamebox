@@ -40,6 +40,8 @@ PROD_DATABASE_USER=(prod db username)
 
 PROD_DATABASE_PASSWORD=(prod db password)
 
+HOST=(address of the db host)
+
 ### Client (/client/.env)
 
 REACT_APP_API_URL=(url where the api is deployed)

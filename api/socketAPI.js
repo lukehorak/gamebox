@@ -87,8 +87,6 @@ io.on('connection', function (socket) {
       console.log('setting faker')
       socket.game.setFaker();
     }
-
-    console.log('env test-->', process.env.PROD_DATABASE_NAME)
     knex.select('question')
       .from('wingit')
       .where('category', '=', category)
