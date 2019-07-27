@@ -6,11 +6,12 @@
   height: 30em;
   background-color: white;
   word-break: break-word;
+  text-align: center;
 }
 
 .question{
   font-size: 4em;
-  font-weight: 800;
+  font-weight: 900;
   margin: 0 1em 0 1em;
 }
 
@@ -28,14 +29,24 @@
   }
 }
 
-@media screen and (min-width: 326px){
+@media screen and (min-width: 300px){
   .question{
-    font-size: 1.5em;
+    font-size: 1em;
   }
   .question-container{
     height: 30em;
   }
 }
+
+@media screen and (min-width: 400px){
+  .question{
+    font-size: 1em;
+  }
+  .question-container{
+    height: 30em;
+  }
+}
+
 
 @media screen and (min-width: 800px){
   .question{
@@ -53,5 +64,11 @@
 @media screen and (min-width: 2000px){
   .question-footer{
     height: 61.7em;
+  }
+}
+
+@media screen and (min-height: 1000px){
+  .question-footer{
+    height: 80em;
   }
 }

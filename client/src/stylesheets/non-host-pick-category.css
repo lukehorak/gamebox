@@ -6,6 +6,7 @@
   height: 30em;
   background-color: white;
   word-break: break-word;
+  text-align: center;
 }
 
 .host-is-choosing-category{
@@ -29,7 +30,8 @@
 .pac-man {
   border-radius: 50%;
   margin: 0 auto;
-  margin-top: 5em;
+  margin-top: 3em;
+  margin-right: 9em;
   border-radius: 100em 100em 0 0;
   transform-origin: bottom;
   animation: eating-top .5s infinite;
@@ -113,6 +115,9 @@
   .non-host-category-body{
     height: 15em;
   }
+  .non-host-cat-footer{
+    height: 30em;
+  }
 }
 
 @media screen and (min-width: 800px){
@@ -133,6 +138,12 @@
 
 @media screen and (min-width: 2000px){
   .non-host-cat-footer{
-    height: 61.7em;
+    height: 200em;
+  }
+}
+
+@media screen and (min-height: 1000px){
+  .non-host-category-body{
+    height: 30em;
   }
 }

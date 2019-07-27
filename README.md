@@ -23,18 +23,26 @@ Play party games with friends!
 ## Environment Variables
 ### Add environment variables for: 
 
-DEV_DATABASE_NAME=
-DEV_DATABASE_USER=
-DEV_DATABASE_PASSWORD=
+(replace values inside < > with the appriate values)
 
-PROD_DATABASE_NAME=
-PROD_DATABASE_USER=
-PROD_DATABASE_PASSWORD=
+### API (/api/.env)
+
+DEV_DATABASE_NAME=(dev db name)
+
+DEV_DATABASE_USER=(dev db username)
+
+DEV_DATABASE_PASSWORD=(dev db password)
 
 
-### API
+PROD_DATABASE_NAME=(prod db name)
 
-### Client (Front-End)
+PROD_DATABASE_USER=(prod db username)
+
+PROD_DATABASE_PASSWORD=(prod db password)
+
+### Client (/client/.env)
+
+REACT_APP_API_URL=(url where the api is deployed)
 
 ## Contributing
 
