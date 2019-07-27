@@ -27,22 +27,22 @@ Play party games with friends!
 
 ### API (/api/.env)
 
-DEV_DATABASE_NAME=<dev db name>
+DEV_DATABASE_NAME=(dev db name)
 
-DEV_DATABASE_USER=<dev db username>
+DEV_DATABASE_USER=(dev db username)
 
-DEV_DATABASE_PASSWORD=<dev db password>
+DEV_DATABASE_PASSWORD=(dev db password)
 
 
-PROD_DATABASE_NAME=<prod db name>
+PROD_DATABASE_NAME=(prod db name)
 
-PROD_DATABASE_USER=<prod db username>
+PROD_DATABASE_USER=(prod db username)
 
-PROD_DATABASE_PASSWORD=<prod db password>
+PROD_DATABASE_PASSWORD=(prod db password)
 
 ### Client (/client/.env)
 
-REACT_APP_API_URL=<url where the api is deployed>
+REACT_APP_API_URL=(url where the api is deployed)
 
 ## Contributing
 
