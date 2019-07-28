@@ -140,17 +140,16 @@ body{
     text-align: center;
 }
 
-
 #hand{
-  background-color: #76B3FC;
+  background-image: linear-gradient(to top, #48c6ef 0%, #6f86d6 100%);;
 }
 
 #count{
-  background-color:#F7CBA9;
+  background-image: linear-gradient(to top, #96fbc4 0%, #f9f586 100%);
 }
 
 #point{
-  background-color: #FC6A9D;
+  background-image: linear-gradient(to top, #c471f5 0%, #fa71cd 100%);
 }
 
 #hand:focus,

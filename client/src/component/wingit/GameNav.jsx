@@ -8,20 +8,22 @@ import React, { Component } from 'react';
     setStyle = (category) => {
       switch(category){
         case 'hand':
-          return '#76B3FC'
+          return "linear-gradient(to top, #48c6ef 0%, #6f86d6 100%)"
         case 'count':
-          return '#F7CBA9'
+          return "linear-gradient(to top, #96fbc4 0%, #f9f586 100%)"
         case 'point':
-          return '#FC6A9D'
+          return "linear-gradient(to top, #c471f5 0%, #fa71cd 100%)"
         default: 
-          return '#956DD4'
+          return "linear-gradient(-41deg, rgb(127, 139, 255), rgb(0, 239, 216))"
       }
-    }
+    };
+
+    
 
     render(){
       return(
         <div className="game-nav-container">
-          <nav style={{backgroundColor: this.setStyle(this.props.category)}} id="game-navbar" role="navigation" aria-label="main navigation">
+          <nav style={{backgroundImage: this.setStyle(this.props.category)}} id="game-navbar" role="navigation" aria-label="main navigation">
             <div className="nav-player-name">
               {this.props.player} 
             </div>

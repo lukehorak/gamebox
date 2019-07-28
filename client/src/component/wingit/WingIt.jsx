@@ -31,7 +31,9 @@ class WingIt extends Component {
       roundResult:false,
       faker: false,
       foundFaker: false,
-      realQuestion: false
+      realQuestion: false,
+      error: false,
+      errorType: null
     }
   }
 
@@ -106,9 +108,15 @@ class WingIt extends Component {
   createGame = (e) => {
     e.preventDefault();
     const { username } = e.target.elements
-    this.socket.emit('new-game', { username: username.value });
+    const name = username.value
+    if(name !== ""){
+      this.socket.emit('new-game', { username: username.value });
+    } else {
+      this.setState({ error: true, errorType: 'empty string' })
+      console.log('A user tried to enter  an empty string @ create game form')
+    }
   }
-
+  
   joinGame = (e) => {
     e.preventDefault();
     const { username, roomCode } = e.target.elements;
@@ -132,13 +140,13 @@ class WingIt extends Component {
   setStyle = (category) => {
     switch(category){
       case 'hand':
-        return '#76B3FC'
+        return "linear-gradient(to top, #48c6ef 0%, #6f86d6 100%)"
       case 'count':
-        return '#F7CBA9'
+        return "linear-gradient(to top, #96fbc4 0%, #f9f586 100%)"
       case 'point':
-        return '#FC6A9D'
+        return "linear-gradient(to top, #c471f5 0%, #fa71cd 100%)"
       default: 
-        return '#956DD4'
+        return "linear-gradient(-41deg, rgb(127, 139, 255), rgb(0, 239, 216))"
     }
   };
 
@@ -159,7 +167,7 @@ class WingIt extends Component {
 
   nextRound = () => {
     this.socket.emit('next-round', { roomCode: this.state.roomCode });
-  } 
+  }  
 
   handleCase = (phase) => {
     switch (phase) {
@@ -171,31 +179,40 @@ class WingIt extends Component {
                 joinGame={this.joinGame}
                 startGame={this.startGame}
                 players={this.state.players}
-                isHost={this.state.thisPlayer.isHost} />
+                isHost={this.state.thisPlayer.isHost} 
+                error={this.state.error}
+                errorType={this.state.errorType}
+                />
               );
       case 1:
         return (
-              <PickCategory
+                <PickCategory
                 player={this.state.thisPlayer}
-                sendCategory={this.sendCategory} />
+                sendCategory={this.sendCategory} 
+                category={this.props.category}
+                setStyle={this.props.setStyle}
+                />
               );
       case 2:
-        return <DisplayQuestion
+        return (
+                <DisplayQuestion
                 isHost={this.state.thisPlayer.isHost}
                 question={this.state.question}
                 player={this.state.thisPlayer}
                 startClock={this.startClock}
                 setStyle={this.setStyle} 
                 category={this.state.category} />
+                ); 
       case 4:
         return (
-              <VotingPage
+                <VotingPage
                 players={this.state.players}
                 realQuestion={this.state.realQuestion} 
                 player={this.state.thisPlayer}
                 sendVote={this.sendVote}
                 category={this.state.category}
-                getVotesForPlayer={this.getVotesForPlayer}/>
+                getVotesForPlayer={this.getVotesForPlayer}
+                />
               );
       case 5:
         return <RoundResult
@@ -206,14 +223,16 @@ class WingIt extends Component {
                 faker={this.state.faker}
                 isHost={this.state.thisPlayer.isHost}
                 nextRound={this.nextRound} 
-                setStyle={this.setStyle}/>
+                setStyle={this.setStyle}
+                />
       case 6:
         return <GameResults
                 category={this.state.category}
                 player={this.state.thisPlayer}
                 faker={this.state.faker}
                 foundFaker={this.state.foundFaker}
-                setStyle={this.setStyle} />
+                setStyle={this.setStyle} 
+                />
       default:
         return <h1>HOW DID YOU EVEN END UP HERE?</h1>
     }

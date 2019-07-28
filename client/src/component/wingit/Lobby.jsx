@@ -3,18 +3,9 @@ import CreateGameForm from './CreateGameForm';
 
 
 class Lobby extends Component {
-  constructor(props){
-    super()
-    this.state = ({ error: false })
+  checkStuff = (event) =>{
+    console.log(this.props.players)
   }
-
-  checkForTakenUser = (e, players) => {
-    players.ForEach(function (player) {
-      if(player.name === e.target.value){
-        this.setState({error: true});
-      }
-    }) 
-  }; 
 
   listPlayers = (players) => {
     const playerList = players.map(function (player) {
@@ -49,19 +40,19 @@ class Lobby extends Component {
           {!this.props.roomCode &&
             <div className="create-game-container">
               <span className="create-game-header">Create a Game:</span>
-              <CreateGameForm createGame={this.props.createGame} />
+              <CreateGameForm errorType={this.props.errorType} error={this.props.error} createGame={this.props.createGame} />
               <hr className="create-game-hr"/>
             </div>}
-          {!this.props.roomCode &&
+            {!this.props.roomCode &&
             <div className="join-game-container">
-              <span className="join-game-header">Join a Game:</span>
-              <form onBlur={this.checkForTakenUser} className="lobby-join-game-form" onSubmit={this.state.error === false && this.props.joinGame}>
+              <span className="join-game-header">Join a Game:</span> 
+              <form className="lobby-join-game-form" onSubmit={ this.props.joinGame }>
                 <input className="name-field" name="username" placeholder="Enter your username" />
                 <input className="name-field" name="roomCode" placeholder="Enter your game's room code" />
                 <button className="join-game-button">Join Game</button>
-                {this.state.error === true && <span className="player-name-taken-error">
+                {this.props.error === true && this.props.errorType === "taken username" && <span className="player-name-taken-error">
                   That username is already in use!
-                </span>}
+                </span> }
               </form>
             </div>}
 
