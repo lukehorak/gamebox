@@ -140,13 +140,13 @@ class WingIt extends Component {
   setStyle = (category) => {
     switch(category){
       case 'hand':
-        return "linear-gradient(to top, #48c6ef 0%, #6f86d6 100%)"
+        return "#72cbff"
       case 'count':
-        return "linear-gradient(to top, #96fbc4 0%, #f9f586 100%)"
+        return "#DCF798"
       case 'point':
-        return "linear-gradient(to top, #c471f5 0%, #fa71cd 100%)"
+        return "#DD72E3"
       default: 
-        return "linear-gradient(-41deg, rgb(127, 139, 255), rgb(0, 239, 216))"
+        return "#7095FC"
     }
   };
 
@@ -201,7 +201,9 @@ class WingIt extends Component {
                 player={this.state.thisPlayer}
                 startClock={this.startClock}
                 setStyle={this.setStyle} 
-                category={this.state.category} />
+                category={this.state.category}
+                faker={this.state.faker} 
+                />
                 ); 
       case 4:
         return (

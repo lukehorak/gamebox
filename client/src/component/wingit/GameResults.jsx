@@ -12,7 +12,7 @@ class GameResults extends Component {
         {!this.props.foundFaker && <LosingGameResults faker={this.props.faker}/>}
         {this.props.foundFaker && <WinningGameResults faker={this.props.faker}/>}
         <section 
-        style={{backgroundImage: this.props.setStyle(this.props.category)}} 
+        style={{backgroundColor: this.props.setStyle(this.props.category)}} 
         category={this.props.category} 
         className="rounds-footer"> 
         </section> 

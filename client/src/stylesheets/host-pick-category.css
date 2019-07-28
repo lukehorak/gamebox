@@ -140,16 +140,26 @@ body{
     text-align: center;
 }
 
+/* switch(category){
+  case 'hand':
+    return "#6D89D7"
+  case 'count':
+    return "#DCF798"
+  case 'point':
+    return "#DD72E3"
+  default: 
+    return "#7095FC" */
+
 #hand{
-  background-image: linear-gradient(to top, #48c6ef 0%, #6f86d6 100%);;
+  background-color: #72cbff;
 }
 
 #count{
-  background-image: linear-gradient(to top, #96fbc4 0%, #f9f586 100%);
+  background-color: #DCF798;
 }
 
 #point{
-  background-image: linear-gradient(to top, #c471f5 0%, #fa71cd 100%);
+  background-color: #DD72E3;
 }
 
 #hand:focus,

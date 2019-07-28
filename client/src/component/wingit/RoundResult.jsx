@@ -20,7 +20,7 @@ class RoundResult extends Component {
           {this.props.roundResult === "faker-caught" && <FakerCaught setStyle={this.props.setStyle} nextRound={this.props.nextRound} isHost={this.props.isHost} nextRound={this.props.nextRound} isHost={this.props.isHost} category={this.props.category} faker={this.props.faker} />}
         </div>
         <section 
-        style={{backgroundImage: this.props.setStyle(this.props.category)}} 
+        style={{backgroundColor: this.props.setStyle(this.props.category)}} 
         category={this.props.category} 
         className="rounds-footer"> 
         </section> 

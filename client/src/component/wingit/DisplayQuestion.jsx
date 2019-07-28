@@ -20,7 +20,7 @@ class DisplayQuestion extends Component {
           <h1 className="question">{this.props.question}</h1>
         </div>
         <section 
-          style={{backgroundImage: this.props.setStyle(this.props.category)}} 
+          style={{backgroundColor: this.props.setStyle(this.props.category)}} 
           className="question-footer">
         </section>
       </div>
