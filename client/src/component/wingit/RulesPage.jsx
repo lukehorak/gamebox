@@ -6,12 +6,13 @@ class RulesPage extends Component {
   render() {
 
     return (
-      <div>
+      <div className="rules-main-container">
 
-      <h1>RULES of the Game</h1>
+      <h1 className= "rules-title">RULES of the Game</h1>
 
+        <div className="rules-container">
       
-        <p>During each round everyone, except one, will be sent some sort of task, for example "Raise your hand if you had breakfast this morning." </p>
+        <p className="par-1">During each round everyone, except one, will be sent some sort of task, for example "Raise your hand if you had breakfast this morning." </p>
 
         <p>The player who didn't get the task is the one who will have to "wing it", and his/her goal is to try and blend with others without knowing the task themselves. </p>
 
@@ -25,8 +26,11 @@ class RulesPage extends Component {
 
         <p>HAVE FUN!</p>
 
+        </div>
+
         {this.props.isHost && <button onClick={this.props.startGame}>Start game!</button>}
           
+
       </div>
 
     )

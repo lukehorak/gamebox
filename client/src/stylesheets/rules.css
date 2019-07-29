@@ -1,0 +1,25 @@
+.rules-main-container {
+    /* display: flex; */
+    /* align-items: center;
+    text-align: center;
+    margin: 10em */
+}
+
+.rules-title {
+    align-items: center;
+    text-align: center;
+    margin: 5em
+}
+
+.rules-container {
+      /* display: flex; */
+      align-items: center;
+      text-align: center;
+      margin-right: 10em;
+      margin-left: 10em;
+
+}
+
+.par-1 {
+  background-color: aqua;
+}
