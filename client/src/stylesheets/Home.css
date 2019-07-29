@@ -10,6 +10,12 @@ html, body{
   overflow-x: hidden;
 }
 
+
+a{
+  color: white;
+}
+
+
 nav{
   height: 5em;
   /* background-color: #AC3B61; */

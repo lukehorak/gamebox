@@ -100,7 +100,6 @@ body{
   transition: background 250ms ease-in-out,
   transform 150ms ease;
   /* border: 3px solid rgb(28, 70, 133); */
-  border: 3px solid rgb(226, 161, 39);
   border-radius: 0.5em;
   width: 20em;
   font-weight: 900;

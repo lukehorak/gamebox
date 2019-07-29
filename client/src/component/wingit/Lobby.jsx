@@ -3,10 +3,6 @@ import CreateGameForm from './CreateGameForm';
 
 
 class Lobby extends Component {
-  checkStuff = (event) =>{
-    console.log(this.props.players)
-  }
-
   listPlayers = (players) => {
     const playerList = players.map(function (player) {
       return (
@@ -50,9 +46,6 @@ class Lobby extends Component {
                 <input className="name-field" name="username" placeholder="Enter your username" />
                 <input className="name-field" name="roomCode" placeholder="Enter your game's room code" />
                 <button className="join-game-button">Join Game</button>
-                {this.props.error === true && this.props.errorType === "taken username" && <span className="player-name-taken-error">
-                  That username is already in use!
-                </span> }
               </form>
             </div>}
 

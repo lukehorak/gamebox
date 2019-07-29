@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 
 class WinningGameResults extends Component {
   render() {
+
+    console.log(this.props)
     return(
       <div className="winning-stuff-container">
         <div className="word-wrapper">

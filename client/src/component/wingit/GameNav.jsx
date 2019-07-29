@@ -14,7 +14,7 @@ import React, { Component } from 'react';
         case 'point':
           return "#DD72E3"
         default: 
-          return "#7095FC"
+          return "rgba(65, 250, 248, 0.74)"
       }
     };
 

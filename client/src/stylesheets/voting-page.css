@@ -78,7 +78,7 @@
 }
 
 .player-vote-button{
-  background-color: #96f5ff;
+  background-color:  rgba(65, 250, 248, 0.74);
   border-radius: 0.5em;
   font-size: 1em;
   width: 14em;
@@ -99,10 +99,10 @@
 
 @media screen and ( min-width: 320px){
   .the-question{
-    font-size: 1em;
+    font-size: 0.8em;
   }
   .the-question-was{
-    font-size: 1em;
+    font-size: 0.8em;
     margin-bottom: 0em;
   }
   .question-container{
@@ -123,28 +123,34 @@
 
 @media screen and (min-width: 360px){
   .the-question{
-    font-size: 1.5em;
+    font-size: 1em;
   }
   .voting-main-container{
     height: 14em;
   }
   .the-question-was{
-    font-size: 1.5em;
+    font-size: 1em;
   }
   .player-vote-button{
     font-size: 1em;
   }
   .voting-instructions{
-    margin-top: 5em;
+    margin-top: 3em;
   }
   .voting-list-container{
     margin-top: 8em;
+  }
+  .player-vote-button{
+    margin-top: 0.5em;
   }
 }
 
 @media screen and (min-width: 600px){
 
   .the-question{
+    font-size: 2em;
+  }
+  .the-question-was{
     font-size: 2em;
   }
   .question-container{

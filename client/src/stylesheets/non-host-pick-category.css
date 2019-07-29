@@ -18,7 +18,7 @@
 .non-host-cat-footer{
   width: 100%;
   height: 24.22em;
-  background-image: linear-gradient(-41deg, rgb(127, 139, 255), rgb(0, 239, 216));
+  background-color: rgba(65, 250, 248, 0.74);
 }
 .pac-man-container{
   display: flex;
