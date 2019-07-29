@@ -1,29 +1,21 @@
 import React, { Component } from 'react';
 
 class CreateGameForm extends Component {
-  constructor(props){
-    super()
-      this.state={ error: false}
+
+  removeError = (event) => {
+    this.setState({ error: false, errorType: null })
   }
 
-  checkForEmptyString = (event) => {
-    if(event.target.value == ""){
-      this.setState({ error: true})
-      return true
-    }
-  };
-
-  componentDidMount(){
-    this.checkForEmptyString
-  }
-  
   render(){
     return(
       <div>
-        <form id="create-game-form" onSubmit={this.state.error === false && this.props.createGame}>
-          <input onSubmit={this.checkForEmptyString} name="username" placeholder="Enter your username"></input>
-          <button className="lobby-create-game-button">Create Game</button>
-          {this.state.error === true && <span className="empty-string-error">
+        <form id="create-game-form" onSubmit={ this.props.createGame }>
+          <input onClick={this.removeError} name="username" placeholder="Enter your username">
+          </input>
+          <button className="lobby-create-game-button">
+            Create Game
+          </button>
+          {this.props.error === true && this.props.errorType === "empty string" && <span className="empty-string-error"> 
             Please enter a username
           </span>}
         </form>

@@ -8,15 +8,17 @@ import React, { Component } from 'react';
     setStyle = (category) => {
       switch(category){
         case 'hand':
-          return '#76B3FC'
+          return "#72cbff"
         case 'count':
-          return '#F7CBA9'
+          return "#DCF798"
         case 'point':
-          return '#FC6A9D'
+          return "#DD72E3"
         default: 
-          return '#956DD4'
+          return "rgba(65, 250, 248, 0.74)"
       }
-    }
+    };
+
+    
 
     render(){
       return(

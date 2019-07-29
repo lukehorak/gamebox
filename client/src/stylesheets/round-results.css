@@ -13,6 +13,11 @@
   justify-content: center;
 }
 
+button{
+  border: none;
+  outline: none;
+}
+
 .winning-stuff-container,
 .losing-stuff-container{
   background-color: white;
@@ -42,8 +47,6 @@
   margin: 1em 2em 0.5em 2em;
 }
 
-
-
 .faker-caught{
   color: red;
   font-size: 6em;
@@ -66,7 +69,7 @@
 
 
 .next-button{
-  background-color: #956DD4;
+  background-color: #ff568e;
   border-radius: 0.5em;
   height: 3em;
   width: 6em;
@@ -81,7 +84,7 @@
 }
 
 #home-button{
-  background-color: #96f5ff;
+  background-color: rgba(65, 250, 248, 0.74);
   border-radius: 0.5em;
   font-size: 1.5em;
   width: 8em;
@@ -107,15 +110,25 @@
   .rounds-footer{
     height: 13em;
   }
+  .losing-stuff{
+    font-size: 1em;
+  }
 }
 
 @media screen and (min-width: 305px){
-  .not-enough-votes,
-  .faker-won-h1,
-  .wrong-person,
-  .busted-faker{
-    font-size: 1.5em;
+  .faker-won-h1{
+    font-size: 2em;
   }
+  .wrong-person{
+    font-size: 1.2em;
+  }
+  .not-enough-votes{
+    font-size: 1.3em;
+  }
+  .busted-faker{
+    font-size: 2em;
+  }
+
   .footer-container,
   .rounds-footer{
     height: 80em;
@@ -127,19 +140,25 @@
   }
   .next-button{
     font-size: 2em;
+    margin-top: 1em;
   }
 }
 
 @media screen and (min-width: 400px){
   .not-enough-votes,
   .faker-won-h1,
-  .wrong-person,
   .busted-faker{
     font-size: 2em;
+  }
+  .wrong-person{
+    font-size: 1.5em;
   }
   .footer-container,
   .rounds-footer{
     height: 28em;
+  }
+  .losing-stuff{
+    font-size: 1.5em;
   }
 }
 
@@ -204,5 +223,12 @@
   .next-button{
     font-size: 6em;
     margin-top: 4em;
+  }
+}
+
+@media screen and (min-height: 1000px){
+  .footer-container,
+  .rounds-footer{
+    height: 200em;
   }
 }

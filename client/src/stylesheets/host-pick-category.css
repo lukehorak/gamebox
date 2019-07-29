@@ -100,7 +100,6 @@ body{
   transition: background 250ms ease-in-out,
   transform 150ms ease;
   /* border: 3px solid rgb(28, 70, 133); */
-  border: 3px solid rgb(226, 161, 39);
   border-radius: 0.5em;
   width: 20em;
   font-weight: 900;
@@ -140,17 +139,26 @@ body{
     text-align: center;
 }
 
+/* switch(category){
+  case 'hand':
+    return "#6D89D7"
+  case 'count':
+    return "#DCF798"
+  case 'point':
+    return "#DD72E3"
+  default: 
+    return "#7095FC" */
 
 #hand{
-  background-color: #76B3FC;
+  background-color: #72cbff;
 }
 
 #count{
-  background-color:#F7CBA9;
+  background-color: #DCF798;
 }
 
 #point{
-  background-color: #FC6A9D;
+  background-color: #DD72E3;
 }
 
 #hand:focus,
