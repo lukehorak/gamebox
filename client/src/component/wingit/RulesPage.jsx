@@ -24,6 +24,8 @@ class RulesPage extends Component {
         <p>To the rest of the players, try to catch the person trying to wing' it!</p>
 
         <p>HAVE FUN!</p>
+
+        {this.props.isHost && <button onClick={this.props.startGame}>Start game!</button>}
           
       </div>
 

@@ -62,6 +62,11 @@ io.on('connection', function (socket) {
 
   });
 
+  socket.on('prep-game', (data) => {
+    io.in(data.code).emit('phase-change', {phase: 'R'});
+    console.log('sending game rules!')
+  })
+
   socket.on('start-game', (data) => {
     io.to(data.code).emit('phase-change', {phase: 1})
     console.log(`starting game ${data.code}`);
