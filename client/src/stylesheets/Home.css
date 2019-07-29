@@ -40,126 +40,38 @@ nav{
   margin: 4em auto;
 }
 
-.name-container{
-  display: flex;
-}
-
-#button-container{
-  display: flex; 
-  flex-direction: column;
-  align-items: center;
-}
-
-
-#join-game{
-  color: white;
-  background-color: #AC3B61;
-  margin-bottom: 2em;
-  margin-top: 6em;
-  padding: 0.7em 0.9em 0.7em 0.9em;
-  border-radius: 0.5em;
-}
-
-.create-game-button{
-  color: white;
-  background-color: #AC3B61;
-  margin: 3em 0 4em 0;
-  padding: 0.79em 0.9em 0.79em 0.9em;
-  border-radius: 0.5em;
-  }
-
-
-form .input{
-  width: 12em;
-  margin-top: 2em;
-}
-
-form .room-code{
-  padding-top: 23em;
-  margin-top: 2em;
-}
-
-  img{
-    width: 10em;
-    height: 12em;
-    /* padding: 1em 1em 0em 1em; */
-    padding: 3px 3px 0px 3px;
-    /* box-shadow: -3px 4px 4px 0 rgb(85, 84, 84); */
-    border-radius: 1em;
-
-  }
-
-  input{
-    border: none;
-    border-radius: 0.5em;
-    box-shadow: -3px 5px 9px 0px rgb(85, 84, 84);
-    height: 1.5rem;
-    width: 6rem;
-  }
-  .name-input{
-    margin-right: 1rem;
-  }
-
-  .room-code-input{
-    margin-left: 1rem;
-  }
-
-  #card-container{
-    display: flex;
-    justify-content: center;
-    background-color: rgba(0,0,0, 0.2);
-    border-radius: .5em;
-    /* height: 30em; */
-    width: 40em;
-    /* overflow-y: scroll; */
-    scroll-behavior: smooth; 
-    margin: 4em auto;
-    box-shadow: inset -8px 4px 16px 8px #846a6a;
-    display: flex;
-    flex-wrap: wrap;
-  }
-
-  figure{
-    border: 0.1em solid #EEE2DC;
-    background-color:#846a6a;
+img{
+    width: 11em;
+    height: 13em;
     border-radius: 0.5em;
     box-shadow:  -3px 4px 4px 0 rgb(85, 84, 84);
     margin: 1.5em;
-  }
-  
-  figure .title-container{
-    display: flex;
-    justify-content: center;
-    /* background-color: rgb(52, 48, 48); */
-  }
+    border-radius: 1em;
+ }
 
-  p .title{
-    margin: 0;
-  }
+#card-container{
+  display: flex;
+  justify-content: center;
+  border-radius: .5em;
+  width: 40em;
+  scroll-behavior: smooth; 
+  margin: 4em auto;
+  box-shadow: inset 0px 1px 16px 8px #846a6a;
+  display: flex;
+  flex-wrap: wrap;
+}
 
-  .join-game{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
+.game-link{
+  color: black;
+  text-decoration: none;
+}
 
-  .create-game{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+@media screen and (max-width: 992px) {
+  #card-container {
+    width: 80%;
   }
+}
 
-  .game-link{
-    color: black;
-    text-decoration: none;
-  }
-
-  @media screen and (max-width: 992px) {
-    #card-container {
-      width: 80%;
-    }
-  }
-
-  .typist {
-    border-radius: 2em;
-  }
+.typist {
+  border-radius: 2em;
+}
