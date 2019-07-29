@@ -54,7 +54,7 @@ class Lobby extends Component {
               {this.listPlayers(this.props.players)}
             </div>}
 
-          {this.props.isHost && <button className="start-game-button" onClick={this.props.startGame}>Start Game</button>}
+          {this.props.isHost && <button className="start-game-button" onClick={this.props.prepGame}>Start Game</button>}
 
         </div>
 

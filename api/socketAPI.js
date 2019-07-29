@@ -40,6 +40,10 @@ io.on('connection', function (socket) {
     try {
       // Create new player, add them to their game, and get back ID of their game's host
       const hostID = socketApi.newPlayer(data.roomCode, data.username);
+
+      //
+
+
       // Send roomcode to new player (getting the actual game's code isntead of what they fed it)
       socket.emit('room-code', io.sockets.connected[hostID].game.roomCode);
       socket.join(io.sockets.connected[hostID].game.roomCode)
@@ -57,6 +61,11 @@ io.on('connection', function (socket) {
     }
 
   });
+
+  socket.on('prep-game', (data) => {
+    io.in(data.code).emit('phase-change', {phase: 'R'});
+    console.log('sending game rules!')
+  })
 
   socket.on('start-game', (data) => {
     io.to(data.code).emit('phase-change', {phase: 1})
@@ -156,7 +165,6 @@ io.on('connection', function (socket) {
     console.log('sending faker: ', player, foundFaker)
     io.in(data.roomCode).emit('set-faker', { faker: player, foundFaker: foundFaker })
     if(socket.game.isOver()){
-      //io.in(data.roomCode).emit('clear-state');
       console.log(`${player} was the faker: ${foundFaker}`)
       io.in(data.roomCode).emit('phase-change', { phase: 6 });
     }
