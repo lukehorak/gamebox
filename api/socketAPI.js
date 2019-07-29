@@ -42,8 +42,8 @@ io.on('connection', function (socket) {
       const hostID = socketApi.newPlayer(data.roomCode, data.username);
       if (hostID){
         socket.emit('room-code', io.sockets.connected[hostID].game.roomCode);
+
         socket.join(io.sockets.connected[hostID].game.roomCode)
-  
         // set socket username
         socket.username = data.username;
         // Send all players to all connected sockets
@@ -56,8 +56,8 @@ io.on('connection', function (socket) {
     }
     catch (e) {
       console.warn(`Unable to add user to room, as room with code '${data.roomCode}' room does not exist!`, e)
-      socket.emit('empty-room', {
-        error: `Room with code '${data.roomCode}' does not exist!`
+      socket.emit('send-error', {
+        error: `Failed to join room with code ${data.roomCode}. Are you sure it exists?`
       })
     }
 
