@@ -12,7 +12,7 @@ class Card extends Component {
           <div className="card-image">
             <a className="game-link" href={this.props.link}>
               <figure>
-                <img src={this.props.imageSource} alt="Placeholder" />
+                <img id={this.props.cardClass} src={this.props.imageSource} alt="Placeholder" />
               </figure>
               </a>
           </div>
