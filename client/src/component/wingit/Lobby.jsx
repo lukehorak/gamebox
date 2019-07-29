@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import CreateGameForm from './CreateGameForm';
-
+import JoinGameForm from './JoinGameForm';
 
 class Lobby extends Component {
   listPlayers = (players) => {
@@ -42,11 +42,12 @@ class Lobby extends Component {
             {!this.props.roomCode &&
             <div className="join-game-container">
               <span className="join-game-header">Join a Game:</span> 
-              <form className="lobby-join-game-form" onSubmit={ this.props.joinGame }>
+              <JoinGameForm error={this.props.error} joinGame={this.props.joinGame} clearError={this.props.clearError}/>
+              {/* <form className="lobby-join-game-form" onSubmit={ this.props.joinGame }>
                 <input className="name-field" name="username" placeholder="Enter your username" />
                 <input className="name-field" name="roomCode" placeholder="Enter your game's room code" />
                 <button className="join-game-button">Join Game</button>
-              </form>
+              </form> */}
             </div>}
 
           {this.props.roomCode &&

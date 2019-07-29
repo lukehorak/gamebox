@@ -104,6 +104,11 @@ class WingIt extends Component {
       this.setState({ roundResult: false })
       //console.log(this.state)
     })
+
+    this.socket.on('send-error', data => {
+      console.warn(data.error);
+      this.setState({ error: data.error })
+    })
   }
 
   // Class Methods
@@ -174,7 +179,12 @@ class WingIt extends Component {
 
   nextRound = () => {
     this.socket.emit('next-round', { roomCode: this.state.roomCode });
-  }  
+  } 
+  
+  clearError = () => {
+    console.log('clearing error');
+    this.setState({ error: false });
+  }
 
   handleCase = (phase) => {
     switch (phase) {
@@ -189,6 +199,7 @@ class WingIt extends Component {
                 isHost={this.state.thisPlayer.isHost} 
                 error={this.state.error}
                 errorType={this.state.errorType}
+                clearError={this.clearError}
                 />
               );
       case 'R':
