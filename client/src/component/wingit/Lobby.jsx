@@ -21,6 +21,11 @@ class Lobby extends Component {
   render() {
     return (
       <div>
+        <nav className="lobby-nav">
+          <span className="title">
+            Just Wing it!
+          </span>
+        </nav>
         <div className="wingit-main-container" >
           {this.props.roomCode &&
             <div className="generated-room-code">

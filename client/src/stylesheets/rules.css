@@ -228,29 +228,29 @@
   .rules-main-container {
     width: 100%;
   }
-   .rules-container {
-     width: 80%;
-   }
+  .rules-container {
+    width: 80%;
+  }
 
-   .rules-title {
-     font-size: 2em;
-   }
+  .rules-title {
+    font-size: 2em;
+  }
 }
 
 @media screen and (max-width: 600px) {
-   .rules-main-container {
-     width: 100%;
-   }
+  .rules-main-container {
+    width: 100%;
+  }
 
-   .rules-container {
-     width: 80%;
-   }
+  .rules-container {
+    width: 80%;
+  }
 
-   .rules-title {
-     font-size: 2em;
-   }
-   /* .par-1 .par-2 .par-3 .par-4 .par-5 .par-6 {
-     font-size: .5em;
+  .rules-title {
+    font-size: 2em;
+  }
+  /* .par-1 .par-2 .par-3 .par-4 .par-5 .par-6 {
+    font-size: .5em;
    } */
 
 }

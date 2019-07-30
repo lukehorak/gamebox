@@ -16,46 +16,36 @@ class Home extends Component {
         <Nav/>
         <div id="main-wrapper">
 
-
-
-          
           <div id="card-container">
-
-
+          
             <div className="game-container" >
 
               <Card
-                cardClass="wingItCard"
+                cardClass="wing-it"
                 imageSource="https://static1.squarespace.com/static/53f222ece4b0607c74c991b4/t/572fb2841bbee07454dcb8f6/1462743697345/Just+wing+it"
-                gameTitle="Wing it!"
                 link="/wingit"
-
+                comingSoon="./assets/coming-soon.png"
               />
               <Card
                 cardClass="typist"
-                imageSource="https://payload.cargocollective.com/1/1/50182/605229/typeordie-01_900.jpg"
-                gameTitle="The Typist"
+                comingSoon="coming-soon" src="./assets/coming-soon.png"
+                imageSource="./assets/type-or-die.png"
               />
-
-
             </div>
-
 
             <div className="game-container">
               <span className="card-wrapper">
                 <Card
                   cardClass="close-enough"
                   imageSource="http://thumbpress.com/wp-content/uploads/2012/02/Close-enough.jpg"
-                  gameTitle="Close enough."
                   link="/closeenough"
                 />
 
               </span>
 
               <Card
-                cardClass="whereAmI"
-                imageSource="https://proxy.duckduckgo.com/iu/?u=https%3A%2F%2Fi.pinimg.com%2F736x%2F33%2F94%2F0d%2F33940d51edd503c1997c17d48b3d0fca--medieval-map-medieval-party.jpg&f=1" alt="Placeholder image"
-                gameTitle="Where Am I?"
+                cardClass="where-am-i"
+                imageSource="./assets/where-am-i.png" alt="Placeholder image"
               />
 
             </div>
