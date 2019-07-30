@@ -13,6 +13,8 @@ import '../../stylesheets/wingit-lobby.css';
 import '../../stylesheets/Question-page.css';
 import '../../stylesheets/non-host-pick-category.css'
 import '../../stylesheets/voting-page.css'
+import '../../stylesheets/close_enough/CELobby.css'
+
 class CloseEnough extends Component {
 
   constructor(props) {
@@ -159,9 +161,7 @@ class CloseEnough extends Component {
   render() {
     return (
       <div>
-        Play CLOSE ENOUGH!
-        This game page is for close enough.
-        Not Wingit. <br></br>
+          <h1 className="ce-title">CLOSE ENOUGH.</h1>
         {/* It looks like Wingit right now, but (a reminder for us) this game is for Close Enough. */}
 
         {this.handleCase(this.state.phase)}
