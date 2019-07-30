@@ -1,25 +1,194 @@
 .rules-main-container {
-    /* display: flex; */
-    /* align-items: center;
-    text-align: center;
-    margin: 10em */
+  /* background-color: antiquewhite; */
+  /* align-items: center; */
+  align-items: center;
+  text-align: center;
 }
 
 .rules-title {
     align-items: center;
     text-align: center;
-    margin: 5em
+    background-color: red;
 }
 
 .rules-container {
-      /* display: flex; */
-      align-items: center;
-      text-align: center;
-      margin-right: 10em;
-      margin-left: 10em;
-
+    /* align-items: center; */
+    align-items: left;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    /* background-color: rgba(0, 0, 0, 0.2); */
+    background-color: antiquewhite;
+    border-radius: .5em;
+    width: 40em;
+    scroll-behavior: smooth;
+    margin: auto;
+    /* box-shadow: inset -8px 4px 16px 8px #846a6a; */
+    display: flex;
+    flex-wrap: wrap;
 }
 
-.par-1 {
+/* .par-1 {
   background-color: aqua;
+  margin: .5em 3em .5em 3em;
+  border-radius: 20px;
+  padding: 0.5em;
+  /* /* width: 100px; */
+  /* height: 50px; */
+  /* transform: skew(15deg); */
+    /* background: #555;
+  border-top: 25px;
+  border-left: 50px;
+  border-bottom: 100px;
+/* } */
+
+.par-1 {
+    /* width: 140px;
+    height: 100px; */
+    margin: .5em 3em .5em 3em;
+    padding: 0.5em;
+    background: #72cbff;
+    position: relative;
+    -moz-border-radius: 12px;
+    -webkit-border-radius: 12px;
+    border-radius: 12px;
+    transform: skew(10deg);
+        border-width: thick;
+        border-style: solid;
+        border-color: black;
+}
+
+.par-1:after {
+  content: "";
+  width: 0;
+  height: 0;
+  top: 100%;
+  right: 38px;
+  position: absolute;
+  border-top: 26px solid #72cbff;
+  border-left: 13px solid black;
+  border-right: 13px solid black;
+}
+
+.par-2 {
+    margin: .5em 3em .5em 3em;
+    padding: 0.5em;
+    background: #DCF798;
+    position: relative;
+    -moz-border-radius: 12px;
+    -webkit-border-radius: 12px;
+    border-radius: 12px;
+    transform: skew(-10deg);
+    border-width: thick;
+    border-style: solid;
+    border-color: black;
+}
+
+.par-2:after {
+  content: "";
+  width: 0;
+  height: 0;
+  top: 100%;
+  left: 38px;
+  position: absolute;
+  border-top: 26px solid #DCF798;
+  border-left: 13px solid black;
+  border-right: 13px solid black;
+  border-style: solid;
+}
+
+.par-3 {
+    margin: .5em 3em .5em 3em;
+    padding: 0.5em;
+    background: #DD72E3;
+    position: relative;
+    -moz-border-radius: 12px;
+    -webkit-border-radius: 12px;
+    border-radius: 12px;
+    transform: skew(-10deg);
+    border-width: thick;
+    border-style: solid;
+    border-color: black;
+    }
+
+.par-3:after {
+      content: "";
+      width: 0;
+      height: 0;
+      top: 100%;
+      left: 38px;
+      position: absolute;
+      border-top: 26px solid #DD72E3;
+      border-left: 13px solid black;
+      border-right: 13px solid black;
+      border-style: solid;
+    }
+
+.par-4 {
+    margin: .5em 3em .5em 3em;
+    padding: 0.5em;
+    background: #72cbff;
+    position: relative;
+    -moz-border-radius: 12px;
+    -webkit-border-radius: 12px;
+    border-radius: 12px;
+    transform: skew(10deg);
+    border-width: thick;
+    border-style: solid;
+    border-color: black;
+    }
+
+    .par-4:after {
+      content: "";
+      width: 0;
+      height: 0;
+      top: 100%;
+      left: 38px;
+      position: absolute;
+      border-top: 26px solid #72cbff;
+      border-left: 13px solid black;
+      border-right: 13px solid black;
+      border-style: solid;
+    }
+
+.par-5 {
+  background-color:#DCF798;
+  margin: .5em 3em .5em 3em;
+  border-radius: 20px;
+  padding: 0.5em;
+}
+
+.par-6 {
+  background-color: #DD72E3;
+  margin: .5em 3em .5em 3em;
+  border-radius: 20px;
+  padding: 0.5em;
+}
+
+.par-7 {
+  background-color: #72cbff;
+  margin: .5em 3em .5em 3em;
+  border-radius: 20px;
+  padding: 0.5em;
+}
+
+@media screen and (max-width: 992px) {
+  .rules-main-container {
+    width: 80%;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .rules-container {
+    width: 80%;
+  }
+}
+
+.rules-start-game-button {
+    align-items: center;
+    text-align: center;
+    width: 9em;
+    height: 2em;
+    border-radius: 4em;
+    font-size: 2em;
 }
