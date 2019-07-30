@@ -20,7 +20,7 @@ class RulesPage extends Component {
           
         <p className="par-4">The vote has to be unanimous (minus one, being the faker) for it to count, so discussing the possible faker is encouraged. </p>
       
-        <p className="par-5">    To the wing woman or man, blend in well!      </p>
+        <p className="par-5">    If you're stuck winging it, blend in well!      </p>
       
         <p className="par-6">To the rest of the players, try to catch the person trying to wing' it!</p>
 
