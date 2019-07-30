@@ -14,6 +14,7 @@
     font-size: 3em;
     margin: 0;
     padding: .5em;
+    font-family: "Acme";
 }
 
 .rules-container {
@@ -29,6 +30,7 @@
     /* box-shadow: inset -8px 4px 16px 8px #846a6a; */
     display: flex;
     flex-wrap: wrap;
+    flex-direction: column;
 }
 
 /* .par-1 {
@@ -217,11 +219,13 @@
     -moz-border-radius: 12px;
     -webkit-border-radius: 12px;
     border-radius: 12px;
-    border-width: medium;
+    border-width: thick;
     border-style: solid;
     border-color: black;
     font-size: 2em;
     font-weight: bold;
+    font-family: "Acme";
+
 }
 
 @media screen and (max-width: 992px) {
@@ -256,7 +260,7 @@
 }
 
 .rules-start-game-button {
-    align-items: center;
+    /* align-items: center;
     text-align: center;
     width: 6em;
     height: 2em;
@@ -264,7 +268,16 @@
     font-size: 2em;
     border-color: rgb(129, 128, 128);
     border-style: solid;
-    margin: .5em;
+    margin: .5em; */
+
+      font-family: "Acme";
+      background-color: #ff568e;
+      border-radius: 0.5em;
+      font-size: 1.5em;
+      width: 10em;
+      height: 2em;
+      border: none;
+      color: white;
 }
 
 @media screen and (min-width: 992px) {

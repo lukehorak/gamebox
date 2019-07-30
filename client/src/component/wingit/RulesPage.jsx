@@ -28,7 +28,7 @@ class RulesPage extends Component {
 
         </div>
 
-        {this.props.isHost && <button onClick={this.props.startGame} className="rules-start-game-button">Start game!</button>}
+        {this.props.isHost && <button onClick={this.props.startGame} className="rules-start-game-button">Start game</button>}
           
 
       </div>
