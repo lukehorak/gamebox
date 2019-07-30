@@ -17,7 +17,7 @@ class DisplayQuestion extends Component {
         <div className="nav-container">
           <GameNav category={this.props.category} player={this.props.player.username}/>
         </div>
-        <Countdown timerInSec={8} />
+        {/* <Countdown timerInSec={8} /> */}
         <div  className="question-container">
           <h1 className="question">{this.props.question}</h1>
         </div>
