@@ -40,23 +40,33 @@ io.on('connection', function (socket) {
     try {
       // Create new player, add them to their game, and get back ID of their game's host
       const hostID = socketApi.newPlayer(data.roomCode, data.username);
-      // Send roomcode to new player (getting the actual game's code isntead of what they fed it)
-      socket.emit('room-code', io.sockets.connected[hostID].game.roomCode);
-      socket.join(io.sockets.connected[hostID].game.roomCode)
+      if (hostID){
+        socket.emit('room-code', io.sockets.connected[hostID].game.roomCode);
 
-      // set socket username
-      socket.username = data.username;
-      // Send all players to all connected sockets
-      io.in(data.roomCode).emit('respond-all-players', socketApi.getPlayerList(data.roomCode))
+        socket.join(io.sockets.connected[hostID].game.roomCode)
+        // set socket username
+        socket.username = data.username;
+        // Send all players to all connected sockets
+        io.in(data.roomCode).emit('respond-all-players', socketApi.getPlayerList(data.roomCode))
+      }
+      else {
+        socket.emit('send-error', { error: "A player with that name already exists!" })
+      }
+      // Send roomcode to new player (getting the actual game's code isntead of what they fed it)
     }
     catch (e) {
       console.warn(`Unable to add user to room, as room with code '${data.roomCode}' room does not exist!`, e)
-      socket.emit('empty-room', {
-        error: `Room with code '${data.roomCode}' does not exist!`
+      socket.emit('send-error', {
+        error: `Failed to join room with code ${data.roomCode}. Are you sure it exists?`
       })
     }
 
   });
+
+  socket.on('prep-game', (data) => {
+    io.in(data.code).emit('phase-change', {phase: 'R'});
+    console.log('sending game rules!')
+  })
 
   socket.on('start-game', (data) => {
     io.to(data.code).emit('phase-change', {phase: 1})
@@ -156,7 +166,6 @@ io.on('connection', function (socket) {
     console.log('sending faker: ', player, foundFaker)
     io.in(data.roomCode).emit('set-faker', { faker: player, foundFaker: foundFaker })
     if(socket.game.isOver()){
-      //io.in(data.roomCode).emit('clear-state');
       console.log(`${player} was the faker: ${foundFaker}`)
       io.in(data.roomCode).emit('phase-change', { phase: 6 });
     }
@@ -216,8 +225,8 @@ socketApi.getRoom = (roomCode) => {
 socketApi.newPlayer = function (roomCode, username) {
   const hostID = socketApi.getHost(roomCode);
   console.log(`Adding player ${username} to game room ${roomCode}`)
-  io.sockets.connected[hostID].game.addPlayerByName(username);
-  return hostID;
+  const success = io.sockets.connected[hostID].game.addPlayerByName(username);
+  return (success ? hostID : false);
 }
 
 socketApi.getRealQuestion = (roomCode) => {
