@@ -23,43 +23,58 @@ class CELobby extends Component {
   render() {
     return (
       <div>
-        <div className="close-enough-main-container" >
+
+        <div className="close-enough-main-container row" >
+
+
+          <div className="split left">
+            <div className="centered">
           {
             this.props.roomCode &&
-            <div className="generated-room-code">
+            <div className="ce-generated-room-code">
               Room Code:
-              <div className="room-code-container">
-                <span id="room-code">
+              <div className="ce-room-code-container">
+                <span id="ce-room-code">
                   {this.props.roomCode}
-                  <hr className="room-code-hr" />
+                  <hr className="ce-room-code-hr" />
                 </span>
               </div>
             </div>
           }
           {!this.props.roomCode &&
-            <div className="create-game-container">
-              <span className="create-game-header">Create a Game:</span>
+            <div className="ce-create-game-container">
+              <span className="ce-create-game-header">Create a Game:</span>
               <CreateGameForm createGame={this.props.createGame} />
-              <hr className="create-game-hr" />
+              {/* <hr className="ce-create-game-hr" /> */}
             </div>}
+          </div>
+          </div>
+
+
+          <div className="split right">
+            <div className="centered">
           {!this.props.roomCode &&
-            <div className="join-game-container">
-              <span className="join-game-header">Join a Game:</span>
-              <form className="lobby-join-game-form" onSubmit={this.props.joinGame}>
-                <input className="name-field" name="username" placeholder="Enter your username" />
-                <input className="name-field" name="roomCode" placeholder="Enter your game's room code" />
-                <button className="join-game-button">Join Game</button>
+            <div className="ce-join-game-container">
+              <span className="ce-join-game-header">Join a Game:</span>
+              <form className="ce-lobby-join-game-form" onSubmit={this.props.joinGame}>
+                <input className="ce-name-field" name="username" placeholder="Enter your username" />
+                <input className="ce-name-field" name="roomCode" placeholder="Enter your game's room code" />
+                <button className="ce-join-game-button">Join Game</button>
               </form>
             </div>}
+          </div>
+          </div>
+
+        </div>
 
           {this.props.roomCode &&
-            <div className="player-list-container">
+            <div className="ce-player-list-container">
               {this.listPlayers(this.props.players)}
             </div>}
 
-          {this.props.isHost && <button className="start-game-button" onClick={this.props.startGame}>Start Game</button>}
+          {this.props.isHost && <button className="ce-start-game-button" onClick={this.props.startGame}>Start Game</button>}
 
-        </div>
+        
 
       </div>
     )
