@@ -28,7 +28,7 @@ class Round {
   getQuestion(playerName) {
     const player = this.players[playerName]
     if (player.isFaker){
-      return (this.prefix + "... JUST KIDDING! We're not going to tell you." + this.fakerQuestion);
+      return (`${this.prefix}... JUST KIDDING! We're not going to tell you! ${this.fakerQuestion}`);
     }
     return this.prefix + this.question;
   }
