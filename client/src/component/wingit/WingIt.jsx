@@ -6,6 +6,8 @@ import DisplayQuestion from './DisplayQuestion';
 import VotingPage from './VotingPage';
 import RoundResult from './RoundResult';
 import GameResults from './GameResults';
+import RulesPage from './RulesPage';
+
 import '../../stylesheets/Home.css';
 import '../../stylesheets/wingit.css';
 import '../../stylesheets/host-pick-category.css';
@@ -14,6 +16,7 @@ import '../../stylesheets/Question-page.css';
 import '../../stylesheets/non-host-pick-category.css';
 import '../../stylesheets/voting-page.css';
 import '../../stylesheets/round-results.css';
+import { timingSafeEqual } from 'crypto';
 class WingIt extends Component {
 
   constructor(props) {
@@ -101,6 +104,11 @@ class WingIt extends Component {
       this.setState({ roundResult: false })
       //console.log(this.state)
     })
+
+    this.socket.on('send-error', data => {
+      console.warn(data.error);
+      this.setState({ error: data.error })
+    })
   }
 
   // Class Methods
@@ -123,8 +131,12 @@ class WingIt extends Component {
     this.socket.emit('new-player', { username: username.value, roomCode: roomCode.value })
   }
 
+  prepGame = () => {
+    this.socket.emit('prep-game', { code: this.state.roomCode });
+  }
+
   startGame = () => {
-    this.socket.emit('start-game', { code: this.state.roomCode });
+    this.socket.emit('start-game', { code: this.state.roomCode })
   }
 
   sendCategory = (category) => {
@@ -167,7 +179,12 @@ class WingIt extends Component {
 
   nextRound = () => {
     this.socket.emit('next-round', { roomCode: this.state.roomCode });
-  }  
+  } 
+  
+  clearError = () => {
+    console.log('clearing error');
+    this.setState({ error: false });
+  }
 
   handleCase = (phase) => {
     switch (phase) {
@@ -177,13 +194,22 @@ class WingIt extends Component {
                 roomCode={this.state.roomCode}
                 createGame={this.createGame}
                 joinGame={this.joinGame}
-                startGame={this.startGame}
+                prepGame={this.prepGame}
                 players={this.state.players}
                 isHost={this.state.thisPlayer.isHost} 
                 error={this.state.error}
                 errorType={this.state.errorType}
+                clearError={this.clearError}
                 />
               );
+      case 'R':
+        return(
+              <RulesPage
+              isHost={this.state.thisPlayer.isHost}
+              startGame={this.startGame}
+              category={this.state.category}
+              />
+        );
       case 1:
         return (
                 <PickCategory

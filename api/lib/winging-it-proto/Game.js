@@ -32,15 +32,15 @@ class Game {
   addPlayer(player){
     if(!this.players[player.name]){
       this.players[player.name] = player;
+      return true;
     }
-    else {
-      console.log("A player with that name already exists!")
-    };
+    console.log("A player with that name already exists!");
+    return false;
   }
 
   addPlayerByName(playerName){
     const newPlayer = new Player(playerName);
-    this.addPlayer(newPlayer);
+    return this.addPlayer(newPlayer);
   }
 
 
