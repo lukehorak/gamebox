@@ -71,10 +71,9 @@ class Round {
     const response = { checked: false, player: null, foundFaker: false }
     const voteTotals = this.getAllVotes();
     for (let p in voteTotals) {
-      //if (this.playerVotes[p] === magicNumber) {
+      response.player = p;
       if (voteTotals[p] === magicNumber) {
         response.checked = true;
-        response.player = p;
         response.foundFaker = this.players[p].isFaker;
         return response;
       }
