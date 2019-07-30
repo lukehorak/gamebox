@@ -16,6 +16,8 @@ import '../../stylesheets/Question-page.css';
 import '../../stylesheets/non-host-pick-category.css';
 import '../../stylesheets/voting-page.css';
 import '../../stylesheets/round-results.css';
+import '../../stylesheets/rules.css';
+
 import { timingSafeEqual } from 'crypto';
 class WingIt extends Component {
 

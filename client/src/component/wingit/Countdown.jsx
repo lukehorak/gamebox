@@ -1,16 +1,24 @@
 import React, { Component } from 'react';
-// import ReactCountdownClock from 'react-countdown-clock';
-import Nav from '../home/Nav';
 
+let interval;
+let timeOut;
 
 class Countdown extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      player: "John",
-      timer: this.props.timer,
+      timer: this.props.timerInSec,
       visiblity: false
     }
+  }
+
+  componentDidMount() {
+    this.startTimer();
+  }
+
+  componentWillUnmount() {
+    clearInterval(interval);
+    clearTimeout(timeOut);
   }
 
   startTimer() {
@@ -18,45 +26,26 @@ class Countdown extends Component {
       visiblity: true
     })
 
-    const interval = setInterval(() => {
+    interval = setInterval(() => {
       this.setState({
         timer: this.state.timer - 1
       })
     }, 1000);
 
-    setTimeout(() => {
+    timeOut = setTimeout(() => {
+      clearInterval(interval);
       this.setState({
+        visiblity: false,
         timer: " 0 - Time's up!"
       })
-      clearInterval(interval);
     }, (this.state.timer) * 1000)
   }
 
   render() {
-    const myComponent = () => {
-      return <div>
-        <span>{this.state.timer}</span>
-        {/* <div>
-          <ReactCountdownClock seconds={this.props.timer}
-            color="#000"
-            alpha={0.9}
-            size={100} />
-        </div> */}
-      </div>
-    }
-    
     return (
       <div>
-        <Nav />
-        <div className="player-name">
-          Player: {this.state.player}
-        </div>
-      <div className='clock'>
-        <button onClick={this.startTimer.bind(this)}>Start {this.props.timer}-second Countdown</button>
-        {this.state.visiblity && myComponent()}
+        <span>{this.state.timer}</span>
       </div>
-      </div>
-
     );
   }
 }
