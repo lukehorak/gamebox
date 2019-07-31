@@ -38,34 +38,39 @@ io.on('connection', function (socket) {
   // Creating/Adding a new player to an existing game
   socket.on('new-player', function (data) {
     const playerCount = io.sockets.adapter.rooms[data.roomCode].length;
-    if(playerCount < 6){
-      try {
-        // Create new player, add them to their game, and get back ID of their game's host
-        const hostID = socketApi.getHost(data.roomCode);
-        const playerAdded = socketApi.newPlayer(hostID, data.username);
-        if (playerAdded){
-          socket.emit('room-code', io.sockets.connected[hostID].game.roomCode);
-          
-          socket.join(io.sockets.connected[hostID].game.roomCode)
-          // set socket username
-          socket.username = data.username;
-          // Send all players to all connected sockets
-          io.in(data.roomCode).emit('respond-all-players', socketApi.getPlayerList(data.roomCode))
-        }
-        else {
-          socket.emit('send-error', { error: "A player with that name already exists!" })
-        }
-        // Send roomcode to new player (getting the actual game's code isntead of what they fed it)
-      }
-      catch (e) {
-        console.warn(`Unable to add user to room, as room with code '${data.roomCode}' room does not exist!`, e)
-        socket.emit('send-error', {
-          error: `Failed to join room with code ${data.roomCode}. Are you sure it exists?`
-        })
-      }
+    if (data.username == ''){
+      socket.emit('send-error', { error: 'Oops! looks like you forgot a name'})
     }
     else{
-      socket.emit('send-error', { error: 'Sorry, this game has reached its max (6 people)!' })
+      if(playerCount < 6){
+        try {
+          // Create new player, add them to their game, and get back ID of their game's host
+          const hostID = socketApi.getHost(data.roomCode);
+          const playerAdded = socketApi.newPlayer(hostID, data.username);
+          if (playerAdded){
+            socket.emit('room-code', io.sockets.connected[hostID].game.roomCode);
+            
+            socket.join(io.sockets.connected[hostID].game.roomCode)
+            // set socket username
+            socket.username = data.username;
+            // Send all players to all connected sockets
+            io.in(data.roomCode).emit('respond-all-players', socketApi.getPlayerList(data.roomCode))
+          }
+          else {
+            socket.emit('send-error', { error: "A player with that name already exists!" })
+          }
+          // Send roomcode to new player (getting the actual game's code isntead of what they fed it)
+        }
+        catch (e) {
+          console.warn(`Unable to add user to room, as room with code '${data.roomCode}' room does not exist!`, e)
+          socket.emit('send-error', {
+            error: `Failed to join room with code ${data.roomCode}. Are you sure it exists?`
+          })
+        }
+      }
+      else{
+        socket.emit('send-error', { error: 'Sorry, this game has reached its max (6 people)!' })
+      }
     }
 
   });
