@@ -23,9 +23,9 @@ import Countdown from '../wingit/Countdown';
           <hr className="voting-hr"/>
           </div>
           <div className="player-container">
-            <div  className="voting-list-container">
+            <span  className="voting-list-container">
               {players} 
-            </div>
+            </span>
           </div>
         </div>
       );

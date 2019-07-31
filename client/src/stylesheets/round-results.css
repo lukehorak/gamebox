@@ -1,3 +1,8 @@
+body{
+  font-family: "Acme";
+  font-weight: 200;
+}
+
 .not-enough-votes-container,
 .faker-wins-center-wrapper,
 .wrong-person-container,
@@ -69,6 +74,7 @@ button{
 
 
 .next-button{
+  font-family: "Acme";
   background-color: #ff568e;
   border-radius: 0.5em;
   height: 3em;
@@ -84,13 +90,14 @@ button{
 }
 
 #home-button{
-  background-color: rgba(65, 250, 248, 0.74);
+  font-family: "Acme";
+  background-color: #ff568e;
   border-radius: 0.5em;
   font-size: 1.5em;
-  width: 8em;
-  height: 3em;
+  width: 10em;
+  height: 2em;
   border: none;
-  box-shadow: -4px 8px 11px grey;
+  color: white;
 }
 
 .busted-faker{

@@ -41,18 +41,13 @@ class Lobby extends Component {
           {!this.props.roomCode &&
             <div className="create-game-container">
               <span className="create-game-header">Create a Game:</span>
-              <CreateGameForm errorType={this.props.errorType} error={this.props.error} createGame={this.props.createGame} />
+              <CreateGameForm clearError={this.props.clearError} errorType={this.props.errorType} error={this.props.error} createGame={this.props.createGame} />
               <hr className="create-game-hr"/>
             </div>}
             {!this.props.roomCode &&
             <div className="join-game-container">
               <span className="join-game-header">Join a Game:</span> 
               <JoinGameForm error={this.props.error} joinGame={this.props.joinGame} clearError={this.props.clearError}/>
-              {/* <form className="lobby-join-game-form" onSubmit={ this.props.joinGame }>
-                <input className="name-field" name="username" placeholder="Enter your username" />
-                <input className="name-field" name="roomCode" placeholder="Enter your game's room code" />
-                <button className="join-game-button">Join Game</button>
-              </form> */}
             </div>}
 
           {this.props.roomCode &&
