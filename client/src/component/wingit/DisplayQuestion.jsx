@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import '../../stylesheets/host-pick-category.css';
 import GameNav from '../wingit/GameNav';
+import Countdown from '../wingit/Countdown';
 
 
 class DisplayQuestion extends Component {
@@ -16,6 +17,7 @@ class DisplayQuestion extends Component {
         <div className="nav-container">
           <GameNav category={this.props.category} player={this.props.player.username}/>
         </div>
+        {/* <Countdown timerInSec={8} /> */}
         <div  className="question-container">
           <h1 className="question">{this.props.question}</h1>
         </div>
@@ -24,7 +26,6 @@ class DisplayQuestion extends Component {
           className="question-footer">
         </section>
       </div>
-      
     );
   }
 }

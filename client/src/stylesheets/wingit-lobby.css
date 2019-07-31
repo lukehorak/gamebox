@@ -1,5 +1,22 @@
+
+.lobby-nav{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  height: 8em;
+  width: 100vw;
+  background-color: rgba(65, 250, 248, 0.74);
+}
+
+.title{
+  font-family: "Acme";
+  font-size: 4em;
+  font-weight: 800;
+}
+
 .wingit-main-container {
-  background-color:rgba(65, 250, 248, 0.74);
+  background-color:white;
   height: 76.9em;
   display: flex; 
   flex-direction: column;
@@ -7,7 +24,11 @@
 }
 
 .generated-room-code {
+<<<<<<< HEAD
   font-family: "Permanent Marker";
+=======
+  font-family: "Acme";
+>>>>>>> 596dea1ab2a36c21082985b9bee73ccb7117e2a8
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -18,7 +39,11 @@
 }
 
 #room-code{
+<<<<<<< HEAD
   font-family: "Hind Guntur";
+=======
+  font-family: "Acme";
+>>>>>>> 596dea1ab2a36c21082985b9bee73ccb7117e2a8
   font-size: 2em;
   font-weight: bolder;
   display: flex;
@@ -46,9 +71,17 @@ button:active{
   width: 20rem;
 }
 
-.empty-string-error{
+.error-container{
+  margin-top: 0.5em;
+  width: 100%;
+  text-align: center;
+}
+
+.error{
+  font-family: "Acme";
   padding-top: 1em;
-  color: black;
+  color: red;
+  font-size: 1.5em;
 }
 
 .create-game-container{
@@ -59,18 +92,24 @@ button:active{
 
 .create-game-header,
 .join-game-header{
+  font-family: "Acme";
   font-size: 2em;
-  font-weight: 500;
   color: black;
+<<<<<<< HEAD
   font-weight: bolder;
   font-family: "Permanent Marker"
+=======
+  font-weight: 600;
+>>>>>>> 596dea1ab2a36c21082985b9bee73ccb7117e2a8
 }
 
 .join-game-header{
+  font-family: "Acme";
   margin-top: 1em;
 }
 
 input{
+  font-family: "Acme";
   display: block;
   justify-content: center;
   margin: 1em 0 2em 0;
@@ -82,6 +121,10 @@ input{
   box-shadow: -3px 6px 10px rgba(22, 23, 23, 0.74);
   border: none;
   border-radius: 0.4em;
+<<<<<<< HEAD
+=======
+  text-align: center;
+>>>>>>> 596dea1ab2a36c21082985b9bee73ccb7117e2a8
 }
 
 .join-game-container{
@@ -91,6 +134,7 @@ input{
 }
 
 #create-game-form{
+  font-family: "Acme";
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -101,6 +145,7 @@ input:focus{
 }
 
 .name-field{
+  font-family: "Acme";
   width: 15em;
   height: 2em;
   font-size: inherit;
@@ -109,6 +154,7 @@ input:focus{
 
 
 .lobby-join-game-form{
+  font-family: "Acme";
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -117,7 +163,11 @@ input:focus{
 .lobby-create-game-button,
 .join-game-button,
 .start-game-button{
+<<<<<<< HEAD
   font-family: "Hind Guntur";
+=======
+  font-family: "Acme";
+>>>>>>> 596dea1ab2a36c21082985b9bee73ccb7117e2a8
   background-color: #ff568e;
   border-radius: 0.5em;
   font-size: 1.5em;
@@ -128,6 +178,7 @@ input:focus{
 }
 
 .start-game-button{
+  font-family: "Acme";
   margin-top: 2em;
 }
 
@@ -142,6 +193,7 @@ button:hover{
 }
 
 .player-menu-card{
+  font-family: "Acme";
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -238,7 +290,7 @@ button:hover{
     height: 78.1em;
   }
   .create-game-header{
-    margin-top: 4em;
+    margin-top: 1em;
   }
   .generated-room-code{
     font-size: 2em;
