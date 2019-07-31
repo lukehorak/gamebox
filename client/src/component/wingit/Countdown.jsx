@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import '../../stylesheets/timer.css';
 
 let interval;
 let timeOut;
@@ -43,8 +44,8 @@ class Countdown extends Component {
 
   render() {
     return (
-      <div>
-        <span>{this.state.timer}</span>
+      <div className="timer-div">
+        <span className="timer-style">{this.state.timer}</span>
       </div>
     );
   }

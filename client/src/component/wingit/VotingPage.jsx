@@ -19,9 +19,9 @@ import Countdown from '../wingit/Countdown';
           <span className="voting-instructions"> Vote for the faker! </span>
             <h2 className="the-question-was">The question was:</h2>
             <h3 className="the-question">{this.props.realQuestion}</h3>
-            {/* <Countdown timerInSec={20} /> */}
           <hr className="voting-hr"/>
           </div>
+          <Countdown timerInSec={20} />
           <div className="player-container">
             <div  className="voting-list-container">
               {players} 

@@ -13,7 +13,7 @@ import '../../stylesheets/wingit-lobby.css';
 import '../../stylesheets/Question-page.css';
 import '../../stylesheets/non-host-pick-category.css'
 import '../../stylesheets/voting-page.css'
-import '../../stylesheets/close_enough/CELobby.css'
+import '../../stylesheets/close_enough/CELobby2.css'
 
 class CloseEnough extends Component {
 

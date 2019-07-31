@@ -24,11 +24,11 @@ class CELobby extends Component {
     return (
       <div>
 
-        <div className="close-enough-main-container row" >
+        <div className="close-enough-main-container ce-row" >
 
 
-          <div className="split left">
-            <div className="centered">
+          <div className="ce-split ce-left">
+            <div className="ce-centered">
           {
             this.props.roomCode &&
             <div className="ce-generated-room-code">
@@ -51,8 +51,8 @@ class CELobby extends Component {
           </div>
 
 
-          <div className="split right">
-            <div className="centered">
+          <div className="ce-split ce-right">
+            <div className="ce-centered">
           {!this.props.roomCode &&
             <div className="ce-join-game-container">
               <span className="ce-join-game-header">Join a Game:</span>
