@@ -70,6 +70,7 @@ class WingIt extends Component {
     })
 
     this.socket.on('phase-change', data => {
+      this.scrollToTop()
       this.setState({ phase: data.phase })
     })
 
@@ -114,6 +115,10 @@ class WingIt extends Component {
   }
 
   // Class Methods
+
+  scrollToTop = () =>{
+    window.scrollTo(0, 0)
+  }
 
   createGame = (e) => {
     e.preventDefault();

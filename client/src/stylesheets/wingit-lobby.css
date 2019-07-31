@@ -219,27 +219,6 @@ button:hover{
   }
 }
 
-@media screen and (min-width: 330px){
-  .create-game-header{
-    margin-top: 0.1em;
-  }
-  .player-menu-card{
-    margin: 3em 26em 2em 3.5em;
-    font-size: 0.55em;
-  }
-
-  .generated-room-code{
-    padding-top: 0.5em;
-    font-size: 2em;
-  }
-  .join-game-header{
-    margin-top: 1em;
-  }
-  .name-field{
-    margin: 1em;
-  }
-  
-}
 
 @media screen and (min-width: 700px){
   .column{
@@ -261,7 +240,7 @@ button:hover{
   }
   
   .player-menu-card{
-    margin: 6em 28em 2em 4em;
+    margin: 1em 28em 2em 4em;
     font-size: 1em;
   }
 

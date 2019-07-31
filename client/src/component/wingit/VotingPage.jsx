@@ -17,11 +17,11 @@ class VotingPage extends Component {
         <GameNav category={this.props.category} player={this.props.player.username} />
         <div className="voting-main-container">
           <span className="voting-instructions"> Vote for the faker! </span>
+          <Countdown timerInSec={20} />
             <h2 className="the-question-was">The question was:</h2>
             <h3 className="the-question">{this.props.realQuestion}</h3>
           <hr className="voting-hr"/>
           </div>
-          <Countdown timerInSec={20} />
           <div className="player-container">
             <span  className="voting-list-container">
               {players} 

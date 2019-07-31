@@ -119,6 +119,12 @@ body{
   .player-voting-card{
     display: flex;
   }
+  .player-list-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
 }
 
 @media screen and (min-width: 360px){
@@ -133,7 +139,7 @@ body{
   }
   .player-vote-button{
     font-size: 1em;
-    margin-top: 2em;
+    margin-top: 4em;
   }
   .voting-instructions{
     margin-top: 3em;
@@ -159,7 +165,8 @@ body{
     font-size: 2em;
   }
   .player-vote-button{
-    font-size: 1.5em;
+    font-size: 1em;
+    margin-top: 9em;
   }
 }
 
@@ -175,6 +182,9 @@ body{
   }
   .voting-column{
     margin-top: 1em;
+  }
+  .player-vote-button{
+    margin-top: 10em;
   }
 }
 
@@ -214,7 +224,7 @@ body{
   }
 
   .voting-card-container{
-    margin-top: 5em;
+    margin-top: 10em;
   }
   .player-vote-button{
   font-size: 1em;
@@ -229,7 +239,7 @@ body{
   }}
 
 
-@media screen and (min-width: 2000px){
+/* @media screen and (min-width: 2000px){
   .question-footer{
     height: 62.7em;
   }
@@ -238,10 +248,10 @@ body{
   }
   .player-vote-button{
     font-size: 1em;
-    width: 12em;
+    width: 10em;
     height: 8em;
     border: none;
     margin: 1.8em;
     border-radius: 4em; 
   }
-}
+} */
