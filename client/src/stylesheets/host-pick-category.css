@@ -1,5 +1,7 @@
 body{
-  background-color: white; 
+  background-color: white;
+  font-family: "Acme";
+  font-weight: 200;
 }
 .nonhost-waiting-for-category {
     /* display: inline-block; */
@@ -151,14 +153,17 @@ body{
 
 #hand{
   background-color: #72cbff;
+  font-family: "Acme";
 }
 
 #count{
   background-color: #DCF798;
+  font-family: "Acme";
 }
 
 #point{
   background-color: #DD72E3;
+  font-family: "Acme";
 }
 
 #hand:focus,

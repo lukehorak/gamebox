@@ -10,7 +10,7 @@ class CreateGameForm extends Component {
               Please enter a username
             </span>
           </div>}
-          <input onClick={this.removeError} name="username" placeholder="Enter your username">
+          <input onChange={this.props.clearError} name="username" placeholder="Enter your username">
           </input>
           <button className="lobby-create-game-button">
             Create Game
