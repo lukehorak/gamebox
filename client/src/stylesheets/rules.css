@@ -236,19 +236,16 @@ body{
   .par-5,
   .par-6,
   .par-7{
-    width: 20em;
+    width: 13em;
     word-break: break-word;
     text-align: center;
-    height: 5em;
-  }
-  .par-4::after{
-    right: 9em;
+    height: 8em;
   }
   .rules-title{
     font-size: 2em;
   }
   .par-1{
-    margin-top: 0.4em;
+    margin-top: 1em;
   }
   .rules-container{
     margin-bottom: 2em;
@@ -257,10 +254,10 @@ body{
     left: 2em;
   }
   .par-4::after{
-    left: 10em;
+    left: 2em;
   }
   .par-5::after{
-    left: 15em;
+    left: 9em;
   }
 }
 
@@ -270,7 +267,11 @@ body{
   .par-6{
     width: 25em;
   }
-
+  .par-1,
+  .par-3,
+  .par-5{
+    width: 23em;
+  }
   .par-2::after{
     left: 3em;
   }

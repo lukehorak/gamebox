@@ -12,7 +12,7 @@ class RulesPage extends Component {
 
         <div className="rules-container">
       
-        <p className="par-1">During each round everyone, except one, will be sent some sort of task, for example "Raise your hand if you had breakfast this morning." </p>
+        <p id="par-1" className="par-1">During each round everyone, except one, will be sent some sort of task, for example "Raise your hand if you had breakfast this morning." </p>
 
         <p className="par-2">The player who didn't get the task is the one who will have to "wing it", and his/her goal is to try and blend with others without knowing the task themselves. </p>
 
