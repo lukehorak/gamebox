@@ -21,7 +21,7 @@ class DisplayQuestion extends Component {
         <div  className="question-container">
           <h1 className="question">{this.props.question}</h1>
         </div>
-        <Countdown timerInSec={8} />
+        {/* <Countdown timerInSec={8} /> */}
         <section 
           style={{backgroundColor: this.props.setStyle(this.props.category)}} 
           className="question-footer">
