@@ -19,7 +19,7 @@ body{
   align-items: center;
   height: 6em; 
   margin: 2em 3em .5em 3em;
-  padding: 0.5em;
+  padding: 1em;
   background: #72cbff;
   position: relative;
   -moz-border-radius: 0.2em;
@@ -108,6 +108,7 @@ border-right: 13px solid white;
 @media screen and (min-width: 400px){
   .question{
     font-size: 1em;
+    padding: 1em;
   }
   .question-container{
     height: 30em;
@@ -117,7 +118,7 @@ border-right: 13px solid white;
 
 @media screen and (min-width: 800px){
   .question{
-    font-size: 3em;
+    font-size: 1em;
   }
 }
 
