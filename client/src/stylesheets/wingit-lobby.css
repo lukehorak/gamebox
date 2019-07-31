@@ -34,7 +34,7 @@ body{
   align-items: center;
   text-align: left;
   font-size: 2em;
-  font-weight: 500;
+  font-weight: 400;
   padding-top: 2em;
 }
 
@@ -109,6 +109,7 @@ input{
   font-size: inherit;
   font-weight: bolder;
   padding: 0.5em;
+  -webkit-box-shadow: -3px 6px 10px rgba(22, 23, 23, 0.74);
   box-shadow: -3px 6px 10px rgba(22, 23, 23, 0.74);
   border: none;
   border-radius: 0.4em;
@@ -172,6 +173,7 @@ input:focus{
 
 
 button:hover{
+  -webkit-box-shadow: -3px 6px 10px rgba(22, 23, 23, 0.74);
   box-shadow: -3px 6px 10px rgba(22, 23, 23, 0.74);
   cursor: pointer;
 }
@@ -187,6 +189,7 @@ button:hover{
   width: 16em;
   height: 4em;
   margin: 2em 0 2em 0;
+  -webkit-box-shadow: -3px 6px 10px rgba(22, 23, 23, 0.74);
   box-shadow: -3px 6px 10px rgba(22, 23, 23, 0.74);
 }
 /* 
