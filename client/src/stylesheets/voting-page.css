@@ -166,7 +166,7 @@ body{
   }
   .player-vote-button{
     font-size: 1em;
-    margin-top: 9em;
+    margin-top: 12em;
   }
 }
 
@@ -178,13 +178,13 @@ body{
     font-size: 2em;
   }
   .voting-instructions{
-    padding-top: 0;
+    margin-top: 7em;
   }
   .voting-column{
     margin-top: 1em;
   }
   .player-vote-button{
-    margin-top: 10em;
+    margin-top: 12em;
   }
 }
 
@@ -209,6 +209,7 @@ body{
   }
   .voting-instructions{
     font-size: 3em;
+    margin-top: 6em;
   } 
 
   .voting-column{
