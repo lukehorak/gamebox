@@ -27,9 +27,9 @@ body{
     padding: 0.5em;
     background: #72cbff;
     position: relative;
-    -moz-border-radius: 1erm;
-    -webkit-border-radius: 1erm;
-    border-radius: 1erm;
+    -moz-border-radius: 0.2em;
+    -webkit-border-radius: 0.2em;
+    border-radius: 0.2em;
 
 }
 
@@ -54,9 +54,9 @@ body{
     padding: 0.5em;
     background: #DCF798;
     position: relative;
-    -moz-border-radius: 1erm;
-    -webkit-border-radius: 1erm;
-    border-radius: 1erm;
+    -moz-border-radius: 0.2em;
+    -webkit-border-radius: 0.2em;
+    border-radius: 0.2em;
 }
 
 .par-2:after {
@@ -80,9 +80,9 @@ body{
     padding: 0.5em;
     background: #DD72E3;
     position: relative;
-    -moz-border-radius: 1erm;
-    -webkit-border-radius: 1erm;
-    border-radius: 1erm;
+    -moz-border-radius: 0.2em;
+    -webkit-border-radius: 0.2em;
+    border-radius: 0.2em;
     }
 
 .par-3:after {
@@ -105,9 +105,9 @@ body{
     padding: 0.5em;
     background: #72cbff;
     position: relative;
-    -moz-border-radius: 1erm;
-    -webkit-border-radius: 1erm;
-    border-radius: 1erm;
+    -moz-border-radius: 0.2em;
+    -webkit-border-radius: 0.2em;
+    border-radius: 0.2em;
     }
 
     .par-4:after {
@@ -133,9 +133,9 @@ body{
     padding: 0.5em;
     background: #DCF798;
     position: relative;
-    -moz-border-radius: 1erm;
-    -webkit-border-radius: 1erm;
-    border-radius: 1erm;
+    -moz-border-radius: 0.2em;
+    -webkit-border-radius: 0.2em;
+    border-radius: 0.2em;
     }
 
     .par-5:after {
@@ -162,9 +162,9 @@ body{
     padding: 0.5em;
     background: #DD72E3;
     position: relative;
-    -moz-border-radius: 1erm;
-    -webkit-border-radius: 1erm;
-    border-radius: 1erm;
+    -moz-border-radius: 0.2em;
+    -webkit-border-radius: 0.2em;
+    border-radius: 0.2em;
     }
 
 
@@ -178,8 +178,8 @@ body{
     padding: 0.5em;
     background: #72cbff;
     position: relative;
-    -moz-border-radius: 1erm;
-    -webkit-border-radius: 1erm;
+    -moz-border-radius: 0.2em;
+    -webkit-border-radius: 0.2em;
     border-radius: 1em;
     font-size: 2em;
     font-weight: bold;
