@@ -31,7 +31,7 @@ class WingIt extends Component {
       players: [],
       thisPlayer: false,
       category: false,
-      question: "test question",
+      question: "loading question...",
       playerVotes: {},
       roundResult:false,
       faker: false,
