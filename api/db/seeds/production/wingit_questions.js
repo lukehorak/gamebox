@@ -10,15 +10,15 @@ exports.seed = function (knex) {
           category: 'hand',
         },
         {
-          question: 'you are over 6ft tall',
+          question: 'you think you would be good at being a super hero',
           category: 'hand',
         },
         {
-          question: 'you have ever seen Batman in real life',
+          question: 'you wear glasses',
           category: 'hand',
         },
         {
-          question: 'you are currently wearing glasses(not contacts)',
+          question: 'you showered today',
           category: 'hand',
         },
         {
@@ -26,39 +26,27 @@ exports.seed = function (knex) {
           category: 'hand',
         },
         {
-          question: 'you know who Ned Stark is',
+          question: 'you\'ve ever had a parking ticket',
           category: 'hand',
         },
         {
-          question: 'you have ever been to a job interview',
+          question: 'you have seen a Marvel movie in the last year',
           category: 'hand',
         },
         {
-          question: 'you ever had a parking ticket',
+          question: 'you love Sriracha sauce',
           category: 'hand',
         },
-        {
-          question: 'you have ever seen a Marvel movie',
-          category: 'hand',
-        },
-        {
-          question: 'you are currently wearing a shirt with buttons',
-          category: 'hand',
-        },
-         {
-           question: 'you hate puppies',
-          category: 'hand',
-         },
         {
           question: 'you like this game',
           category: 'hand',
         },
         {
-          question: 'is sitting to your right',
+          question: 'you think would win a hot dog eating contest',
           category: 'point',
         },
         {
-          question: 'is wearing red',
+          question: 'is the loudest',
           category: 'point',
         },
         {
@@ -66,7 +54,15 @@ exports.seed = function (knex) {
           category: 'point',
         },
         {
-          question: 'is the tallest person playing',
+          question: 'is the best cook',
+          category: 'point',
+        },
+        {
+          question: 'you think drinks the most coffee',
+          category: 'point',
+        },
+        {
+          question: 'has the best style',
           category: 'point',
         },
         {
@@ -74,23 +70,31 @@ exports.seed = function (knex) {
           category: 'point',
         },
         {
-          question: 'the number of pizza slices you had today',
-          category: 'count',
-        }, 
+          question: 'you\'d have the best chance of beating in an arm wrestling match',
+          category: 'point',
+        },
         {
-          question: 'the number of tentacles an octopus has',
-          category: 'count',
-        }, 
+          question: 'you\'d pick to be your partner as a detective',
+          category: 'point',
+        },
         {
-          question: '1 + 1 =',
-          category: 'count',
-        }, 
-        {
-          question: 'the number of wheels an airplane has',
+          question: 'the number of slices of pizza you\'ve eaten today',
           category: 'count',
         },
         {
-          question: 'feet you are tall',
+          question: 'the number of tentacles an octopus has',
+          category: 'count',
+        },
+        {
+          question: 'hours of sleep you got last night',
+          category: 'count',
+        },
+        {
+          question: 'glasses of water you\'ve drank today',
+          category: 'count',
+        },
+        {
+          question: 'feet tall you wish you were',
           category: 'count',
         },
         {
@@ -99,6 +103,14 @@ exports.seed = function (knex) {
         },
         {
           question: 'the number of Disney movies you\'ve seen this year',
+          category: 'count',
+        },
+        {
+          question: 'the number of drinks you\'ll typically have on a night out',
+          category: 'count',
+        },
+        {
+          question: 'the number of pets you have',
           category: 'count',
         }
 

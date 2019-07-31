@@ -12,6 +12,32 @@ class DisplayQuestion extends Component {
     }
   }
 
+  setStyle = (category) => {
+    switch(category){
+      case 'hand':
+        return "#DCF798"
+      case 'count':
+        return "#72cbff"
+      case 'point':
+        return "rgba(65, 250, 248, 0.74)"
+      default: 
+        return "#DD72E3"
+    }
+  };
+
+  setPointStyle = (category) => {
+    switch(category){
+      case 'hand':
+        return "26px solid #DCF798"
+      case 'count':
+        return "26 px solid #72cbff"
+      case 'point':
+        return "26px solid rgba(65, 250, 248, 0.74)"
+      default: 
+        return "26px solid #DD72E3"
+    }
+  };
+
   render() {
     return (
       <div className="main-question-container">
@@ -19,7 +45,14 @@ class DisplayQuestion extends Component {
           <GameNav category={this.props.category} player={this.props.player.username}/>
         </div>
         <div  className="question-container">
-          <h1 className="question">{this.props.question}</h1>
+          <h1 className="question">
+            <span id={this.props.category + "-q"} className="question-1">
+              <span id={this.props.category + "-q::after"}>
+              </span>
+              {this.props.question}
+            </span>
+          </h1>
+          
         </div>
         {/* <Countdown timerInSec={8} /> */}
         <section 
