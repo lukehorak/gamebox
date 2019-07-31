@@ -28,7 +28,6 @@ class VotingPage extends Component {
             </span>
           </div>
         </div>
-      </div>
     );
   };
 };
