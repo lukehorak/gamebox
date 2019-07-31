@@ -11,18 +11,18 @@ class RulesPage extends Component {
       <h1 className= "rules-title">RULES of the Game</h1>
 
         <div className="rules-container">
-      
-        <p className="par-1">During each round everyone, except one, will be sent some sort of task, for example "Raise your hand if you had breakfast this morning." </p>
 
-        <p className="par-2">The player who didn't get the task is the one who will have to "wing it", and his/her goal is to try and blend with others without knowing the task themselves. </p>
+        <p id="par-1" className="par-1">First, your host will pick a category, then each player will receive a prompt to their device (something like "Raise your hand if you ate breakfast this morning"). Sounds pretty simple, right? BUT WAIT, THERE'S MORE!</p>
 
-        <p className="par-3">The other players have to try to figure out who in the room is faking it, and they are given three chances to get it correct. </p>
+        <p className="par-2">One player won't get the prompt, and instead will be told to "Just Wing It" (😉 get it?). His/her goal is to try and blend with others without knowing the task themselves. During this phase, don't talk to eachother (or do, I'm not a cop. But the game's more fun if you don't!)</p>
+
+        <p className="par-3">After a brief period, the question will be sent to everyone, and you all will have about 20 seconds to vote on who you think is Wingin' It!™ <br/>(but not actually trademarked. We don't have "trademarking things" money!) </p>
           
-        <p className="par-4">The vote has to be unanimous (minus one, being the faker) for it to count, so discussing the possible faker is encouraged. </p>
+        <p className="par-4">The vote has to be unanimous (minus one, because who's going to vote for themselves?) for it to count, so talk it out! </p>
       
-        <p className="par-5">    If you're stuck winging it, blend in well!      </p>
+        <p className="par-5"> If you're stuck winging it, just try to blend in!</p>
       
-        <p className="par-6">To the rest of the players, try to catch the person trying to wing' it!</p>
+        <p className="par-6">To the rest of the players, try to catch the person Wingin' It!</p>
 
         {this.props.isHost && <button onClick={this.props.startGame} className="join-game-button">Start game!</button>}
           </div>
