@@ -37,28 +37,35 @@ io.on('connection', function (socket) {
 
   // Creating/Adding a new player to an existing game
   socket.on('new-player', function (data) {
-    try {
-      // Create new player, add them to their game, and get back ID of their game's host
-      const hostID = socketApi.newPlayer(data.roomCode, data.username);
-      if (hostID){
-        socket.emit('room-code', io.sockets.connected[hostID].game.roomCode);
-
-        socket.join(io.sockets.connected[hostID].game.roomCode)
-        // set socket username
-        socket.username = data.username;
-        // Send all players to all connected sockets
-        io.in(data.roomCode).emit('respond-all-players', socketApi.getPlayerList(data.roomCode))
+    const playerCount = io.sockets.adapter.rooms[data.roomCode].length;
+    if(playerCount < 6){
+      try {
+        // Create new player, add them to their game, and get back ID of their game's host
+        const hostID = socketApi.getHost(data.roomCode);
+        const playerAdded = socketApi.newPlayer(hostID, data.username);
+        if (playerAdded){
+          socket.emit('room-code', io.sockets.connected[hostID].game.roomCode);
+          
+          socket.join(io.sockets.connected[hostID].game.roomCode)
+          // set socket username
+          socket.username = data.username;
+          // Send all players to all connected sockets
+          io.in(data.roomCode).emit('respond-all-players', socketApi.getPlayerList(data.roomCode))
+        }
+        else {
+          socket.emit('send-error', { error: "A player with that name already exists!" })
+        }
+        // Send roomcode to new player (getting the actual game's code isntead of what they fed it)
       }
-      else {
-        socket.emit('send-error', { error: "A player with that name already exists!" })
+      catch (e) {
+        console.warn(`Unable to add user to room, as room with code '${data.roomCode}' room does not exist!`, e)
+        socket.emit('send-error', {
+          error: `Failed to join room with code ${data.roomCode}. Are you sure it exists?`
+        })
       }
-      // Send roomcode to new player (getting the actual game's code isntead of what they fed it)
     }
-    catch (e) {
-      console.warn(`Unable to add user to room, as room with code '${data.roomCode}' room does not exist!`, e)
-      socket.emit('send-error', {
-        error: `Failed to join room with code ${data.roomCode}. Are you sure it exists?`
-      })
+    else{
+      socket.emit('send-error', { error: 'Sorry, this game has reached its max (6 people)!' })
     }
 
   });
@@ -226,9 +233,9 @@ socketApi.getRoom = (roomCode) => {
 }
 
 // Adds player to game with roomCode, returning the room's host's ID
-socketApi.newPlayer = function (roomCode, username) {
-  const hostID = socketApi.getHost(roomCode);
-  console.log(`Adding player ${username} to game room ${roomCode}`)
+socketApi.newPlayer = function (hostID, username) {
+  //const hostID = socketApi.getHost(roomCode);
+  //console.log(`Adding player ${username} to game room ${roomCode}`)
   const success = io.sockets.connected[hostID].game.addPlayerByName(username);
   return (success ? hostID : false);
 }
