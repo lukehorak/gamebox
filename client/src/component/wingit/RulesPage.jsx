@@ -11,8 +11,8 @@ class RulesPage extends Component {
       <h1 className= "rules-title">RULES of the Game</h1>
 
         <div className="rules-container">
-      
-        <p className="par-1">First, your host will pick a category, then each player will receive a prompt to their device (something like "Raise your hand if you ate breakfast this morning"). Sounds pretty simple, right? BUT WAIT, THERE'S MORE!</p>
+
+        <p id="par-1" className="par-1">First, your host will pick a category, then each player will receive a prompt to their device (something like "Raise your hand if you ate breakfast this morning"). Sounds pretty simple, right? BUT WAIT, THERE'S MORE!</p>
 
         <p className="par-2">One player won't get the prompt, and instead will be told to "Just Wing It" (😉 get it?). His/her goal is to try and blend with others without knowing the task themselves. During this phase, don't talk to eachother (or do, I'm not a cop. But the game's more fun if you don't!)</p>
 

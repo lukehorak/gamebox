@@ -14,6 +14,68 @@ body{
   text-align: center;
 }
 
+.question-1 {
+  display: flex;
+  align-items: center;
+  height: 6em; 
+  margin: 2em 3em .5em 3em;
+  padding: 1em;
+  background: #72cbff;
+  position: relative;
+  -moz-border-radius: 0.2em;
+  -webkit-border-radius: 0.2em;
+  border-radius: 0.2em;
+
+}
+
+#hand-q{
+  background-color: #DD72E3;
+}
+
+#count-q{
+  background-color: #72cbff;
+}
+
+#point-q{
+  background-color: #DCF798;
+}
+
+#hand-q::after {
+  content: "";
+  width: 0;
+  height: 0;
+  top: 100%;
+  right: 38px;
+  position: absolute;
+  border-top: 26px solid #DD72E3;
+  border-left: 13px solid white;
+  border-right: 13px solid white;
+  }
+
+#count-q::after {
+  content: "";
+  width: 0;
+  height: 0;
+  top: 100%;
+  right: 38px;
+  position: absolute;
+  border-top: 26px solid  #72cbff;
+  border-left: 13px solid white;
+  border-right: 13px solid white;
+  }
+
+#point-q::after {
+content: "";
+width: 0;
+height: 0;
+top: 100%;
+right: 38px;
+position: absolute;
+border-top: 26px solid #DCF798;
+border-left: 13px solid white;
+border-right: 13px solid white;
+}
+
 .question{
   font-size: 4em;
   font-weight: 900;
@@ -46,6 +108,7 @@ body{
 @media screen and (min-width: 400px){
   .question{
     font-size: 1em;
+    padding: 1em;
   }
   .question-container{
     height: 30em;
@@ -55,7 +118,7 @@ body{
 
 @media screen and (min-width: 800px){
   .question{
-    font-size: 3em;
+    font-size: 1em;
   }
 }
 

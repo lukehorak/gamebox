@@ -64,6 +64,7 @@ body{
 }
 
 .vote-button-name{
+  font-family: "Acme";
   color: white;
   margin: 0 0.2em 0.3em 0;
   font-size: 2em;
