@@ -29,7 +29,7 @@ class VotingPage extends Component {
           </div>
         </div>
     );
-  };
+  };  
 };
 
 export default VotingPage
