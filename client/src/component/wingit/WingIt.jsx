@@ -18,7 +18,6 @@ import '../../stylesheets/voting-page.css';
 import '../../stylesheets/round-results.css';
 import '../../stylesheets/rules.css';
 
-import { timingSafeEqual } from 'crypto';
 class WingIt extends Component {
 
   constructor(props) {
@@ -129,7 +128,7 @@ class WingIt extends Component {
     const { username } = e.target.elements
     const name = username.value
     if(name !== ""){
-      this.socket.emit('new-game', { username: username.value });
+      this.socket.emit('new-game', { username: username.value.trim() });
     } else {
       this.setState({ error: true, errorType: 'empty string' })
       console.log('A user tried to enter  an empty string @ create game form')
@@ -139,7 +138,7 @@ class WingIt extends Component {
   joinGame = (e) => {
     e.preventDefault();
     const { username, roomCode } = e.target.elements;
-    this.socket.emit('new-player', { username: username.value, roomCode: roomCode.value })
+    this.socket.emit('new-player', { username: username.value.trim(), roomCode: roomCode.value/trim() })
   }
 
   prepGame = () => {
