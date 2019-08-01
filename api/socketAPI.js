@@ -151,8 +151,8 @@ io.on('connection', function (socket) {
         const resultCode = socketApi.getRoundResults(results);
         io.in(data.roomCode).emit('respond-results', { resultCode: resultCode, faker: results.player })
         io.in(data.roomCode).emit('phase-change', { phase: 5 });
-      }, 20000)
-      }, 8000)
+      }, 2000)
+      }, 5000)
   });
 
   socket.on('send-vote', (data) => {
@@ -178,6 +178,9 @@ io.on('connection', function (socket) {
     console.log('sending faker: ', player, foundFaker)
     io.in(data.roomCode).emit('set-faker', { faker: player, foundFaker: foundFaker })
     if(socket.game.isOver()){
+      //
+      io.in(data.roomCode).emit('set-faker', { faker: socket.game.fakerPlayer.name, foundFaker: foundFaker })
+      //
       console.log(`${player} was the faker: ${foundFaker}`)
       io.in(data.roomCode).emit('phase-change', { phase: 6 });
     }

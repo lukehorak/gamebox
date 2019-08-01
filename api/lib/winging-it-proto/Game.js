@@ -56,6 +56,7 @@ class Game {
     const index = Math.floor((Math.random() * keys.length));
     const faker = this.players[ keys[ index ] ]
     faker.isFaker = true;
+    this.fakerPlayer = faker;
   }
 
   endGame() {
