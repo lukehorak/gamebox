@@ -151,8 +151,8 @@ io.on('connection', function (socket) {
         const resultCode = socketApi.getRoundResults(results);
         io.in(data.roomCode).emit('respond-results', { resultCode: resultCode, faker: results.player })
         io.in(data.roomCode).emit('phase-change', { phase: 5 });
-      }, 2000)
-      }, 5000)
+      }, 20000)
+      }, 10000)
   });
 
   socket.on('send-vote', (data) => {
