@@ -37,7 +37,7 @@ io.on('connection', function (socket) {
 
   // Creating/Adding a new player to an existing game
   socket.on('new-player', function (data) {
-    const playerCount = io.sockets.adapter.rooms[data.roomCode].length;
+    const playerCount = (io.sockets.adapter.rooms[data.roomCode] ? io.sockets.adapter.rooms[data.roomCode].length : -1);
     if (data.username == ''){
       socket.emit('send-error', { error: 'Oops! looks like you forgot a name'})
     }
