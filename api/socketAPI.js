@@ -51,7 +51,7 @@ io.on('connection', function (socket) {
             socket.emit('room-code', io.sockets.connected[hostID].game.roomCode);
             
             socket.join(io.sockets.connected[hostID].game.roomCode)
-            // set socket username
+            // set socket username.
             socket.username = data.username;
             // Send all players to all connected sockets
             io.in(data.roomCode).emit('respond-all-players', socketApi.getPlayerList(data.roomCode))
