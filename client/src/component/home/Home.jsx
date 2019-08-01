@@ -26,7 +26,7 @@ class Home extends Component {
                 link="/wingit"
                 comingSoon="./assets/coming-soon.png"
               />
-              <Card
+              {/* <Card
                 cardClass="typist"
                 comingSoon="coming-soon" src="./assets/coming-soon.png"
                 imageSource="./assets/type-or-die.png"
@@ -46,7 +46,7 @@ class Home extends Component {
               <Card
                 cardClass="where-am-i"
                 imageSource="./assets/where-am-i.png" alt="Placeholder image"
-              />
+              /> */}
 
             </div>
           </div>

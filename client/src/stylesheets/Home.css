@@ -17,6 +17,7 @@ a{
 
 
 nav{
+  font-family: "Hind Guntur";
   height: 5em;
   /* background-color: #AC3B61; */
   background-color: rgb(47, 48, 49);
@@ -32,12 +33,11 @@ nav{
 }
 
 .navbar-start{
-  margin-left: 1em;
   font-size: 2em;
   font-weight: 120em;
   color: white;
   align-items: center;
-  margin: 4em auto;
+  margin-left: 20em;
 }
 
 img{

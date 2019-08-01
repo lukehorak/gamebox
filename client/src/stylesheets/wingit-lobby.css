@@ -217,36 +217,13 @@ button:hover{
   #room-code{
     font-size: 2em;
   }
+  input{
+    border: 1px solid #eee;
+  }
 }
 
-@media screen and (min-width: 330px){
-  .create-game-header{
-    margin-top: 0.1em;
-  }
-  .player-menu-card{
-    margin: 3em 26em 2em 3.5em;
-    font-size: 0.55em;
-  }
-
-  .generated-room-code{
-    padding-top: 0.5em;
-    font-size: 2em;
-  }
-  .join-game-header{
-    margin-top: 1em;
-  }
-  .name-field{
-    margin: 1em;
-  }
-  
-}
 
 @media screen and (min-width: 700px){
-  .column{
-    width: 50%;
-    float: left;
-  }
-
   .title{
     font-size: 4em;
   }
@@ -260,20 +237,25 @@ button:hover{
     margin-top: 1em;
   }
   
-  .player-menu-card{
-    margin: 6em 28em 2em 4em;
-    font-size: 1em;
-  }
-
   .generated-room-code{
     font-size: 2em;
     padding-top: 1em;
+  }
+  input{
+    border: none;
+  }
+  .name-field{
+    margin: 1em;
   }
 }
 
 @media screen and (min-width: 1024px){
   body{
     font-size: 1em;
+  }
+  .column{
+    width: 50%;
+    float: left;
   }
   .wingit-main-container{
     height: 85.2em;
@@ -283,5 +265,9 @@ button:hover{
   }
   .generated-room-code{
     font-size: 2em;
+  }
+  .player-menu-card{
+    margin: 1em 28em 2em 4em;
+    font-size: 1em;
   }
 }
