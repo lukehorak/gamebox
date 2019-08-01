@@ -138,7 +138,7 @@ class WingIt extends Component {
   joinGame = (e) => {
     e.preventDefault();
     const { username, roomCode } = e.target.elements;
-    this.socket.emit('new-player', { username: username.value.trim(), roomCode: roomCode.value/trim() })
+    this.socket.emit('new-player', { username: username.value.trim(), roomCode: roomCode.value.trim() })
   }
 
   prepGame = () => {
