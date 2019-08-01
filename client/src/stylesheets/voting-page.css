@@ -17,7 +17,7 @@ body{
 
 .the-question{
   font-size: 2em;
-  margin: 1em 2em 2em 2em;
+  margin: 1em 2em 1em 2em;
 }
 
 .voting-card{
@@ -139,14 +139,14 @@ body{
   }
   .player-vote-button{
     font-size: 1em;
-    margin-top: 5em;
   }
   .voting-instructions{
-    margin-top: 3em;
+    margin-top: 1em;
   }
-  .voting-list-container{
-    margin-top: 8em;
+  .player-container{
+    margin-top: 1em;
   }
+
 }
 
 @media screen and (min-width: 600px){
@@ -166,7 +166,18 @@ body{
   }
   .player-vote-button{
     font-size: 1em;
-    margin-top: 12em;
+  }
+  .voting-list-container{
+    margin-top: 15em;
+  }
+  .player-container{
+    margin-top: 11em;
+  }
+  .voting-column{
+    margin-top: 0em;
+    padding-top: 0em;
+    width: 50%;
+    float: left;
   }
 }
 
@@ -180,16 +191,26 @@ body{
   .voting-instructions{
     margin-top: 7em;
   }
-  .voting-column{
-    margin-top: 1em;
+
+  .voting-list-container{
+    margin-top: 11em;
   }
-  .player-vote-button{
-    margin-top: 12em;
+  .player-container{
+    margin-top: 11em;
+  }
+  .voting-column{
+    margin-top: 0em;
+    padding-top: 0em;
+    width: 50%;
+    float: left;
   }
 }
 
 
 @media screen and (min-width: 1024px){
+  .player-container{
+    margin-top: 0em;
+  }
   .voting-footer{
     height: 31.9em;
   }
@@ -202,14 +223,14 @@ body{
   }
   .the-question{
     font-size: 2em;
-    margin-bottom: 4em;
+    margin-bottom: 1em;
   }
   .voting-hr{
     display: none;
   }
   .voting-instructions{
     font-size: 3em;
-    margin-top: 6em;
+    margin-top: 3em;
   } 
 
   .voting-column{
@@ -223,9 +244,8 @@ body{
     margin: 6em 28em 2em 4em;
     font-size: 1em;
   }
-
   .voting-card-container{
-    margin-top: 10em;
+    margin-top: 4em;
   }
   .player-vote-button{
   font-size: 1em;
@@ -237,7 +257,8 @@ body{
   }
   .vote-button-name{
     margin-right: 0.6em;
-  }}
+  }
+}
 
 
 /* @media screen and (min-width: 2000px){
