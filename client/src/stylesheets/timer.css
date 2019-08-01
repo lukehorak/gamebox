@@ -19,15 +19,9 @@
   }
 }
 
-@media screen and (min-width: 300px) {
-  .timer-style {
-    font-size: 1em;
-  }
-}
-
 @media screen and (min-width: 400px) {
   .timer-style {
-    font-size: 1em;
+    font-size: 2em;
   }
 }
 
@@ -40,13 +34,13 @@
 
 
 @media screen and (min-width: 1024px) {
-  .timer-style {
-    height: 3em;
+  .timer-style{
+    font-size: 4em;
   }
 }
 
 @media screen and (min-width: 2000px) {
-  .timer-style {
-    height: 3em;
+  .timer-style{
+    font-size: 5em;
   }
 }

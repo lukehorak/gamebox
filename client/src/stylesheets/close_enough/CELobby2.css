@@ -1,0 +1,102 @@
+.close-enough-main-container {
+  background-color: white;
+  height: 76.9em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  column-count: 2;
+}
+
+.ce-row:after { 
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.ce-title {
+  background-color: red;
+  margin: 0;
+  align-items: center;
+  text-align: center;
+  padding: 1em;
+}
+
+/* Split the screen in half */
+.ce-split {
+  height: 100%;
+  width: 50%;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  overflow-x: hidden;
+  padding-top: 20px;
+}
+
+/* Control the left side */
+.ce-left {
+  left: 0;
+  background-color: #111;
+  color: white;
+}
+
+/* Control the right side */
+.ce-right {
+  right: 0;
+  background-color: red;
+}
+
+
+/* If you want the content centered horizontally and vertically */
+.ce-centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+/* 
+.column {
+  float: left;
+  width: 50%;
+  padding: 10px;
+} */
+
+.ce-generated-room-code {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: left;
+  font-size: 2em;
+  font-weight: 500;
+  padding-top: 2em;
+}
+
+.ce-create-game-header {
+  font-size: 2em;
+  font-weight: 500;
+  /* color: black; */
+  color: white;
+  font-weight: bolder;
+}
+
+.ce-join-game-header {
+  font-size: 2em;
+  font-weight: 500;
+  color: black;
+  /* color: white; */
+  font-weight: bolder;
+}
+
+.ce-join-game-button {
+  background-color: #ff568e;
+  border-radius: 0.5em;
+  font-size: 1.5em;
+  width: 10em;
+  height: 2em;
+  border: none;
+  color: white;
+  border-width: medium;
+  border-style: solid;
+  border-color: white;
+}
