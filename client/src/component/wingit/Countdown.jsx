@@ -23,7 +23,7 @@ class Countdown extends Component {
 
     interval = setInterval(() => {
       this.setState({
-        timer: this.state.timer - 1
+        timer: this.state.timer > 0 ? this.state.timer - 1 : 0 
       })
     }, 1000);
 

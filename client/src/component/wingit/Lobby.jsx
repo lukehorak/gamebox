@@ -52,7 +52,9 @@ class Lobby extends Component {
 
           {this.props.roomCode &&
             <div className="player-list-container">
-              {this.listPlayers(this.props.players)}
+              <span className = "player-lobby-container">
+                {this.listPlayers(this.props.players)}
+              </span>
             </div>}
 
           {this.props.isHost && <button className="start-game-button" onClick={this.props.prepGame}>Start Game</button>}

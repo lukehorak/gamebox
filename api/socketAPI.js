@@ -37,7 +37,7 @@ io.on('connection', function (socket) {
 
   // Creating/Adding a new player to an existing game
   socket.on('new-player', function (data) {
-    const playerCount = io.sockets.adapter.rooms[data.roomCode].length;
+    const playerCount = (io.sockets.adapter.rooms[data.roomCode] ? io.sockets.adapter.rooms[data.roomCode].length : -1);
     if (data.username == ''){
       socket.emit('send-error', { error: 'Oops! looks like you forgot a name'})
     }
@@ -51,7 +51,7 @@ io.on('connection', function (socket) {
             socket.emit('room-code', io.sockets.connected[hostID].game.roomCode);
             
             socket.join(io.sockets.connected[hostID].game.roomCode)
-            // set socket username
+            // set socket username.
             socket.username = data.username;
             // Send all players to all connected sockets
             io.in(data.roomCode).emit('respond-all-players', socketApi.getPlayerList(data.roomCode))
@@ -152,7 +152,7 @@ io.on('connection', function (socket) {
         io.in(data.roomCode).emit('respond-results', { resultCode: resultCode, faker: results.player })
         io.in(data.roomCode).emit('phase-change', { phase: 5 });
       }, 20000)
-      }, 8000)
+      }, 10000)
   });
 
   socket.on('send-vote', (data) => {
@@ -178,6 +178,9 @@ io.on('connection', function (socket) {
     console.log('sending faker: ', player, foundFaker)
     io.in(data.roomCode).emit('set-faker', { faker: player, foundFaker: foundFaker })
     if(socket.game.isOver()){
+      //
+      io.in(data.roomCode).emit('set-faker', { faker: socket.game.fakerPlayer.name, foundFaker: foundFaker })
+      //
       console.log(`${player} was the faker: ${foundFaker}`)
       io.in(data.roomCode).emit('phase-change', { phase: 6 });
     }
