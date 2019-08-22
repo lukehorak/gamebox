@@ -15,7 +15,7 @@ Play party games with friends at https://gamebox.netlify.com!
 ![Lobby](https://github.com/Aidanchase/gamebox/blob/update/Readme/client/public/docs/Lobby.png?raw=true)
 
 ### Game Lobby
-![Game Lobby](https://github.com/Aidanchase/gamebox/blob/update/Readme/client/public/docs/PopulatedLobby.png?raw=true)
+![Game Lobby](https://github.com/Aidanchase/gamebox/blob/update/Readme/client/public/docs/Game%20Lobby.png?raw=true)
 
 ### Rules
 ![Rules](https://github.com/Aidanchase/gamebox/blob/update/Readme/client/public/docs/Rules.png?raw=true)
@@ -25,6 +25,9 @@ Play party games with friends at https://gamebox.netlify.com!
 
 ### Host Is Picking a Category
 ![Host Category](https://github.com/Aidanchase/gamebox/blob/update/Readme/client/public/docs/Pacman.png?raw=true)
+
+### Question
+![Question](https://github.com/Aidanchase/gamebox/blob/update/Readme/client/public/docs/Question.png?raw=true)
 
 ### Voting Page
 ![Voting Page](https://github.com/Aidanchase/gamebox/blob/update/Readme/client/public/docs/Voting.png?raw=true)
