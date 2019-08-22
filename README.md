@@ -2,7 +2,7 @@
 
 ## Description
 
-Play party games with friends!
+Play party games with friends at httpss://www.gamebox.netlify.com!
 
 
 ## Screenshots
