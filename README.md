@@ -4,6 +4,34 @@
 
 Play party games with friends!
 
+
+## Screenshots
+
+### Home Page
+
+![Home Page](https://github.com/Aidanchase/gamebox/blob/update/Readme/client/public/docs/Home.png?raw=true)
+
+### Lobby
+![Lobby](https://github.com/Aidanchase/gamebox/blob/update/Readme/client/public/docs/Lobby.png?raw=true)
+
+### Game Lobby
+![Game Lobby](https://github.com/Aidanchase/gamebox/blob/update/Readme/client/public/docs/PopulatedLobby.png?raw=true)
+
+### Rules
+![Rules](https://github.com/Aidanchase/gamebox/blob/update/Readme/client/public/docs/Rules.png?raw=true)
+
+### Categories
+![Categories](https://github.com/Aidanchase/gamebox/blob/update/Readme/client/public/docs/Categories.png?raw=true)
+
+### Host Is Picking a Category
+![Host Category](https://github.com/Aidanchase/gamebox/blob/update/Readme/client/public/docs/Pacman.png?raw=true)
+
+### Voting Page
+![Voting Page](https://github.com/Aidanchase/gamebox/blob/update/Readme/client/public/docs/Voting.png?raw=true)
+
+### Busted!
+![Busted](https://github.com/Aidanchase/gamebox/blob/update/Readme/client/public/docs/Busted.png?raw=true)
+
 ## Project Setup
 
 0. Fork this repo
